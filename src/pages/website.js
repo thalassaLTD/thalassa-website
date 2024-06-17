@@ -81,7 +81,7 @@ const Website = () => {
       </div>
       <Grid container spacing={2} sx={{ p: 10 }}>
         <Grid item xs={12} md={6} sx={{}}>
-          <img src="/static/images/covid.png" alt="COVID Modeling" style={{ width: "100%", height: "auto", boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)" }} />
+          <img src="/static/images/ABMmodelimage.png" alt="COVID Modeling" style={{ width: "100%", height: "auto", boxShadow: "0px 8px 16px rgba(0, 0, 0, 0.1)" }} />
         </Grid>
         <Grid item xs={12} md={4} style={{ textAlign: "center", margin: "auto" }}>
           <Typography variant="h4" gutterBottom>COVID-19 Dynamic Modeling</Typography>
