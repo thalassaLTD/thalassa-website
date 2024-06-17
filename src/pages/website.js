@@ -115,7 +115,6 @@ const Website = () => {
       </Grid>
       <Grid container justifyContent="center" alignItems="center" sx={{ mb: 5 }}>
         <Typography variant="h6" color="textSecondary" sx={{ p: 5 }}>Contact us for a demo: mglucksman@thalassa.ltd</Typography>
-        <Typography variant="h6" color="textSecondary" sx={{ p: 5 }}>Phone: +44 7768 773965</Typography>
       </Grid>
       <Grid style={{ color: "#fff", textAlign: "center", margin: "auto", backgroundColor: "black" }}>
         <Typography variant="body2">© 2024 Dynamic Modeling Solutions.</Typography>
