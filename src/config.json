@@ -1,0 +1,6 @@
+{
+    "url2" : "http://0.0.0.0:8000/",
+    "url" : "http://ec2-3-95-230-217.compute-1.amazonaws.com/",
+    "url-ec2" : "http://ec2-3-95-230-217.compute-1.amazonaws.com/",
+    "url-local" : "http://0.0.0.0:8000/"
+}
