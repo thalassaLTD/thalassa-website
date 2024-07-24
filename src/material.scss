@@ -1,0 +1,37 @@
+#root{
+    background:#f3f5f7;
+    height: 100%;
+}
+html{
+    height: 100% !important;
+}
+.MuiTypography-root.header{
+    color: #123860;
+    font-weight: 600;
+    margin-top: 2rem;
+}
+
+.MuiTypography-body1.body{
+    color: #555;
+    display: block;
+    margin:1rem 0;
+}
+.tab-item.MuiTab-root{
+    border: 1px solid grey;
+    color: white;
+    background-color: #123860;
+    margin: 8px;
+    padding: 10px;
+    border-radius: 25px;
+}
+.tab-item.MuiTab-root.Mui-selected{
+    color: white;
+}
+.tab-item.MuiTab-root.Mui-disabled{
+    background: #f4f4f4;
+    color: #5b5b5b;
+}
+.MuiAutocomplete-listbox .MuiAutocomplete-option[aria-selected="true"]{
+    color:#fff;
+    background-color:rgba(18,56,96,.5) !important;
+}

@@ -1,33 +1,67 @@
-import { CssBaseline } from "@mui/material";
-import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./theme";
-import AppRouter from "./routers";
-import { Provider } from "react-redux";
-import { PersistGate } from "redux-persist/integration/react";
-import ReduxStore from "./store";
-import { setAuthToken } from "./services/config";
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useRoutes,
+  Navigate,
+  Redirect,
+} from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { AuthProvider } from "./components/Auth/Auth";
+import Signin from "./components/Auth/Signin";
+import Signup from "./components/Auth/Signup";
+import TermsAndConditions from "./components/Auth/TermsAndConditions";
+import Website from "./pages/website";
+import Home from "./pages/home";
+import Dashboard from "./pages/dashboard";
+import Jobs from "./pages/jobs";
+import CaseStudies from "./pages/caseStudies";
+import Profile from "./pages/profile";
+import CompanyPage from "./pages/company";
+import InternshipPage from "./pages/internship";
+import SmoothScroll from "smooth-scroll";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./pages/ErrorFallback";
+import { getCurrentUser } from "./components/Helper";
+import ProtectedRoutesComponent from "./components/commonComponents/ProtectedRoutesComponent";
+// import Certificate from "../src/components/certificateGenretor/Certificate";
 
-// const clientSideEmotionCache = createEmotionCache();
+export const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1000,
+  speedAsDuration: true,
+});
 
-const App = (props) => {
-  const { pageProps } = props;
-  const JWT = localStorage.getItem("JWT");
-  if (JWT) setAuthToken(JWT);
-
-  // const getLayout = Component.getLayout ?? ((page) => page);
+const App = () => {
   return (
-    <>
-      {/* <LocalizationProvider dateAdapter={AdapterDateFns}> */}
-      <Provider store={ReduxStore.store}>
-        <PersistGate loading={null} persistor={ReduxStore.persistor}>
-          <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <AppRouter {...pageProps} />
-          </ThemeProvider>
-        </PersistGate>
-      </Provider>
-      {/* </LocalizationProvider> */}
-    </>
+    <AuthProvider>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/" element={<Website />} />
+            <Route path="*" element={<Navigate to="/" />} />
+            <Route exact path='/explore/company/:id' element={<CompanyPage />}></Route>
+            <Route exact path='/case-studies' element={<Jobs />}></Route>
+            <Route exact path='/case-studies' element={<CaseStudies />}></Route>
+            <Route
+              element={<ProtectedRoutesComponent />}
+            >
+              <Route exact path='/home' element={<Home />}></Route>
+              <Route exact path='/dashboard' element={<Dashboard />}></Route>
+
+              <Route exact path='/account' element={<Profile />}></Route>
+              <Route exact path='/terms' element={<TermsAndConditions />}></Route>            
+              <Route exact path='/company/:id' element={<CompanyPage />}></Route>              
+              <Route exact path='/internship/:id' element={<InternshipPage />}></Route>
+              {/* <Route exact path='/certificate' element={<Certificate />}></Route> */}
+
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </ErrorBoundary>
+    </AuthProvider>
   );
 };
 

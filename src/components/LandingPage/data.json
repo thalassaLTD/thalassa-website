@@ -1,0 +1,139 @@
+{
+  "Header": {
+    "title": "Thalassa",
+    "paragraph": "Providing tailored solutions for complex challenges"
+  },
+  "About": {
+    "paragraph": "Thalassa offers expert advisory services across various domains, utilizing data-driven strategies and localized insights to deliver impactful solutions.",
+    "Why": [
+      "Custom solutions tailored to unique industry challenges",
+      "Collaborative approach to partner with clients for effective outcomes",
+      "Focus on quick, actionable results to drive immediate impact",
+      "Data-driven decision-making to maximize client returns."
+    ],
+    "Why2": [
+      "Personalized Service",
+      "Client-Centric Approach",
+      "Comprehensive Expertise",
+      "Commitment to Excellence",
+      "Innovation and Quality",
+      "Scalable and Adaptable Solutions",
+      "Commitment to Security and Integrity."
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "New Vaccine Impact on Fish Farms",
+      "largeImage": "https://media.cnn.com/api/v1/images/stellar/prod/230817230825-covid-vaccine-arm-wellness.jpg?c=16x9&q=h_833,w_1480,c_fill",
+      "smallImage": "img/portfolio/case1_small.jpg"
+    },
+    {
+      "title": "Exploratory Modelling of Depression",
+      "largeImage": "https://thalassa.ltd/static/images/ABMmodelimage.png",
+      "smallImage": "img/portfolio/case2_small.jpeg"
+    },
+    {
+      "title": "Solar Energy and Retail Integration",
+      "largeImage": "https://aemo.com.au/-/media/images/site-assets/promo-tiles/renewables-square.jpg?h=1414&la=en&w=1417&hash=30144ECF443CFDCBEE6544700759176C",
+      "smallImage": "img/portfolio/case3_small.jpg"
+    },
+    {
+      "title": "Localization of COVID-19 Models",
+      "largeImage": "https://images-provider.frontiersin.org/api/ipx/w=1200&f=png/https://www.frontiersin.org/files/Articles/566853/frcmn-01-566853-HTML-r1/image_m/frcmn-01-566853-g001.jpg",
+      "smallImage": "img/portfolio/case4_small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-database",
+      "name": "Data-Driven Insights",
+      "text": "Utilize comprehensive data analytics to gain deep insights and drive strategic decisions across various sectors."
+    },
+    {
+      "icon": "fa fa-line-chart",
+      "name": "Strategic Consulting",
+      "text": "Provide expert guidance and strategy development to tackle complex business and public health challenges."
+    },
+    {
+      "icon": "fa fa-lightbulb-o",
+      "name": "Research & Development",
+      "text": "Innovate and develop new methodologies and technologies for enhanced business performance and health outcomes."
+    },
+    {
+      "icon": "fa fa-briefcase",
+      "name": "Technology Integration",
+      "text": "Support the integration of advanced technologies, including renewable energy and AI, into existing systems."
+    },
+    {
+      "icon": "fa fa-lock",
+      "name": "Data Security",
+      "text": "Ensure the security and integrity of data with robust encryption and risk management solutions."
+    },
+    {
+      "icon": "fa fa-cloud",
+      "name": "Epidemiological Modelling",
+      "text": "Develop and localize epidemiological models to improve public health responses and strategies."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "Thalassa provided invaluable insights that significantly improved our operations. Their expertise and dedication to quality were evident throughout the project.",
+      "name": "Alex Johnson"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "The team at Thalassa delivered outstanding solutions tailored to our specific needs. Their professionalism and attention to detail were exceptional.",
+      "name": "Samantha Lee"
+    }
+  ],
+  "Features": [
+    {
+      "icon": "fa fa-line-chart",
+      "title": "Streamlined Onboarding",
+      "text": "Our efficient onboarding process ensures your business quickly benefits from our advisory services."
+    },
+    {
+      "icon": "fa fa-cogs",
+      "title": "Advanced Analytical Tools",
+      "text": "We offer state-of-the-art analytical tools for data visualization and predictive modelling."
+    },
+    {
+      "icon": "fa fa-database",
+      "title": "Data Security and Management",
+      "text": "Thalassa guarantees secure data management, ensuring your information is protected and accessible."
+    },
+    {
+      "icon": "fa fa-rocket",
+      "title": "AI-Driven Solutions",
+      "text": "Leverage AI to gain actionable insights and a competitive edge in your industry."
+    }
+  ],
+  "Contact": {
+    "email": "mglucksman@thalassa.ltd"
+  },
+  "Footer": {
+    "social": [
+      {
+        "icon": "fa-facebook",
+        "url": "#"
+      },
+      {
+        "icon": "fa-twitter",
+        "url": "#"
+      },
+      {
+        "icon": "fa-instagram",
+        "url": "#"
+      },
+      {
+        "icon": "fa-linkedin",
+        "url": "#"
+      }
+    ],
+    "copyright": {
+      "text": "© 2024 Thalassa Limited. All Rights Reserved.",
+      "url": "#"
+    }
+  }
+}

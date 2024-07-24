@@ -1,0 +1,121 @@
+@media screen and (max-width: 400px) {
+  #features {
+    padding: 20px;
+    width: 111%;
+  }
+  #about,
+  #services,
+  #testimonials,
+  #team,
+  #contact,
+  #footer {
+    width: 111%;
+  }
+
+  #portfolio {
+    width: 110%;
+  }
+}
+
+.App{
+}
+
+.mycard {
+  margin-top: 30px;
+}
+
+.auth-card {
+  padding-top: 40;
+  padding: 80px;
+  text-align: center;
+  max-width: 400px;
+  margin: 10px auto;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid rgb(8, 93, 252) !important;
+  box-shadow: 0 1px 0 0 rgb(8, 93, 252) !important;
+}
+
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid rgb(8, 93, 252) !important;
+  box-shadow: 0 1px 0 0 rgb(8, 93, 252) !important;
+}
+
+#toast-container {
+  top: 30px !important;
+  right: 20px !important;
+  left: auto !important;
+}
+
+.google-btn {
+	width: 184px;
+	height: 42px;
+  background-color: #4285f4;
+  display: inline-block;
+	border-radius: 2px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.google-btn .google-icon-wrapper {
+	position: absolute;
+	margin-top: 1px;
+	margin-left: 1px;
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+	background-color: #fff;
+}
+
+.google-btn .google-icon {
+	position: absolute;
+	margin-top: 11px;
+	margin-left: -7px;
+	width: 18px;
+	height: 18px;
+}
+
+.google-btn .btn-text {
+	float: right;
+	margin: 11px 11px 0 0;
+	color: #fff;
+	font-size: 14px;
+	letter-spacing: 0.2px;
+	font-family: "Roboto";
+}
+
+.google-btn:hover {
+	box-shadow: 0 0 6px #4285f4;
+}
+
+.google-btn:active {
+	background: #1669F2;
+}
+
+/* .nav {
+	background-color: #1669F2;
+} */
+
+.nav-wrapper {
+    background-color: #1a0303 !important;
+    font-size: 14px;
+	font-weight: bold;
+	color: #fff;
+  }
+
+
+.about-us{
+	padding: 5%;
+	font-size: large;
+}
+
+.profile-card{
+	padding: 30px;
+	border: solid 1px rgba(0, 0, 0, 0.08);
+	cursor: pointer;
+}
+
+.company-Details{
+	flex: 10;
+}
