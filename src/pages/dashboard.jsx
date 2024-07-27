@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-
 import Sidenav from "../components/NavBars/Sidenav";
 import ScoreBoard from "../components/Dashboard/ScoreBoard";
 import TopCards from "../components/Dashboard/TopCards";
-import Immersions from "../components/Dashboard/Immersions";
-
-import "../components/Dashboard/dash.css";
-
 import AmplitudeEvent from "../components/Amplitude/AmplitudeEvent";
-import { Paper, Typography } from "@mui/material";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import { getUserId, post } from "../components/Helper";
 import Loading from "../components/commonComponents/Loading";
+import "../components/Dashboard/dash.css";
+
+// Import videos
+import DGD1 from "../components/animations/DGD1.mp4";
+import DGD2 from "../components/animations/DGD2.mp4";
+import DGD3 from "../components/animations/DGD3.mp4";
+import DGD4 from "../components/animations/DGD4.mp4";
 
 export default function Dashboard() {
   AmplitudeEvent("/dashboard-loaded");
   
   const uid = getUserId()
-  const reqData = {student_id : uid}
+  const reqData = {student_id: uid}
   const [loading, setLoading] = useState(true);
   const [scoreboardData, setScoreboardData] = useState(null);
 
@@ -34,47 +35,38 @@ export default function Dashboard() {
       });
   }, []);
 
+  // List of video sources
+  const videoSources = [DGD1, DGD2, DGD3, DGD4];
+
   return (
     <>
       <ResponsiveAppBar />
       <div className="bgcolor">
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />
-          {loading && <Loading/>}
+          {loading && <Loading />}
           {!loading && <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
             <Box height={20} />
-            {/* <Paper>
-              <Typography
-                color="#123860"
-                sx={{ p: 3, py: 2, fontWeight: 600 }}
-                variant="h5"
-              >
-                Dashboard
-              </Typography>
-            </Paper> */}
-            <TopCards scoreboardData={scoreboardData}/>
+            <TopCards scoreboardData={scoreboardData} />
 
             <Box height={10} />
 
             <Grid container spacing={2} className="paddingall">
               <Grid item xs={12}>
-                <ScoreBoard scoreboardData={scoreboardData.scorecard}/>
+                <ScoreBoard scoreboardData={scoreboardData?.scorecard} />
               </Grid>
-              {/* <Grid item xs={12} md={8}>
-                <Immersions />
-              </Grid> */}
-            </Grid>
-            {/* <Grid container height={'100%'}>
-              <Grid item p={3} xs={8} >
-                <Paper sx={{borderRadius:4,background:'#fff',p:3}} >
-                <TopCards />
-                </Paper>
 
+              <Grid item xs={12}>
+                <Box>
+                  {videoSources.map((source, index) => (
+                    <video key={index} width="820" height="840" controls>
+                      <source src={source} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ))}
+                </Box>
               </Grid>
-              <Grid item xs={4}>
-                
-              </Grid>
-            </Grid> */}
+            </Grid>
           </Box>}
         </Box>
       </div>

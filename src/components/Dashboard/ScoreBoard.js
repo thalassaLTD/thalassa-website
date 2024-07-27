@@ -55,10 +55,10 @@ export default function ScoreBoard({scoreboardData}) {
     return (
       <div>
         <Typography variant="h5" className="header" sx={{ mt: 4, mb: 2 }}>
-          Scoreboard
+          Visualisations
         </Typography>
         <Box height={5} />
-        <TableContainer component={Paper}>
+        {/* <TableContainer component={Paper}>
           <Table aria-label="internship table">
             <TableHead>
               <TableRow>
@@ -134,7 +134,7 @@ export default function ScoreBoard({scoreboardData}) {
               ))}
             </TableBody>
           </Table>
-        </TableContainer>
+        </TableContainer> */}
       </div>
     );
 }

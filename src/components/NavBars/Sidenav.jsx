@@ -250,7 +250,7 @@ export default function Sidenav() {
               />
             </ListItemButton>
           </ListItem>
-          <ListItem
+          {/* <ListItem
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
@@ -273,7 +273,7 @@ export default function Sidenav() {
               ></WorkIcon>
               <ListItemText primary="Jobs" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}

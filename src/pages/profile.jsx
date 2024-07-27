@@ -221,8 +221,8 @@ const StudentProfile = () => {
           <Grid item xs={12} md={6}>
             <TextField
               fullWidth
-              label="College"
-              name="college"
+              label="Name"
+              name="name"
               value={student?.college || ""}
               onChange={handleChange}
               disabled={!editable}
@@ -240,7 +240,7 @@ const StudentProfile = () => {
               disabled={!editable}
             />
           </Grid>
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <TextField
               required
               fullWidth
@@ -420,7 +420,7 @@ const StudentProfile = () => {
               onChange={handleChange}
               disabled={!editable}
             />
-          </Grid>
+          </Grid> */}
           <Grid item xs={12}>
             <Box>
               {editable ? (
@@ -457,7 +457,7 @@ const StudentProfile = () => {
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          {/* <Grid item xs={12} md={6}>
             <Typography
               my={2}
               variant="h6"
@@ -511,7 +511,7 @@ const StudentProfile = () => {
                 </FileThumbnail>
               </Grid>
             )}
-          </Grid>
+          </Grid> */}
         </Grid>
       </form>
     );
@@ -609,20 +609,20 @@ const StudentProfile = () => {
                     sx={{ mb: "1rem", width: "100%" }}
                   />
                   <Grid container item pb={2} justifyContent="space-around">
-                    <Grid item>
+                    {/* <Grid item>
                       {" "}
                       <Typography variant="body1">
                       Programs enrolled
                       </Typography>{" "}
-                    </Grid>
-                    <Grid item>
+                    </Grid> */}
+                    {/* <Grid item>
                       <Typography variant="body1" fontWeight={600}>
                         {" "}
                         {student?.enrolled_internships?.length
                           ? student.enrolled_internships.length
                           : 0}
                       </Typography>{" "}
-                    </Grid>
+                    </Grid> */}
                   </Grid>
                   <Divider
                     orientation="horizontal"

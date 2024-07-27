@@ -23,7 +23,7 @@ export default function DashboardGrid({scoreboardData}) {
                 component="div"
                 sx={{ color: "#ccd1d1" }}
               >
-                Total Assignments
+                Depression Cities
               </Typography>
             </CardContent>
           </Card>
@@ -40,7 +40,7 @@ export default function DashboardGrid({scoreboardData}) {
                 sx={{ color: "#fff" }}
               >
                 <AssignmentIcon sx={{color:"#fff"}} fontSize="large"/> 
-                Completed Assignments
+                Over all cities
               </Typography>
               <Typography
                 gutterBottom
