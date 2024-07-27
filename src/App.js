@@ -15,6 +15,8 @@ import TermsAndConditions from "./components/Auth/TermsAndConditions";
 import Website from "./pages/website";
 import Home from "./pages/home";
 import Dashboard from "./pages/dashboard";
+import CubePlots from "./pages/cubePlots";
+import BokehInteractions from "./pages/bokehInteractions";
 import Jobs from "./pages/jobs";
 import CaseStudies from "./pages/caseStudies";
 import Profile from "./pages/profile";
@@ -50,6 +52,8 @@ const App = () => {
             >
               <Route exact path='/home' element={<Home />}></Route>
               <Route exact path='/dashboard' element={<Dashboard />}></Route>
+              <Route exact path='/bokeh-interactions' element={<BokehInteractions />}></Route>
+              <Route exact path='/cube-plots' element={<CubePlots />}></Route>
 
               <Route exact path='/account' element={<Profile />}></Route>
               <Route exact path='/terms' element={<TermsAndConditions />}></Route>            

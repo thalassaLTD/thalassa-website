@@ -12,7 +12,7 @@ import Loading from "../components/commonComponents/Loading";
 import "../components/Dashboard/dash.css";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 
-export default function Dashboard() {
+export default function BokehInteractions() {
   AmplitudeEvent("/dashboard-loaded");
   
   const uid = getUserId();
@@ -36,18 +36,19 @@ export default function Dashboard() {
 
   useEffect(() => {
     const storage = getStorage();
-    const videoRef = ref(storage, 'Animations');
+    const htmlRef = ref(storage, 'Animations/Bokeh');
 
-    listAll(videoRef)
+    
+
+    listAll(htmlRef)
       .then((res) => {
-        const videoPromises = res.items.map((itemRef) => getDownloadURL(itemRef));
-        return Promise.all(videoPromises);
+        const htmlPromises = res.items.map((itemRef) => getDownloadURL(itemRef));
+        return Promise.all(htmlPromises);
       })
-      .then((urls) => setVideoUrls(urls))
+      .then((urls) => setHtmlUrls(urls))
       .catch((error) => {
-        console.error("Failed to load videos:", error);
+        console.error("Failed to load HTML files:", error);
       });
-
   }, []);
 
   return (
@@ -59,23 +60,21 @@ export default function Dashboard() {
           {loading && <Loading />}
           {!loading && (
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              {/* <Box height={20} /> */}
+              <Box height={20} />
               {/* <TopCards scoreboardData={scoreboardData} /> */}
 
-              {/* <Box height={10} /> */}
+              <Box height={10} />
 
               <Grid container spacing={2} className="paddingall">
                 {/* <Grid item xs={12}>
                   <ScoreBoard scoreboardData={scoreboardData?.scorecard} />
                 </Grid> */}
 
+
                 <Grid item xs={12}>
                   <Box>
-                    {videoUrls.map((url, index) => (
-                      <video key={index} width="820" height="840" controls>
-                        <source src={url} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                    {htmlUrls.map((url, index) => (
+                      <iframe key={index} src={url} width="940" height="640" />
                     ))}
                   </Box>
                 </Grid>

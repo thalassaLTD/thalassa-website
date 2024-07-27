@@ -198,7 +198,7 @@ export default function Sidenav() {
         <List
           sx={{ height: 100 + "vh", backgroundColor: "#123860", color: "#fff" }}
         >
-          <ListItem
+          {/* <ListItem
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
@@ -221,7 +221,7 @@ export default function Sidenav() {
               ></HomeIcon>
               <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
 
           <ListItem
             disablePadding
@@ -245,16 +245,16 @@ export default function Sidenav() {
                 }}
               ></DashboardIcon>
               <ListItemText
-                primary="Dashboard"
+                primary="MP4 Videos"
                 sx={{ opacity: open ? 1 : 0 }}
               />
             </ListItemButton>
           </ListItem>
-          {/* <ListItem
+          <ListItem
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/roles-jobdescriptions");
+              navigate("/bokeh-interactions");
             }}
           >
             <ListItemButton
@@ -271,9 +271,33 @@ export default function Sidenav() {
                   justifyContent: "center",
                 }}
               ></WorkIcon>
-              <ListItemText primary="Jobs" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Bokeh Interactions" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem> */}
+          </ListItem>
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => {
+              navigate("/cube-plots");
+            }}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <WorkIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              ></WorkIcon>
+              <ListItemText primary="Cube Plots" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}
