@@ -191,16 +191,16 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
+              {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>
               <Typography>
                 or
-              </Typography>
+              </Typography> */}
 
-              <Button
+              {/* <Button
                 type="submit"
                 fullWidth
                 variant="contained"
@@ -208,12 +208,12 @@ export default function SignIn() {
                 onClick={googleAuth}
               >
                 Sign in with google
-              </Button>
-              <Grid item>
+              </Button> */}
+              {/* <Grid item>
                 <Link to="/signup" href="#" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
-              </Grid>
+              </Grid> */}
             </Grid>
           </Box>
         </Box>
