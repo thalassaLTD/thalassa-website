@@ -14,7 +14,7 @@ import Signup from "./components/Auth/Signup";
 import TermsAndConditions from "./components/Auth/TermsAndConditions";
 import Website from "./pages/website";
 import Home from "./pages/home";
-import Dashboard from "./pages/dashboard";
+import MP4s from "./pages/mp4s";
 import CubePlots from "./pages/cubePlots";
 import BokehInteractions from "./pages/bokehInteractions";
 import Jobs from "./pages/jobs";
@@ -50,8 +50,8 @@ const App = () => {
             <Route
               element={<ProtectedRoutesComponent />}
             >
-              <Route exact path='/home' element={<Home />}></Route>
-              <Route exact path='/dashboard' element={<Dashboard />}></Route>
+              <Route exact path='/home' element={<MP4s />}></Route>
+              <Route exact path='/mp4s' element={<MP4s />}></Route>
               <Route exact path='/bokeh-interactions' element={<BokehInteractions />}></Route>
               <Route exact path='/cube-plots' element={<CubePlots />}></Route>
 

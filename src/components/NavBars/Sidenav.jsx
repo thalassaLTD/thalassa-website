@@ -14,7 +14,16 @@ import WorkIcon from "@mui/icons-material/WorkOutline";
 import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
 import VideoChatIcon from "@mui/icons-material/VideoChat";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
+import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
+import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
+import VideoCallIcon from "@mui/icons-material/VideoCall";
+import PlayCircleFilledIcon from "@mui/icons-material/PlayCircleFilled";
 import PersonIcon from "@mui/icons-material/Person";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import PieChartIcon from "@mui/icons-material/PieChart";
+import ShowChartIcon from "@mui/icons-material/ShowChart";
+import MapIcon from "@mui/icons-material/Map";
+import InsertChartIcon from "@mui/icons-material/InsertChart";
 import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -227,7 +236,7 @@ export default function Sidenav() {
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/dashboard");
+              navigate("/mp4s");
             }}
           >
             <ListItemButton
@@ -237,13 +246,13 @@ export default function Sidenav() {
                 px: 2.5,
               }}
             >
-              <DashboardIcon
+              <VideoLibraryIcon
                 sx={{
                   minWidth: 0,
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                 }}
-              ></DashboardIcon>
+              ></VideoLibraryIcon>
               <ListItemText
                 primary="MP4 Videos"
                 sx={{ opacity: open ? 1 : 0 }}
@@ -264,13 +273,13 @@ export default function Sidenav() {
                 px: 2.5,
               }}
             >
-              <WorkIcon
+              <RoomOutlinedIcon
                 sx={{
                   minWidth: 0,
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                 }}
-              ></WorkIcon>
+              ></RoomOutlinedIcon>
               <ListItemText primary="Bokeh Interactions" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
@@ -288,13 +297,13 @@ export default function Sidenav() {
                 px: 2.5,
               }}
             >
-              <WorkIcon
+              <BarChartIcon
                 sx={{
                   minWidth: 0,
                   mr: open ? 3 : "auto",
                   justifyContent: "center",
                 }}
-              ></WorkIcon>
+              ></BarChartIcon>
               <ListItemText primary="Cube Plots" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
