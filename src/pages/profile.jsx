@@ -581,7 +581,7 @@ const StudentProfile = () => {
               <Grid style={{ paddingTop: 10 }} px={2} item container md={3}>
                 <Paper
                   sx={{
-                    p: 14,
+                    p: 18,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",

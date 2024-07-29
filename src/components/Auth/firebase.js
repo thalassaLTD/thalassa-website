@@ -3,14 +3,14 @@ import "firebase/auth";
 // import "firebase/database";
 // import "firebase/storage";
 
-var config = {
-  apiKey: "AIzaSyAfwsmdzFz-T_JwTQu3MbeWqa9thXoUisQ",
-  authDomain: "uplyft-web.firebaseapp.com",
-  projectId: "uplyft-web",
-  storageBucket: "uplyft-web.appspot.com",
-  messagingSenderId: "48767017756",
-  appId: "1:48767017756:web:a7383dffd3277f009ad0d9",
-  measurementId: "G-BZ07Y9W5D3"
+var config =  {
+  apiKey: "AIzaSyCDDR_OfRTWl-l8iJBggTqtgIdFxnNAuQk",
+  authDomain: "thalassa-ltd.firebaseapp.com",
+  projectId: "thalassa-ltd",
+  storageBucket: "thalassa-ltd.appspot.com",
+  messagingSenderId: "795268866861",
+  appId: "1:795268866861:web:aed6e94e4c2b8650e6a9a4",
+  measurementId: "G-Z2839JMWP2"
 };
 firebase.initializeApp(config);
 

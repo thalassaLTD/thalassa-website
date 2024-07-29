@@ -51,7 +51,7 @@ const App = () => {
             <Route
               element={<ProtectedRoutesComponent />}
             >
-              <Route exact path='/home' element={<MP4s />}></Route>
+              <Route exact path='/home' element={<Experiments />}></Route>
               <Route exact path='/experiments' element={<Experiments />}></Route>
               <Route exact path='/mp4s' element={<MP4s />}></Route>
               <Route exact path='/bokeh-interactions' element={<BokehInteractions />}></Route>

@@ -86,11 +86,11 @@ export default function Bokeh() {
                 <Grid item xs={12}>
                   <Box>
                     <FormControl fullWidth>
-                      <InputLabel>Select Folder</InputLabel>
+                      <InputLabel>Select Experiment</InputLabel>
                       <Select
                         value={selectedFolder}
                         onChange={handleFolderChange}
-                        label="Select Folder"
+                        label="Select Experiment"
                       >
                         <MenuItem value=""><em>Select a folder</em></MenuItem>
                         {folders.map((folder, index) => (

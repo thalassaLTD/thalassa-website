@@ -91,6 +91,8 @@ export default function Experiments() {
                         value={selectedFolder}
                         onChange={handleFolderChange}
                         renderValue={(selected) => selected}
+                        label="Select Experiment"
+
                       >
                         {folders.map((folder) => (
                           <MenuItem key={folder} value={folder}>
@@ -107,6 +109,8 @@ export default function Experiments() {
                           multiple
                           value={selectedFiles}
                           onChange={handleFileChange}
+                          label="Select Trend"
+
                           renderValue={(selected) => (
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                               {selected.map((value) => (
