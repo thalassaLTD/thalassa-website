@@ -565,23 +565,23 @@ const StudentProfile = () => {
   const DesktopView = () => {
     return (
       <Paper>
-        <Paper className={classes.bannerContainer} sx={{ height: "35vh" }}>
-          <img
+        <Paper className={classes.bannerContainer}>
+          {/* <img
             src={bannerImage}
             className={classes.bannerImage}
             alt="fireSpot"
-          />
+          /> */}
           <Box className={classes.overlayContainer}>
             <Grid
               container
-              sx={{ p: 8 }}
+              sx={{ p: 8 , mt:10 }}
               spacing={2}
               justifyContent="space-between"
             >
-              <Grid style={{ paddingTop: 0 }} px={2} item container md={3}>
+              <Grid style={{ paddingTop: 10 }} px={2} item container md={3}>
                 <Paper
                   sx={{
-                    p: 4,
+                    p: 14,
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",

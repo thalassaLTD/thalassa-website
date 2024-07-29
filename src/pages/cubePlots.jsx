@@ -2,53 +2,60 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
-import ScoreBoard from "../components/Dashboard/ScoreBoard";
-import TopCards from "../components/Dashboard/TopCards";
-import AmplitudeEvent from "../components/Amplitude/AmplitudeEvent";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
-import { getAuth } from "firebase/auth";
-import { getUserId, post } from "../components/Helper";
 import Loading from "../components/commonComponents/Loading";
+import JSZip from "jszip";
+import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import "../components/Dashboard/dash.css";
-import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 
-export default function CubePlots() {
-  AmplitudeEvent("/dashboard-loaded");
-  
-  const uid = getUserId();
-  const reqData = { student_id: uid };
+export default function Bokeh() {
   const [loading, setLoading] = useState(true);
-  const [scoreboardData, setScoreboardData] = useState(null);
-  const [videoUrls, setVideoUrls] = useState([]);
   const [htmlUrls, setHtmlUrls] = useState([]);
 
+  
   useEffect(() => {
-    post("/studentDashboard", reqData)
-      .then((response) => {
-        setScoreboardData(response);
+    const fetchAndExtractZip = async () => {
+      const storage = getStorage();
+      const zipRef = ref(storage, 'Animations/CubePlots/Cubes.zip');
+
+      try {
+        // Fetch the ZIP file
+        const url = await getDownloadURL(zipRef);
+        const response = await fetch(url);
+        const blob = await response.blob();
+
+        // Load the ZIP file
+        const zip = await JSZip.loadAsync(blob);
+
+        // Extract HTML files
+        const fileNames = Object.keys(zip.files);
+        const htmlFiles = fileNames.filter(name => name.endsWith('.html'));
+
+        const htmlPromises = htmlFiles.map(async (fileName) => {
+          const file = zip.files[fileName];
+          const content = await file.async("text");
+
+          // Basic validation to check if the content starts with HTML tags
+          if (content.trim().startsWith("<html") || content.trim().startsWith("<!DOCTYPE html")) {
+            const blob = new Blob([content], { type: "text/html" });
+            return URL.createObjectURL(blob);
+          } else {
+            console.warn(`File ${fileName} does not appear to be valid HTML.`);
+            return null; // Skip this file
+          }
+        });
+
+        const urls = (await Promise.all(htmlPromises)).filter(url => url !== null);
+
+        setHtmlUrls(urls);
+      } catch (error) {
+        console.error("Failed to load and extract ZIP file:", error);
+      } finally {
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);  // Ensure loading spinner is stopped on error
-      });
-  }, []);
+      }
+    };
 
-  useEffect(() => {
-    const storage = getStorage();
-    const htmlRef = ref(storage, 'Animations/CubePlots');
-
-    
-
-    listAll(htmlRef)
-      .then((res) => {
-        const htmlPromises = res.items.map((itemRef) => getDownloadURL(itemRef));
-        return Promise.all(htmlPromises);
-      })
-      .then((urls) => setHtmlUrls(urls))
-      .catch((error) => {
-        console.error("Failed to load HTML files:", error);
-      });
+    fetchAndExtractZip();
   }, []);
 
   return (
@@ -61,16 +68,8 @@ export default function CubePlots() {
           {!loading && (
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Box height={20} />
-              {/* <TopCards scoreboardData={scoreboardData} /> */}
-
               <Box height={10} />
-
               <Grid container spacing={2} className="paddingall">
-                {/* <Grid item xs={12}>
-                  <ScoreBoard scoreboardData={scoreboardData?.scorecard} />
-                </Grid> */}
-
-
                 <Grid item xs={12}>
                   <Box>
                     {htmlUrls.map((url, index) => (

@@ -236,7 +236,7 @@ export default function Sidenav() {
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/mp4s");
+              navigate("/experiments");
             }}
           >
             <ListItemButton
@@ -254,7 +254,7 @@ export default function Sidenav() {
                 }}
               ></VideoLibraryIcon>
               <ListItemText
-                primary="MP4 Videos"
+                primary="Experiments"
                 sx={{ opacity: open ? 1 : 0 }}
               />
             </ListItemButton>
@@ -283,7 +283,7 @@ export default function Sidenav() {
               <ListItemText primary="Bokeh Interactions" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          <ListItem
+          {/* <ListItem
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
@@ -306,7 +306,7 @@ export default function Sidenav() {
               ></BarChartIcon>
               <ListItemText primary="Cube Plots" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}

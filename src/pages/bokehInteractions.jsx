@@ -2,54 +2,74 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
-import ScoreBoard from "../components/Dashboard/ScoreBoard";
-import TopCards from "../components/Dashboard/TopCards";
-import AmplitudeEvent from "../components/Amplitude/AmplitudeEvent";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
-import { getAuth } from "firebase/auth";
-import { getUserId, post } from "../components/Helper";
 import Loading from "../components/commonComponents/Loading";
 import "../components/Dashboard/dash.css";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
+import { FormControl, InputLabel, Select, MenuItem, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 
-export default function BokehInteractions() {
-  AmplitudeEvent("/dashboard-loaded");
-  
-  const uid = getUserId();
-  const reqData = { student_id: uid };
+export default function Bokeh() {
   const [loading, setLoading] = useState(true);
-  const [scoreboardData, setScoreboardData] = useState(null);
-  const [videoUrls, setVideoUrls] = useState([]);
-  const [htmlUrls, setHtmlUrls] = useState([]);
+  const [folders, setFolders] = useState([]);
+  const [files, setFiles] = useState([]);
+  const [selectedFolder, setSelectedFolder] = useState('');
+  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [fileSelections, setFileSelections] = useState({});
 
   useEffect(() => {
-    post("/studentDashboard", reqData)
-      .then((response) => {
-        setScoreboardData(response);
+    const fetchFolders = async () => {
+      const storage = getStorage();
+      const baseRef = ref(storage, 'Experiments/DGD/');
+
+      try {
+        const res = await listAll(baseRef);
+        const folderPromises = res.prefixes.map(async (folderRef) => {
+          const folderRes = await listAll(folderRef);
+          const files = await Promise.all(folderRes.items.map(async (itemRef) => {
+            const url = await getDownloadURL(itemRef);
+            return { name: itemRef.name, url };
+          }));
+          return {
+            folderName: folderRef.name,
+            files
+          };
+        });
+
+        const folderData = await Promise.all(folderPromises);
+        setFolders(folderData);
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);  // Ensure loading spinner is stopped on error
-      });
+      } catch (error) {
+        console.error("Failed to load folders and files:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchFolders();
   }, []);
+
+  const handleFolderChange = (event) => {
+    const folderName = event.target.value;
+    const folder = folders.find(f => f.folderName === folderName);
+    if (folder) {
+      setSelectedFolder(folderName);
+      setFiles(folder.files);
+      setFileSelections({}); // Reset file selections
+      setSelectedFiles([]);
+    }
+  };
+
+  const handleFileSelection = (event) => {
+    const url = event.target.value;
+    setFileSelections(prev => ({
+      ...prev,
+      [url]: !prev[url]
+    }));
+  };
 
   useEffect(() => {
-    const storage = getStorage();
-    const htmlRef = ref(storage, 'Animations/Bokeh');
-
-    
-
-    listAll(htmlRef)
-      .then((res) => {
-        const htmlPromises = res.items.map((itemRef) => getDownloadURL(itemRef));
-        return Promise.all(htmlPromises);
-      })
-      .then((urls) => setHtmlUrls(urls))
-      .catch((error) => {
-        console.error("Failed to load HTML files:", error);
-      });
-  }, []);
+    const selected = Object.keys(fileSelections).filter(url => fileSelections[url]);
+    setSelectedFiles(selected);
+  }, [fileSelections]);
 
   return (
     <>
@@ -61,21 +81,56 @@ export default function BokehInteractions() {
           {!loading && (
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Box height={20} />
-              {/* <TopCards scoreboardData={scoreboardData} /> */}
-
               <Box height={10} />
-
               <Grid container spacing={2} className="paddingall">
-                {/* <Grid item xs={12}>
-                  <ScoreBoard scoreboardData={scoreboardData?.scorecard} />
-                </Grid> */}
-
-
                 <Grid item xs={12}>
                   <Box>
-                    {htmlUrls.map((url, index) => (
-                      <iframe key={index} src={url} width="940" height="640" />
-                    ))}
+                    <FormControl fullWidth>
+                      <InputLabel>Select Folder</InputLabel>
+                      <Select
+                        value={selectedFolder}
+                        onChange={handleFolderChange}
+                        label="Select Folder"
+                      >
+                        <MenuItem value=""><em>Select a folder</em></MenuItem>
+                        {folders.map((folder, index) => (
+                          <MenuItem key={index} value={folder.folderName}>{folder.folderName}</MenuItem>
+                        ))}
+                      </Select>
+                    </FormControl>
+
+                    {files.length > 0 && (
+                      <Box mt={2}>
+                        <h2>Select Files</h2>
+                        <FormGroup>
+                          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                            {files.map((file, index) => (
+                              <FormControlLabel
+                                key={index}
+                                control={
+                                  <Checkbox
+                                    checked={fileSelections[file.url] || false}
+                                    onChange={handleFileSelection}
+                                    value={file.url}
+                                  />
+                                }
+                                label={file.name}
+                                style={{ marginRight: '16px' }} // Optional: Adjust spacing between items
+                              />
+                            ))}
+                          </div>
+                        </FormGroup>
+                      </Box>
+                    )}
+
+                    {selectedFiles.length > 0 && (
+                      <Box mt={2}>
+                        <h2>Selected Files</h2>
+                        {selectedFiles.map((url, index) => (
+                          <iframe key={index} src={url} width="50%" height="640" />
+                        ))}
+                      </Box>
+                    )}
                   </Box>
                 </Grid>
               </Grid>

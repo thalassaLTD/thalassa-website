@@ -26,25 +26,25 @@ const ProtectedRoutesComponent = () => {
     "career_interest",
   ];
 
-  useEffect(() => {
-    setTimeout(() => {
-      if(userAuth && !isValidUserData(studentDetails)){
-        axios
-        .post(baseURL + "/getStudent", {
-          googleuid: userAuth,
-        })
-        .then((response) => {
-          if (response.data) {
-            const check = isValidUserData(response.data);
-            setShowRegistration(!check);
-            setStudentDetails(response.data);
-          }
-        })
-        .catch((error) => console.error(error));
-      }
-    }, 5000);
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     if(userAuth && !isValidUserData(studentDetails)){
+  //       axios
+  //       .post(baseURL + "/getStudent", {
+  //         googleuid: userAuth,
+  //       })
+  //       .then((response) => {
+  //         if (response.data) {
+  //           const check = isValidUserData(response.data);
+  //           setShowRegistration(!check);
+  //           setStudentDetails(response.data);
+  //         }
+  //       })
+  //       .catch((error) => console.error(error));
+  //     }
+  //   }, 5000);
     
-  }, []);
+  // }, []);
 
   const isValidUserData = (userData) => {
     if (!userData?.email) return false;

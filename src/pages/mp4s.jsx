@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
-import ScoreBoard from "../components/Dashboard/ScoreBoard";
-import TopCards from "../components/Dashboard/TopCards";
-import AmplitudeEvent from "../components/Amplitude/AmplitudeEvent";
+// import ScoreBoard from "../components/Dashboard/ScoreBoard";
+// import TopCards from "../components/Dashboard/TopCards";
+// import AmplitudeEvent from "../components/Amplitude/AmplitudeEvent";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
-import { getAuth } from "firebase/auth";
+// import { getAuth } from "firebase/auth";
 import { getUserId, post } from "../components/Helper";
 import Loading from "../components/commonComponents/Loading";
 import "../components/Dashboard/dash.css";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 
 export default function Dashboard() {
-  AmplitudeEvent("/dashboard-loaded");
+  // AmplitudeEvent("/dashboard-loaded");
   
   const uid = getUserId();
   const reqData = { student_id: uid };
@@ -47,6 +47,7 @@ export default function Dashboard() {
       .catch((error) => {
         console.error("Failed to load videos:", error);
       });
+      console.log("all videos videoUrls", videoUrls )
 
   }, []);
 
@@ -70,12 +71,19 @@ export default function Dashboard() {
                 </Grid> */}
 
                 <Grid item xs={12}>
+                  
                   <Box>
                     {videoUrls.map((url, index) => (
+                      <>
+                      <h1>This is the title</h1>
+                      <p>This is the description</p>
+
+
                       <video key={index} width="820" height="840" controls>
                         <source src={url} type="video/mp4" />
                         Your browser does not support the video tag.
                       </video>
+                      </>
                     ))}
                   </Box>
                 </Grid>
