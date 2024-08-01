@@ -2,9 +2,9 @@ import firebase from "firebase/compat/app";
 import "firebase/auth";
 // import "firebase/database";
 // import "firebase/storage";
-
+console.log("process.env.apiKey", process.env.REACT_APP_FIREBASE_KEY)
 var config =  {
-  apiKey: "AIzaSyCDDR_OfRTWl-l8iJBggTqtgIdFxnNAuQk",
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "thalassa-ltd.firebaseapp.com",
   projectId: "thalassa-ltd",
   storageBucket: "thalassa-ltd.appspot.com",
