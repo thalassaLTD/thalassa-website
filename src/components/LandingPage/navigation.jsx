@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 export const Navigation = (props) => {
   return (
@@ -13,16 +12,15 @@ export const Navigation = (props) => {
             data-toggle="collapse"
             data-target="#bs-example-navbar-collapse-1"
           >
-            {" "}
-            <span className="sr-only">Toggle navigation</span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
-            <span className="icon-bar"></span>{" "}
+            <span className="sr-only">Toggle navigation</span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
+            <span className="icon-bar"></span>
           </button>
           <Link to="/" className='hide-text'>
             <a className="navbar-brand page-scroll" href="#page-top">
               THALASSA
-            </a>{" "}
+            </a>
           </Link>
         </div>
 
@@ -31,57 +29,74 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-            {/* <li>
-              <a href="#features" className="page-scroll">
-                Features
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                What We Do <b className="caret"></b>
               </a>
-            </li> */}
-            <li>
-              <a href="/#about" className="page-scroll">
-                About Us
-              </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a href="/service1">New vaccine impact on fish farm</a>
+                </li>
+                <li>
+                  <Link to="/service2" className="page-scroll">Modelling depression in the pandemic</Link>
+                </li>
+                <li>
+                  <Link to="/service3" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="/#services" className="page-scroll">
-                What we do
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                Insights <b className="caret"></b>
               </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <Link to="/insights/insight1" className="page-scroll">Insight 1</Link>
+                </li>
+                <li>
+                  <Link to="/insights/insight2" className="page-scroll">Insight 2</Link>
+                </li>
+                <li>
+                  <Link to="/insights/insight3" className="page-scroll">Insight 3</Link>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="/insights" className="page-scroll">
-                Insights
+            <li className="dropdown">
+              <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                Case Studies <b className="caret"></b>
               </a>
+              <ul className="dropdown-menu">
+                <li>
+                  <a href="/service1">New vaccine impact on fish farm</a>
+                </li>
+                <li>
+                  <Link to="/service2" className="page-scroll">Modelling depression in the pandemic</Link>
+                </li>
+                
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to="/service2" className="page-scroll">Exploartory modelling of urban rural and indeginuos areas in Canada
+                    </Link>
+                  </li>
+                </ul>
+                <li>
+                  <Link to="/service3" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
+                </li>
+                <li>
+                  <Link to="/service3" className="page-scroll">Localisation of Epidemiological models of Covid-19</Link>
+                </li>
+              </ul>
             </li>
-            <li>
-              <a href="/case-studies" className="page-scroll">
-                Case Studies
-              </a>
-            </li>
-            {/* <li>
-              <a href="#testimonials" className="page-scroll">
-                Testimonials
-              </a>
-            </li> */}
-            {/* <li>
-              <a href="#team" className="page-scroll">
-                Team
-              </a>
-            </li> */}
             <li>
               <a href="/#contact" className="page-scroll">
                 Contact Us
               </a>
             </li>
-            {/* <li>
-              <a href="https://business.joinuplyft.com/" style={{color:'orange'}}>
-                Go to Business
-              </a>
-            </li> */}
             <li>
               <Link to="/signin" className='hide-text'>
-
                 <a className="page-scroll">
                   Sign in
-              </a>
+                </a>
               </Link>
             </li>
           </ul>
