@@ -19,7 +19,7 @@ export default function Bokeh() {
   useEffect(() => {
     const fetchFolders = async () => {
       const storage = getStorage();
-      const baseRef = ref(storage, '/Experiments/Interactive Plots/Depression Growth Statistics/');
+      const baseRef = ref(storage, '/Experiments/Interactive Plots/');
 
       try {
         const res = await listAll(baseRef);
