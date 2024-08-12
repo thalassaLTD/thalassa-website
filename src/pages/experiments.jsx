@@ -10,9 +10,40 @@ import { MenuItem, Select, InputLabel, FormControl, Checkbox, ListItemText } fro
 export default function Experiments() {
   const [loading, setLoading] = useState(true);
   const [folders, setFolders] = useState([]);
-  const [htmlFiles, setHtmlFiles] = useState([]); // Updated state to store files with names
+  const [htmlFiles, setHtmlFiles] = useState([]); // State to store files with names and metadata
   const [selectedFolder, setSelectedFolder] = useState('');
-  const [selectedFiles, setSelectedFiles] = useState([]);
+  const [selectedFileTitles, setSelectedFileTitles] = useState([]);
+  const [fileTitleToUrl, setFileTitleToUrl] = useState({}); // Mapping of titles to URLs
+
+  const webText = {
+    "DPR1.mp4": {
+      "Title": "DPR1 Depression Prevalence and Growth for Greater London",
+      "Paragraph": "This is a paragraph for DPR1",
+      "Location": "Greater London",
+      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    },
+    "DPR2.mp4": {
+      "Title": "DPR2 Depression Prevalence and Growth for Greater London",
+      "Paragraph": "This is a paragraph for DPR2",
+      "Location": "Greater London",
+      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+
+    },
+    "PPR1.mp4": {
+      "Title": "PPR1 Prescription Prevalence for Greater London",
+      "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
+      "Location": "Greater London",
+      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+
+    },
+    "DGD1.mp4": {
+      "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
+      "Paragraph": "This is a paragraph for DPR2",
+      "Location": "Greater London",
+      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+
+    }
+  };
 
   useEffect(() => {
     const storage = getStorage();
@@ -43,14 +74,19 @@ export default function Experiments() {
       .then((res) => {
         const filePromises = res.items.map(async (itemRef) => {
           const url = await getDownloadURL(itemRef);
-          return { name: itemRef.name, url };
+          const name = itemRef.name;
+          const title = webText[name]?.Title || name; // Use title from webText or fallback to filename
+          return { name, url, title, ...webText[name] }; // Add metadata from webText
         });
         return Promise.all(filePromises);
       })
       .then((files) => {
         setHtmlFiles(files); // Store files with names and URLs
+        const titleToUrl = files.reduce((acc, file) => ({ ...acc, [file.title]: file.url }), {});
+        setFileTitleToUrl(titleToUrl);
         if (files.length > 0) {
-          setSelectedFiles([files[0].url]); // Set the first file as the default selected file
+          const defaultTitle = files[0].title;
+          setSelectedFileTitles([defaultTitle]); // Set the first file title as the default selected title
         }
         setLoading(false);
       })
@@ -64,9 +100,7 @@ export default function Experiments() {
     const {
       target: { value },
     } = event;
-    setSelectedFiles(
-      (typeof value === 'string' ? value.split(',') : value)
-    );
+    setSelectedFileTitles(typeof value === 'string' ? value.split(',') : value);
   };
 
   return (
@@ -83,16 +117,13 @@ export default function Experiments() {
               <Grid container spacing={2} className="paddingall">
                 <Grid item xs={12}>
                   <Box>
-
                     <FormControl fullWidth variant="outlined" margin="normal">
-                    <InputLabel>Select Experiment</InputLabel>
-
+                      <InputLabel>Select Experiment</InputLabel>
                       <Select
                         value={selectedFolder}
                         onChange={handleFolderChange}
                         renderValue={(selected) => selected}
                         label="Select Experiment"
-
                       >
                         {folders.map((folder) => (
                           <MenuItem key={folder} value={folder}>
@@ -107,44 +138,52 @@ export default function Experiments() {
                         <InputLabel>Select Trend</InputLabel>
                         <Select
                           multiple
-                          value={selectedFiles}
+                          value={selectedFileTitles}
                           onChange={handleFileChange}
                           label="Select Trend"
-
                           renderValue={(selected) => (
                             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
                               {selected.map((value) => (
                                 <Box key={value} sx={{ border: '1px solid #ccc', borderRadius: 1, padding: '2px 4px' }}>
-                                  {htmlFiles.find(file => file.url === value)?.name}
+                                  {value}
                                 </Box>
                               ))}
                             </Box>
                           )}
                         >
                           {htmlFiles.map((file) => (
-                            <MenuItem key={file.name} value={file.url}>
-                              <Checkbox checked={selectedFiles.indexOf(file.url) > -1} />
-                              <ListItemText primary={file.name} />
+                            <MenuItem key={file.title} value={file.title}>
+                              <Checkbox checked={selectedFileTitles.indexOf(file.title) > -1} />
+                              <ListItemText primary={file.title} />
                             </MenuItem>
                           ))}
                         </Select>
                       </FormControl>
                     )}
 
-                    {selectedFiles.map((url, index) => (
-                      // <iframe
-                      //   key={index}
-                      //   src={url}
-                      //   width="940"
-                      //   height="640"
-                      //   title={`Selected File ${index + 1}`}
-                      //   style={{ marginTop: '16px' }}
-                      // />
-                      <video key={index} width="920" height="520" controls>
-                        <source src={url} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                    ))}
+                    {selectedFileTitles.map((title, index) => {
+                      const url = fileTitleToUrl[title];
+                      const file = htmlFiles.find(file => file.title === title);
+                      return (
+                        <Box key={index} sx={{ marginTop: '16px' }}>
+                          {url && (
+                            <>
+                              <video width="920" height="520" controls>
+                                <source src={url} type="video/mp4" />
+                                Your browser does not support the video tag.
+                              </video>
+                              {file && (
+                                <Box sx={{ marginTop: '8px' }}>
+                                  <h3>{file.Title}</h3>
+                                  <p>{file.Paragraph}</p>
+                                  <a href={file.Link}  target="_blank"> Code Link</a>
+                                </Box>
+                              )}
+                            </>
+                          )}
+                        </Box>
+                      );
+                    })}
                   </Box>
                 </Grid>
               </Grid>

@@ -283,11 +283,11 @@ export default function Sidenav() {
               <ListItemText primary="Bokeh Interactions" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          {/* <ListItem
+          <ListItem
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/cube-plots");
+              navigate("/compare-results");
             }}
           >
             <ListItemButton
@@ -304,9 +304,9 @@ export default function Sidenav() {
                   justifyContent: "center",
                 }}
               ></BarChartIcon>
-              <ListItemText primary="Cube Plots" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Compare Results" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem> */}
+          </ListItem>
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}
