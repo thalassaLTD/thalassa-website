@@ -96,7 +96,7 @@
     {
       "icon": "fa fa-cogs",
       "title": "Advanced Analytical Tools",
-      "text": "We offer state-of-the-art analytical tools for data visualization and predictive modelling."
+      "text": "We offer state-of-the-art analytical tools for data visualization and predictive modelling needs."
     },
     {
       "icon": "fa fa-database",
@@ -106,7 +106,29 @@
     {
       "icon": "fa fa-rocket",
       "title": "AI-Driven Solutions",
-      "text": "Leverage AI to gain actionable insights and a competitive edge in your industry."
+      "text": "Leverage AI to gain actionable insights and a competitive edge in your industry across the globe."
+    }
+  ],
+  "CaseStudies": [
+    {
+      "title": "2New Vaccine Impact on Fish Farms",
+      "largeImage": "https://media.cnn.com/api/v1/images/stellar/prod/230817230825-covid-vaccine-arm-wellness.jpg?c=16x9&q=h_833,w_1480,c_fill",
+      "smallImage": "img/portfolio/case1_small.jpg"
+    },
+    {
+      "title": "Exploratory Modelling of Depression",
+      "largeImage": "https://thalassa.ltd/static/images/ABMmodelimage.png",
+      "smallImage": "img/portfolio/case2_small.jpeg"
+    },
+    {
+      "title": "Solar Energy and Retail Integration",
+      "largeImage": "https://aemo.com.au/-/media/images/site-assets/promo-tiles/renewables-square.jpg?h=1414&la=en&w=1417&hash=30144ECF443CFDCBEE6544700759176C",
+      "smallImage": "img/portfolio/case3_small.jpg"
+    },
+    {
+      "title": "Localization of COVID-19 Models",
+      "largeImage": "https://images-provider.frontiersin.org/api/ipx/w=1200&f=png/https://www.frontiersin.org/files/Articles/566853/frcmn-01-566853-HTML-r1/image_m/frcmn-01-566853-g001.jpg",
+      "smallImage": "img/portfolio/case4_small.jpg"
     }
   ],
   "Contact": {

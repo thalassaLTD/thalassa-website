@@ -36,7 +36,7 @@ export const Contact = (props) => {
     <div>
       <div id="contact">
         <div className="container">
-          <div className="col-md-7">
+          {/* <div className="col-md-7">
             <div className="row">
               <div className="section-title">
                 <h2>Get In Touch</h2>
@@ -94,11 +94,11 @@ export const Contact = (props) => {
                 </button>
               </form>
             </div>
-          </div>
+          </div> */}
           <div className="col-md-4 col-md-offset-1 contact-info">
-            <div className="row contact-title">
+            {/* <div className="row contact-title">
               <h3>Contact Info</h3>
-            </div>
+            </div> */}
             <div className="row contact-container">
               <div className="col-md-12">
                 <div className="contact-item">

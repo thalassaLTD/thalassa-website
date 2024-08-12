@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
 import { CssBaseline, Grid, Paper, Typography, createTheme, ThemeProvider } from "@mui/material";
+import JsonData from "../components/LandingPage/data.json";
+
 
 const caseStudies = [
   {
@@ -61,6 +63,14 @@ const caseStudies = [
 const theme = createTheme();
 
 const CaseStudies = () => {
+
+  const [caseStudies, setCaseStudies] = useState({});
+
+  useEffect(() => {
+    setCaseStudies(JsonData.CaseStudies);
+  }, []);
+
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
