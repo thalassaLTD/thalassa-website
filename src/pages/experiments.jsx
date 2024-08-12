@@ -17,13 +17,13 @@ export default function Experiments() {
 
   const webText = {
     "DPR1.mp4": {
-      "Title": "DPR1 Depression Prevalence and Growth for Greater London",
+      "Title": "Depression Prevalenence for Greater London",
       "Paragraph": "This is a paragraph for DPR1",
       "Location": "Greater London",
       "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
     },
     "DPR2.mp4": {
-      "Title": "DPR2 Depression Prevalence and Growth for Greater London",
+      "Title": "Depression Growth for Greater London",
       "Paragraph": "This is a paragraph for DPR2",
       "Location": "Greater London",
       "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
@@ -168,7 +168,7 @@ export default function Experiments() {
                         <Box key={index} sx={{ marginTop: '16px' }}>
                           {url && (
                             <>
-                              <video width="920" height="520" controls>
+                              <video width="1200" height="800" controls>
                                 <source src={url} type="video/mp4" />
                                 Your browser does not support the video tag.
                               </video>
@@ -176,7 +176,7 @@ export default function Experiments() {
                                 <Box sx={{ marginTop: '8px' }}>
                                   <h3>{file.Title}</h3>
                                   <p>{file.Paragraph}</p>
-                                  <a href={file.Link}  target="_blank"> Code Link</a>
+                                  <a href={file.Link} target="_blank"> Code Link</a>
                                 </Box>
                               )}
                             </>
