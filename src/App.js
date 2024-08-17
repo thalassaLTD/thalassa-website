@@ -45,9 +45,19 @@ const App = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/" element={<Website />} />
             <Route path="*" element={<Navigate to="/" />} />
-            {/* <Route exact path='/explore/company/:id' element={<CompanyPage />}></Route> */}
             <Route exact path='/case-studies' element={<Jobs />}></Route>
-            <Route exact path='/case-studies' element={<CaseStudies />}></Route>
+            <Route path="/service1" element={<Jobs />}></Route>
+
+            {/* <Route exact path='/case-studies' element={<CaseStudies />}></Route> */}
+            {/* <Route exact path="/services/service1" element={<CaseStudies />} />
+            <Route exact path="/services/service2" element={<CaseStudies />} />
+            <Route exact path="/services/service3" element={<CaseStudies />} />
+            <Route exact path="/insights/insight1" element={<CaseStudies />} />
+            <Route exact path="/insights/insight2" element={<CaseStudies />} />
+            <Route exact path="/insights/insight3" element={<CaseStudies />} />
+            <Route exact path="/case-studies/case1" element={<CaseStudies />} />
+            <Route exact path="/case-studies/case2" element={<CaseStudies />} />
+            <Route exact path="/case-studies/case3" element={<CaseStudies />} /> */}
             <Route
               element={<ProtectedRoutesComponent />}
             >
@@ -58,7 +68,9 @@ const App = () => {
               <Route exact path='/cube-plots' element={<CubePlots />}></Route>
 
               <Route exact path='/account' element={<Profile />}></Route>
-              <Route exact path='/terms' element={<TermsAndConditions />}></Route>            
+              <Route exact path='/terms' element={<TermsAndConditions />}></Route>
+
+
               {/* <Route exact path='/company/:id' element={<CompanyPage />}></Route>               */}
               {/* <Route exact path='/internship/:id' element={<InternshipPage />}></Route> */}
               {/* <Route exact path='/certificate' element={<Certificate />}></Route> */}
