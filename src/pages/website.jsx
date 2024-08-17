@@ -40,10 +40,10 @@ const App = () => {
       <Navigation />
       <Header data={landingPageData.Header} />
       <About data={landingPageData.About} />
-      <Features data={landingPageData.Features} />
-      <Services data={landingPageData.Services} />
+      {/* <Features data={landingPageData.Features} /> */}
+      {/* <Services data={landingPageData.Services} /> */}
       {<Gallery data={landingPageData.Gallery} />}
-      { <Testimonials data={landingPageData.Testimonials} />}
+      {/* { <Testimonials data={landingPageData.Testimonials} />} */}
       {/* { <Team data={landingPageData.Team} />} */}
       <ProgramCarousal/>
       <Contact data={landingPageData.Contact} />

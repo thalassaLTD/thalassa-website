@@ -313,6 +313,7 @@ header .intro-text {
 /* About Section */
 #about {
   padding: 100px 0;
+  background-color: white;
 }
 
 #about h3 {
