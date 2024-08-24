@@ -81,7 +81,7 @@ export default function SignUp() {
   };
 
   if (currentUser) {
-    return <Navigate to="/home" />;
+    return <Navigate to="/animations" />;
   }
 
   const postData = (event) => {
@@ -101,7 +101,7 @@ export default function SignUp() {
           })
           .then((response) => {
           });
-        history("/home");
+        history("/animations");
       })
       .catch((e) => {
         setLoading(false);
@@ -117,7 +117,7 @@ export default function SignUp() {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
       .then((result) => {
-        history("/home");
+        history("/animations");
         alert("Signed in");
         setLoading(false);
         axios
@@ -130,7 +130,7 @@ export default function SignUp() {
             console.log("Axios Sign up data sent", response.data);
           });
 
-        history("/home");
+        history("/animations");
       })
       .catch((e) => {
         setLoading(false);

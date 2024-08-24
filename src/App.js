@@ -13,9 +13,12 @@ import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 import TermsAndConditions from "./components/Auth/TermsAndConditions";
 import Website from "./pages/website";
-import SpatialAnalytics from "./pages/spatialAnalytics";
+import SpatialAnalytics from "./pages/spatial-analytics";
 import Animations from "./pages/animations";
-import CaseStudies from "./pages/caseStudies";
+import CaseStudies from "./pages/case-studies";
+import NewVaccineImpactOnFishFarms from "./pages/new-vaccine-impact-on-fish-farms";
+import ModellingDepressionInPandemic from "./pages/modelling-depression-in-pandemic";
+
 import Profile from "./pages/profile";
 import SmoothScroll from "smooth-scroll";
 import { ErrorBoundary } from "react-error-boundary";
@@ -40,17 +43,17 @@ const App = () => {
             <Route path="*" element={<Navigate to="/" />} />
 
             <Route exact path='/case-studies' element={<CaseStudies />}></Route>
-            <Route path="/service1" element={<CaseStudies />}></Route>
+            <Route path="/new-vaccine-impact-on-fish-farms" element={<NewVaccineImpactOnFishFarms />}></Route>
+            <Route path="/modelling-depression-in-pandemic" element={<ModellingDepressionInPandemic />}></Route>
 
             {/* <Route exact path='/case-studies' element={<CaseStudies />}></Route> */}
             {/* <Route exact path="/services/service1" element={<CaseStudies />} />
             <Route exact path="/case-studies/case3" element={<CaseStudies />} /> */}
 
-            
+
             <Route
               element={<ProtectedRoutesComponent />}
             >
-              <Route exact path='/home' element={<Animations />}></Route>
               <Route exact path='/animations' element={<Animations />}></Route>
               <Route exact path='/spatial-analytics' element={<SpatialAnalytics />}></Route>
               <Route exact path='/account' element={<Profile />}></Route>

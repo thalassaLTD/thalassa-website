@@ -41,7 +41,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppStore } from "./appStore";
 import { getAuth, signOut } from "firebase/auth";
 
-// import Home from "../../pages/home";
+// import Home from "../../pages/animations";
 import { Grid } from "@mui/material";
 import Confirmation from "../Alerts/Confirmation";
 
@@ -152,7 +152,7 @@ export default function Sidenav() {
                   color: open ? "#fff" : "#123860",
                   cursor: "pointer",
                 }}
-                onClick={() => navigate("/home")}
+                onClick={() => navigate("/animations")}
               >
                 THALASSA
               </Typography>
@@ -211,7 +211,7 @@ export default function Sidenav() {
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/home");
+              navigate("/animations");
             }}
           >
             <ListItemButton

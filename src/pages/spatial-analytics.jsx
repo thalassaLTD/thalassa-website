@@ -4,6 +4,7 @@ import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import Loading from "../components/commonComponents/Loading";
+import spatialAnalyticsJsonData from "../customizeThalassa/spatialAnalyticsData.json";
 
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { FormControl, InputLabel, Select, MenuItem, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
@@ -37,6 +38,18 @@ export default function Bokeh() {
 
         const folderData = await Promise.all(folderPromises);
         setFolders(folderData);
+
+        // Automatically select the first folder and its first file if they exist
+        if (folderData.length > 0) {
+          const firstFolder = folderData[0];
+          setSelectedFolder(firstFolder.folderName);
+          setFiles(firstFolder.files);
+
+          if (firstFolder.files.length > 0) {
+            setFileSelections({ [firstFolder.files[0].url]: true });
+          }
+        }
+
         setLoading(false);
       } catch (error) {
         console.error("Failed to load folders and files:", error);
@@ -82,17 +95,18 @@ export default function Bokeh() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Box height={20} />
               <Box height={10} />
+              <h1>{spatialAnalyticsJsonData.HeadTitle}</h1>
+              <>{spatialAnalyticsJsonData.SubTitle1}</>
               <Grid container spacing={2} className="paddingall">
                 <Grid item xs={12}>
                   <Box>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth variant="outlined" margin="normal">
                       <InputLabel>Select Experiment</InputLabel>
                       <Select
                         value={selectedFolder}
                         onChange={handleFolderChange}
                         label="Select Experiment"
                       >
-                        <MenuItem value=""><em>Select a folder</em></MenuItem>
                         {folders.map((folder, index) => (
                           <MenuItem key={index} value={folder.folderName}>{folder.folderName}</MenuItem>
                         ))}

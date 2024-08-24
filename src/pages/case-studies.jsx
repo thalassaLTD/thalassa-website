@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import JsonData from "../customizeThalassa/data.json";
+import JsonData from "../customizeThalassa/caseStudiesData.json";
 import { CssBaseline, Grid, Paper, Typography, createTheme, ThemeProvider } from "@mui/material";
 import { Navigation } from "../components/LandingPage/navigation";
 import { Header } from "../components/LandingPage/header";

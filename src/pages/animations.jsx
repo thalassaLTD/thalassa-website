@@ -7,6 +7,8 @@ import Loading from "../components/commonComponents/Loading";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { MenuItem, Select, InputLabel, FormControl, Checkbox, ListItemText } from "@mui/material";
 
+import animationsJsonData from "../customizeThalassa/animationsData.json";
+
 export default function Experiments() {
   const [loading, setLoading] = useState(true);
   const [folders, setFolders] = useState([]);
@@ -15,36 +17,6 @@ export default function Experiments() {
   const [selectedFileTitles, setSelectedFileTitles] = useState([]);
   const [fileTitleToUrl, setFileTitleToUrl] = useState({}); // Mapping of titles to URLs
 
-  const webText = {
-    "DPR1.mp4": {
-      "Title": "Depression Prevalenence for Greater London",
-      "Paragraph": "This is a paragraph for DPR1",
-      "Location": "Greater London",
-      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-    },
-    "DPR2.mp4": {
-      "Title": "Depression Growth for Greater London",
-      "Paragraph": "This is a paragraph for DPR2",
-      "Location": "Greater London",
-      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
-    },
-    "PPR1.mp4": {
-      "Title": "PPR1 Prescription Prevalence for Greater London",
-      "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
-      "Location": "Greater London",
-      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
-    },
-    "DGD1.mp4": {
-      "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
-      "Paragraph": "This is a paragraph for DPR2",
-      "Location": "Greater London",
-      "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
-    }
-  };
-
   useEffect(() => {
     const storage = getStorage();
     const experimentsRef = ref(storage, 'Experiments/');
@@ -52,9 +24,17 @@ export default function Experiments() {
     // Fetch folders in Experiments/
     listAll(experimentsRef)
       .then((res) => {
-        const folderPromises = res.prefixes.map((folderRef) => folderRef.name);
-        setFolders(folderPromises);
-        setLoading(false);
+        const folderNames = res.prefixes.map((folderRef) => folderRef.name);
+        setFolders(folderNames);
+
+        if (folderNames.length > 0) {
+          // Automatically select the first folder
+          const firstFolder = folderNames[0];
+          setSelectedFolder(firstFolder);
+          handleFolderChange({ target: { value: firstFolder } });
+        } else {
+          setLoading(false);
+        }
       })
       .catch((error) => {
         console.error("Failed to load folders:", error);
@@ -75,8 +55,8 @@ export default function Experiments() {
         const filePromises = res.items.map(async (itemRef) => {
           const url = await getDownloadURL(itemRef);
           const name = itemRef.name;
-          const title = webText[name]?.Title || name; // Use title from webText or fallback to filename
-          return { name, url, title, ...webText[name] }; // Add metadata from webText
+          const title = animationsJsonData[name]?.Title || name; // Use title from animationsJsonData or fallback to filename
+          return { name, url, title, ...animationsJsonData[name] }; // Add metadata from animationsJsonData
         });
         return Promise.all(filePromises);
       })
@@ -114,8 +94,8 @@ export default function Experiments() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Box height={20} />
               <Box height={10} />
-              <h1>This section is for Title</h1>
-              <>This section is for Animations223</>
+              <h1>{animationsJsonData.HeadTitle}</h1>
+              <>{animationsJsonData.SubTitle1}</>
               <Grid container spacing={2} className="paddingall">
                 <Grid item xs={12}>
                   <Box>

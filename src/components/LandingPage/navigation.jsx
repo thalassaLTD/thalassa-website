@@ -29,7 +29,7 @@ export const Navigation = (props) => {
           id="bs-example-navbar-collapse-1"
         >
           <ul className="nav navbar-nav navbar-right">
-            <li className="dropdown">
+            {/* <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                 What We Do <b className="caret"></b>
               </a>
@@ -44,8 +44,8 @@ export const Navigation = (props) => {
                   <Link to="/service3" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
                 </li>
               </ul>
-            </li>
-            <li className="dropdown">
+            </li> */}
+            {/* <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                 Insights <b className="caret"></b>
               </a>
@@ -60,30 +60,23 @@ export const Navigation = (props) => {
                   <Link to="/insights/insight3" className="page-scroll">Insight 3</Link>
                 </li>
               </ul>
-            </li>
+            </li> */}
             <li className="dropdown">
               <a href="#" className="dropdown-toggle" data-toggle="dropdown">
                 Case Studies <b className="caret"></b>
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a href="/service1">New vaccine impact on fish farm</a>
+                  <a href="/new-vaccine-impact-on-fish-farms">New vaccine impact on fish farm</a>
                 </li>
                 <li>
-                  <Link to="/service2" className="page-scroll">Modelling depression in the pandemic</Link>
+                  <Link to="/modelling-depression-in-pandemic" className="page-scroll">Modelling depression in the pandemic</Link>
                 </li>
-                
-                <ul className="dropdown-menu">
-                  <li>
-                    <Link to="/service2" className="page-scroll">Exploartory modelling of urban rural and indeginuos areas in Canada
-                    </Link>
-                  </li>
-                </ul>
                 <li>
                   <Link to="/service3" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
                 </li>
                 <li>
-                  <Link to="/service3" className="page-scroll">Localisation of Epidemiological models of Covid-19</Link>
+                  <Link to="/service4" className="page-scroll">Localisation of Epidemiological models of Covid-19</Link>
                 </li>
               </ul>
             </li>
