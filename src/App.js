@@ -18,6 +18,7 @@ import Animations from "./pages/animations";
 import CaseStudies from "./pages/case-studies";
 import NewVaccineImpactOnFishFarms from "./pages/new-vaccine-impact-on-fish-farms";
 import ModellingDepressionInPandemic from "./pages/modelling-depression-in-pandemic";
+import InvestigationOfSolarEnergyGeneration from "./pages/investigation-of-solar-energy-generation";
 
 import Profile from "./pages/profile";
 import SmoothScroll from "smooth-scroll";
@@ -45,6 +46,7 @@ const App = () => {
             <Route exact path='/case-studies' element={<CaseStudies />}></Route>
             <Route path="/new-vaccine-impact-on-fish-farms" element={<NewVaccineImpactOnFishFarms />}></Route>
             <Route path="/modelling-depression-in-pandemic" element={<ModellingDepressionInPandemic />}></Route>
+            <Route path="/investigation-of-solar-energy-generation" element={<InvestigationOfSolarEnergyGeneration />}></Route>
 
             {/* <Route exact path='/case-studies' element={<CaseStudies />}></Route> */}
             {/* <Route exact path="/services/service1" element={<CaseStudies />} />

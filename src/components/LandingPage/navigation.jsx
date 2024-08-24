@@ -73,11 +73,9 @@ export const Navigation = (props) => {
                   <Link to="/modelling-depression-in-pandemic" className="page-scroll">Modelling depression in the pandemic</Link>
                 </li>
                 <li>
-                  <Link to="/service3" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
+                  <Link to="/investigation-of-solar-energy-generation" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
                 </li>
-                <li>
-                  <Link to="/service4" className="page-scroll">Localisation of Epidemiological models of Covid-19</Link>
-                </li>
+                
               </ul>
             </li>
             {/* <li>
