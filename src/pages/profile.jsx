@@ -31,13 +31,13 @@ import {
   Amplitude,
 } from "../components/Helper";
 import { createUseStyles } from "react-jss";
-import bannerImage from "../assets/banner.jpg";
+// import bannerImage from "../assets/banner.jpg";
 import SnackbarComponent from "../components/Alerts/SnackbarComponent";
 import Confirmation from "../components/Alerts/Confirmation";
-import UploadFileComponent from "../components/Internship/UploadFileComponent";
-import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
-import BackupOutlinedIcon from "@mui/icons-material/BackupOutlined";
-import S3Bucket, { S3Download } from "../aws-exports";
+// import UploadFileComponent from "../components/Internship/UploadFileComponent";
+// import CloudDownloadOutlinedIcon from "@mui/icons-material/CloudDownloadOutlined";
+// import BackupOutlinedIcon from "@mui/icons-material/BackupOutlined";
+// import S3Bucket, { S3Download } from "../aws-exports";
 import FileThumbnail from "../components/commonComponents/FileThumbnail";
 import { NumericFormatCustom } from "../components/commonComponents/NumericFormatCustom";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
@@ -59,10 +59,10 @@ const useStyles = createUseStyles(() => ({
     justifyContent: "center",
     position: "relative",
   },
-  bannerImage: {
-    objectFit: "cover",
-    width: "100%",
-  },
+  // bannerImage: {
+  //   objectFit: "cover",
+  //   width: "100%",
+  // },
   btn: {
     backgroundColor: "#123860",
     borderRadius: 20,
@@ -150,39 +150,39 @@ const StudentProfile = () => {
   };
 
   const handleResumeUpload = () => {
-    S3Bucket.putObject(filesForS3[0])
-      .on("httpUploadProgress", (evt) => {})
-      .send((err, data) => {
-        if (err) {
-          console.log(err);
-          setSnackbarMsg(err);
-          setSeverity("error");
-          setSnackbarOpen(true);
-        } else {
-          const reqData = {
-            student_id: currentUser.uid,
-            resume_s3_path: files[0].file_path,
-          };
-          setConfirmResume(false);
-          post2("/addResume", reqData)
-            .then((data) => {
-              setSnackbarMsg("Resume uploaded successfully");
-              setSeverity("success");
-              setSnackbarOpen(true);
-              setShowUpload(false);
-              setFiles([]);
-              setFilesForS3([]);
-              setTimeout(() => {
-                fetchStudentDetails();
-              }, 2500);
-            })
-            .catch((error) => {
-              setSnackbarMsg("Some error occurred.");
-              setSeverity("error");
-              setSnackbarOpen(true);
-            });
-        }
-      });
+    // S3Bucket.putObject(filesForS3[0])
+    //   .on("httpUploadProgress", (evt) => {})
+    //   .send((err, data) => {
+    //     if (err) {
+    //       console.log(err);
+    //       setSnackbarMsg(err);
+    //       setSeverity("error");
+    //       setSnackbarOpen(true);
+    //     } else {
+    //       const reqData = {
+    //         student_id: currentUser.uid,
+    //         resume_s3_path: files[0].file_path,
+    //       };
+    //       setConfirmResume(false);
+    //       post2("/addResume", reqData)
+    //         .then((data) => {
+    //           setSnackbarMsg("Resume uploaded successfully");
+    //           setSeverity("success");
+    //           setSnackbarOpen(true);
+    //           setShowUpload(false);
+    //           setFiles([]);
+    //           setFilesForS3([]);
+    //           setTimeout(() => {
+    //             fetchStudentDetails();
+    //           }, 2500);
+    //         })
+    //         .catch((error) => {
+    //           setSnackbarMsg("Some error occurred.");
+    //           setSeverity("error");
+    //           setSnackbarOpen(true);
+    //         });
+    //     }
+    //   });
   };
 
   const handleCancel = () => {
@@ -521,11 +521,11 @@ const StudentProfile = () => {
     return (
       <>
         <Paper className={classes.bannerContainer} sx={{ height: "20vh" }}>
-          <img
+          {/* <img
             src={bannerImage}
             className={classes.bannerImage}
             alt="fireSpot"
-          />
+          /> */}
           <Box className={classes.avatarOverlayContainer}>
             <Avatar src={photoUrl} sx={{ width: 120, height: 120 }} />
           </Box>

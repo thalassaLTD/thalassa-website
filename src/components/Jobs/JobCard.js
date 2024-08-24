@@ -46,8 +46,8 @@ const useStyles = createUseStyles((theme) => ({
     justifyContent: "space-between",
     "& .MuiCardHeader-subheader": {
       fontWeight: 600,
-      display:'flex',
-      alignItems:'self-end'
+      display: 'flex',
+      alignItems: 'self-end'
     },
   },
   header: {
@@ -91,15 +91,15 @@ const useStyles = createUseStyles((theme) => ({
       background: "#E35752",
     },
   },
-  jobDesc:{
+  jobDesc: {
     display: "-webkit-box",
     WebkitLineClamp: 2,
     overflow: "hidden",
     WebkitBoxOrient: "vertical"
-}
+  }
 }));
 
-export default function JobCard({ job,applyJob,applied }) {
+export default function JobCard({ job, applyJob, applied }) {
   const classes = useStyles();
   const [showDesc, setShowDesc] = useState(false)
 
@@ -122,9 +122,9 @@ export default function JobCard({ job,applyJob,applied }) {
             </Typography>
           }
           subheader={<>
-          {job?.company_name}
-          <LocationOnOutlined sx={{ml:2}}/> 
-          {job?.location}
+            {job?.company_name}
+            <LocationOnOutlined sx={{ ml: 2 }} />
+            {job?.location}
           </>}
           action={
             <Button
@@ -136,10 +136,10 @@ export default function JobCard({ job,applyJob,applied }) {
               }}
               variant="contained"
               size="small"
-              onClick={()=>applyJob(job?.job_id)}
+              onClick={() => applyJob(job?.job_id)}
               disabled={applied}
             >
-             {applied? 'Applied':'Apply Now'}
+              {applied ? 'Applied' : 'Apply Now'}
             </Button>
           }
           className={classes.header}
@@ -151,30 +151,30 @@ export default function JobCard({ job,applyJob,applied }) {
           }}
         >
           <p className={!showDesc && classes.jobDesc}>
-          {job?.job_description?.length > 0 &&
-            job?.job_description.map((desc, id) => (
-              <Typography key={id} variant="body1" gutterBottom>
-                {desc}
-              </Typography>
-            ))}            
+            {job?.job_description?.length > 0 &&
+              job?.job_description.map((desc, id) => (
+                <Typography key={id} variant="body1" gutterBottom>
+                  {desc}
+                </Typography>
+              ))}
           </p>
           {showDesc && <>
-          <Typography variant="body-1" fontWeight={600}>Skills</Typography>
-          <ul>
-              {(job?.core_skills?.split(',')?.map(skill=>
-                 <li><Typography>- {skill}</Typography></li>))}
-          </ul>
-          {job?.no_of_positions && <div >
-          No. of positions: <b>{job?.no_of_positions}</b>
-          </div>}
-          {job?.urgency && <div>
-          Urgent requirement:  <b>{job?.urgency}</b>
-          </div>}
-          {job?.linked_programs&& <div>
-          Linked Assignment Programs: <a target='_blank' href={job?.linked_programs}>{job?.linked_programs}</a> 
-          </div>}
+            <Typography variant="body-1" fontWeight={600}>Skills</Typography>
+            <ul>
+              {(job?.core_skills?.split(',')?.map(skill =>
+                <li><Typography>- {skill}</Typography></li>))}
+            </ul>
+            {job?.no_of_positions && <div >
+              No. of positions: <b>{job?.no_of_positions}</b>
+            </div>}
+            {job?.urgency && <div>
+              Urgent requirement:  <b>{job?.urgency}</b>
+            </div>}
+            {job?.linked_programs && <div>
+              Linked Assignment Programs: <a target='_blank' href={job?.linked_programs}>{job?.linked_programs}</a>
+            </div>}
           </>}
-          <Button sx={{textTransform:'none'}} onClick={()=>setShowDesc(prev=>!prev)}>{showDesc?'View Less':'View More'}</Button>
+          <Button sx={{ textTransform: 'none' }} onClick={() => setShowDesc(prev => !prev)}>{showDesc ? 'View Less' : 'View More'}</Button>
         </CardContent>
         <CardActions sx={{ px: 0 }}>
           {job?.requirement && (

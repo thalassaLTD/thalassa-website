@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import Loading from "../components/commonComponents/Loading";
-import "../components/Dashboard/dash.css";
+
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { FormControl, InputLabel, Select, MenuItem, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
 

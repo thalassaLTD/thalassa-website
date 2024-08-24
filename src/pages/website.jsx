@@ -8,7 +8,7 @@ import { Gallery } from "../components/LandingPage/gallery";
 import { Testimonials } from "../components/LandingPage/testimonials";
 import { Team } from "../components/LandingPage/Team";
 import { Contact } from "../components/LandingPage/contact";
-import JsonData from "../components/LandingPage/data.json";
+import JsonData from "../customizeThalassa/data.json";
 import SmoothScroll from "smooth-scroll";
 import AmplitudeEvent from '../components/Amplitude/AmplitudeEvent'
 import { Navigate } from 'react-router-dom';
@@ -16,7 +16,7 @@ import { Navigate } from 'react-router-dom';
 //  import '../bootstrap/css/bootstrap.scss';
 
 import { getCurrentUser, getUserId } from '../components/Helper';
-import ProgramCarousal from "../components/Company/ProgramCarousal";
+// import ProgramCarousal from "../components/Company/ProgramCarousal";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000,
@@ -45,7 +45,7 @@ const App = () => {
       {<Gallery data={landingPageData.Gallery} />}
       {/* { <Testimonials data={landingPageData.Testimonials} />} */}
       {/* { <Team data={landingPageData.Team} />} */}
-      <ProgramCarousal/>
+      {/* <ProgramCarousal/> */}
       <Contact data={landingPageData.Contact} />
     </div>
   );

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 import { getCurrentUser } from "../Helper";
 import axios from "axios";
-import Registration from "../../components/Registration";
+// import Registration from "../../components/Registration";
 
 const baseURL = "https://api.joinuplyft.com";
 
 const ProtectedRoutesComponent = () => {
   let userAuth = getCurrentUser()?.uid;
-  const [showRegistration, setShowRegistration] = useState(false);
+  // const [showRegistration, setShowRegistration] = useState(false);
   const [studentDetails, setStudentDetails] = useState(null);
   const fieldsToValidate = [
     "contact_number",
@@ -60,13 +60,13 @@ const ProtectedRoutesComponent = () => {
     return (
       <>
         <Outlet />
-        {showRegistration && (
+        {/* {showRegistration && (
           <Registration
             open={showRegistration}
             studentDetails={studentDetails}
             onClose={() => setShowRegistration((prev) => !prev)}
           />
-        )}
+        )} */}
       </>
     );
   }

@@ -114,6 +114,8 @@ export default function Experiments() {
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
               <Box height={20} />
               <Box height={10} />
+              <h1>This section is for Title</h1>
+              <>This section is for Animations223</>
               <Grid container spacing={2} className="paddingall">
                 <Grid item xs={12}>
                   <Box>

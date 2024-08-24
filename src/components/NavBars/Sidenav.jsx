@@ -41,7 +41,7 @@ import { useNavigate } from "react-router-dom";
 import { useAppStore } from "./appStore";
 import { getAuth, signOut } from "firebase/auth";
 
-import Home from "../../pages/home";
+// import Home from "../../pages/home";
 import { Grid } from "@mui/material";
 import Confirmation from "../Alerts/Confirmation";
 
@@ -236,7 +236,7 @@ export default function Sidenav() {
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/experiments");
+              navigate("/animations");
             }}
           >
             <ListItemButton
@@ -263,7 +263,7 @@ export default function Sidenav() {
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
-              navigate("/bokeh-interactions");
+              navigate("/spatial-analytics");
             }}
           >
             <ListItemButton
@@ -283,7 +283,7 @@ export default function Sidenav() {
               <ListItemText primary="Spatial Analytics" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          <ListItem
+          {/* <ListItem
             disablePadding
             sx={{ display: "block" }}
             onClick={() => {
@@ -306,7 +306,7 @@ export default function Sidenav() {
               ></BarChartIcon>
               <ListItemText primary="Compare Results" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
-          </ListItem>
+          </ListItem> */}
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}
