@@ -112,7 +112,7 @@ export const Contact = (props) => {
               </div>
             </div>
           </div>
-          <div className="col-md-12">
+          {/* <div className="col-md-12">
             <div className="row">
               <div className="social">
                 <ul>
@@ -134,14 +134,14 @@ export const Contact = (props) => {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div id="footer">
         <div className="container text-center">
           <p>
             &copy; 2024
-            <a href="http://www.templatewire.com" rel="nofollow">
+            <a href="http://www.thalassa.ltd" rel="nofollow">
               -THALASSA
             </a>
           </p>
