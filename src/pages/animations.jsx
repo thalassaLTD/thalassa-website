@@ -158,7 +158,7 @@ export default function Experiments() {
                                 <Box sx={{ marginTop: '8px' }}>
                                   <h3>{file.Title}</h3>
                                   <p>{file.Paragraph}</p>
-                                  <a href={file.Link} target="_blank"> Code Link</a>
+                                  <a href={file.Link} target="_blank"> Code Link (currently disabled)</a>
                                 </Box>
                               )}
                             </>
