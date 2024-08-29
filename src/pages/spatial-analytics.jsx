@@ -1,157 +1,126 @@
-import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+import React, { useState } from "react";
 import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
-import Loading from "../components/commonComponents/Loading";
-import spatialAnalyticsJsonData from "../customizeThalassa/spatialAnalyticsData.json";
+import { FormControl, FormLabel, FormControlLabel, Checkbox, Box, RadioGroup, Radio } from "@mui/material";
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 
-import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-import { FormControl, InputLabel, Select, MenuItem, Checkbox, FormGroup, FormControlLabel } from "@mui/material";
+const FilterComponent = () => {
+  const [mapFormat, setMapForamt] = useState('');
+  const [independentVariable, setIndependentVariable] = useState('');
+  const [dependentVariable, setDependentVariable] = useState('');
+  const [statisticalTest, setStatisticalTest] = useState('');
+  const [selectedYears, setSelectedYears] = useState([]);
 
-export default function Bokeh() {
-  const [loading, setLoading] = useState(true);
-  const [folders, setFolders] = useState([]);
-  const [files, setFiles] = useState([]);
-  const [selectedFolder, setSelectedFolder] = useState('');
-  const [selectedFiles, setSelectedFiles] = useState([]);
-  const [fileSelections, setFileSelections] = useState({});
-
-  useEffect(() => {
-    const fetchFolders = async () => {
-      const storage = getStorage();
-      const baseRef = ref(storage, '/Experiments/Interactive Plots/');
-
-      try {
-        const res = await listAll(baseRef);
-        const folderPromises = res.prefixes.map(async (folderRef) => {
-          const folderRes = await listAll(folderRef);
-          const files = await Promise.all(folderRes.items.map(async (itemRef) => {
-            const url = await getDownloadURL(itemRef);
-            return { name: itemRef.name, url };
-          }));
-          return {
-            folderName: folderRef.name,
-            files
-          };
-        });
-
-        const folderData = await Promise.all(folderPromises);
-        setFolders(folderData);
-
-        // Automatically select the first folder and its first file if they exist
-        if (folderData.length > 0) {
-          const firstFolder = folderData[0];
-          setSelectedFolder(firstFolder.folderName);
-          setFiles(firstFolder.files);
-
-          if (firstFolder.files.length > 0) {
-            setFileSelections({ [firstFolder.files[0].url]: true });
-          }
-        }
-
-        setLoading(false);
-      } catch (error) {
-        console.error("Failed to load folders and files:", error);
-        setLoading(false);
-      }
-    };
-
-    fetchFolders();
-  }, []);
-
-  const handleFolderChange = (event) => {
-    const folderName = event.target.value;
-    const folder = folders.find(f => f.folderName === folderName);
-    if (folder) {
-      setSelectedFolder(folderName);
-      setFiles(folder.files);
-      setFileSelections({}); // Reset file selections
-      setSelectedFiles([]);
-    }
+  const handleYearChange = (event) => {
+    const { value } = event.target;
+    setSelectedYears((prev) =>
+      prev.includes(value) ? prev.filter((year) => year !== value) : [...prev, value]
+    );
   };
-
-  const handleFileSelection = (event) => {
-    const url = event.target.value;
-    setFileSelections(prev => ({
-      ...prev,
-      [url]: !prev[url]
-    }));
-  };
-
-  useEffect(() => {
-    const selected = Object.keys(fileSelections).filter(url => fileSelections[url]);
-    setSelectedFiles(selected);
-  }, [fileSelections]);
 
   return (
     <>
       <ResponsiveAppBar />
       <div className="bgcolor">
+
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />
-          {loading && <Loading />}
-          {!loading && (
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Box height={20} />
-              <Box height={10} />
-              <h1>{spatialAnalyticsJsonData.HeadTitle}</h1>
-              <>{spatialAnalyticsJsonData.SubTitle1}</>
-              <Grid container spacing={2} className="paddingall">
-                <Grid item xs={12}>
-                  <Box>
-                    <FormControl fullWidth variant="outlined" margin="normal">
-                      <InputLabel>Select Experiment</InputLabel>
-                      <Select
-                        value={selectedFolder}
-                        onChange={handleFolderChange}
-                        label="Select Experiment"
-                      >
-                        {folders.map((folder, index) => (
-                          <MenuItem key={index} value={folder.folderName}>{folder.folderName}</MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
+          <Box sx={{ padding: '20px' }}>
+            <Tooltip title="Choose an independent and dependent variable and a statistical test and check the years you want to compare" arrow>
+              <h2>Select Filters</h2>
+            </Tooltip>
 
-                    {files.length > 0 && (
-                      <Box mt={2}>
-                        <h2>Select Files</h2>
-                        <FormGroup>
-                          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                            {files.map((file, index) => (
-                              <FormControlLabel
-                                key={index}
-                                control={
-                                  <Checkbox
-                                    checked={fileSelections[file.url] || false}
-                                    onChange={handleFileSelection}
-                                    value={file.url}
-                                  />
-                                }
-                                label={file.name}
-                                style={{ marginRight: '16px' }} // Optional: Adjust spacing between items
-                              />
-                            ))}
-                          </div>
-                        </FormGroup>
-                      </Box>
-                    )}
+            {/* Plt type Variable Filter */}
+            <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
+              <FormLabel component="legend"> Format</FormLabel>
+              <RadioGroup
+                name="independentVariable"
+                value={mapFormat}
+                onChange={(e) => setMapForamt(e.target.value)}
+              >
+                <FormControlLabel value="Cubes" control={<Radio />} label="Cubes" />
+                <FormControlLabel value="Maps" control={<Radio />} label="Maps" />
+              </RadioGroup>
+            </FormControl>
 
-                    {selectedFiles.length > 0 && (
-                      <Box mt={2}>
-                        <h2>Selected Files</h2>
-                        {selectedFiles.map((url, index) => (
-                          <iframe key={index} src={url} width="50%" height="640" />
-                        ))}
-                      </Box>
-                    )}
-                  </Box>
-                </Grid>
-              </Grid>
+
+            {/* Independent Variable Filter */}
+            <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
+              <FormLabel component="legend"> Independent Variable</FormLabel>
+              <RadioGroup
+                name="independentVariable"
+                value={independentVariable}
+                onChange={(e) => setIndependentVariable(e.target.value)}
+              >
+                <FormControlLabel value="Depression Prevelance Prior Year" control={<Radio />} label="Depression Prevelance Prior Year" />
+                <FormControlLabel value="Items Per Patient Prior Year" control={<Radio />} label="Items Per Patient Prior Year" />
+              </RadioGroup>
+            </FormControl>
+
+            {/* Dependent Variable Filter */}
+            <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
+              <FormLabel component="legend">Dependent Variable</FormLabel>
+              <RadioGroup
+                name="dependentVariable"
+                value={dependentVariable}
+                onChange={(e) => setDependentVariable(e.target.value)}
+              >
+                <FormControlLabel value="Depression Prevelance Current Year" control={<Radio />} label="Depression Prevelance Current Year" />
+                <FormControlLabel value="Depression Growth Year-on-Year" control={<Radio />} label="Depression Growth Year-on-Year" />
+              </RadioGroup>
+            </FormControl>
+
+            {/* Statistical Test Filter */}
+            <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
+              <FormLabel component="legend">Statistical Test</FormLabel>
+              <RadioGroup
+                name="statisticalTest"
+                value={statisticalTest}
+                onChange={(e) => setStatisticalTest(e.target.value)}
+              >
+                <FormControlLabel value="R-Squared" control={<Radio />} label="R-Squared" />
+                <FormControlLabel value="T-Value" control={<Radio />} label="T-Value" />
+              </RadioGroup>
+            </FormControl>
+
+            {/* Year Filter */}
+            <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
+              <FormLabel component="legend">Year</FormLabel>
+              <Box>
+                {Array.from({ length: 11 }, (_, i) => {
+                  const year = String(2012 + i);
+                  return (
+                    <FormControlLabel
+                      key={year}
+                      control={
+                        <Checkbox
+                          checked={selectedYears.includes(year)}
+                          onChange={handleYearChange}
+                          value={year}
+                        />
+                      }
+                      label={year}
+                    />
+                  );
+                })}
+              </Box>
+            </FormControl>
+
+            {/* Display Selected Filters */}
+            <Box sx={{ marginTop: '20px' }}>
+              <h3>Selected Filters:</h3>
+              <p><strong>Independent Variable:</strong> {independentVariable}</p>
+              <p><strong>Dependent Variable:</strong> {dependentVariable}</p>
+              <p><strong>Statistical Test:</strong> {statisticalTest}</p>
+              <p><strong>Years:</strong> {selectedYears.join(', ')}</p>
+              <p><strong>File To Show:</strong> {mapFormat}_{independentVariable}_{dependentVariable}_{statisticalTest}_{selectedYears[0]}.html</p>
             </Box>
-          )}
+          </Box>
         </Box>
       </div>
     </>
   );
-}
+};
+
+export default FilterComponent;

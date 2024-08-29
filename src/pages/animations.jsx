@@ -19,12 +19,14 @@ export default function Experiments() {
 
   useEffect(() => {
     const storage = getStorage();
-    const experimentsRef = ref(storage, 'Experiments/');
+    const experimentsRef = ref(storage, 'Experiments/Temporal Animations/');
 
     // Fetch folders in Experiments/
     listAll(experimentsRef)
       .then((res) => {
-        const folderNames = res.prefixes.map((folderRef) => folderRef.name);
+        // const folderNames = res.prefixes.map((folderRef) => folderRef.name);
+        const folderNames = ["Depression Prevalence (DPR)", "Prescription Prevalence (PPR)", "Depression Growth Drivers (DGD)"];
+
         setFolders(folderNames);
 
         if (folderNames.length > 0) {
@@ -48,7 +50,7 @@ export default function Experiments() {
     setLoading(true);
 
     const storage = getStorage();
-    const folderRef = ref(storage, `Experiments/${folder}`);
+    const folderRef = ref(storage, `Experiments/Temporal Animations/${folder}`);
 
     listAll(folderRef)
       .then((res) => {
