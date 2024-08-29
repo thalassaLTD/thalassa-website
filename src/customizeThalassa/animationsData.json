@@ -3,13 +3,13 @@
   "SubTitle1" : "Choose one of the experiment to see the results.",
   "DPR1.mp4": {
     "Title": "Depression Prevalenence for Greater London",
-    "Paragraph": "This is a paragraph for DPR1",
+    "Paragraph": "Depression Prevelance appears to be steadily increasing in clusters",
     "Location": "Greater London",
     "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
   },
   "DPR2.mp4": {
     "Title": "Depression Growth for Greater London",
-    "Paragraph": "This is a paragraph for DPR2",
+    "Paragraph": "However, growth is happening in bursts seemingly randomly across the map",
     "Location": "Greater London",
     "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
