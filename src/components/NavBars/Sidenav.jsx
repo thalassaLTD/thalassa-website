@@ -254,7 +254,7 @@ export default function Sidenav() {
                 }}
               ></VideoLibraryIcon>
               <ListItemText
-                primary="Animations"
+                primary="Temporal Animations"
                 sx={{ opacity: open ? 1 : 0 }}
               />
             </ListItemButton>
@@ -280,7 +280,7 @@ export default function Sidenav() {
                   justifyContent: "center",
                 }}
               ></RoomOutlinedIcon>
-              <ListItemText primary="Spatial Analytics" sx={{ opacity: open ? 1 : 0 }} />
+              <ListItemText primary="Spatial Analysis" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
           {/* <ListItem
