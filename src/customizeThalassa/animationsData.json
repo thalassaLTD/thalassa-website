@@ -1,87 +1,88 @@
 {
-  "HeadTitle" : "These are animations MP4s of the years from 2012-2022 for the Greater London Area.",
-  "SubTitle1" : "Choose one of the experiment to see the results.",
+  "HeadTitle" : "These maps show the evoloution of depression and prescription data from GP surgery reports to NHS Digtial 2012-2022",
+  "SubTitle1" : "Choose one of the experiment to see the results. ",
+  "SubTitle1" : "(XXXN) - Denotes the analysis index ",
   "DPR1.mp4": {
-    "Title": "Depression Prevalenence for Greater London",
-    "Paragraph": "Depression Prevelance appears to be steadily increasing in clusters",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Title": "Depression Prevalence (DPR1)",
+    "Paragraph": "Depression Prevelance appears to be steadily increasing in clusters that are also expanding in size over time",
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
   },
   "DPR2.mp4": {
-    "Title": "Depression Growth for Greater London",
+    "Title": "Depression Growth (DPR2)",
     "Paragraph": "However, growth is happening in bursts seemingly randomly across the map",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "PPR1.mp4": {
-    "Title": "PPR1 Prescription Prevalence for Greater London",
-    "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Title": "Prescription Prevalence for Greater London (PPR1)",
+    "Paragraph": "This is the number of patients recieving prescription for depression divided by the number of people attending GP practices in each LSOA",
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "PPR2.mp4": {
-    "Title": "PPR1 Prescription Prevalence for Greater London",
-    "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Title": "Prescription Growth for Greater London (PPR2)",
+    "Paragraph": "",
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
-  "PPR3.mp4": {
-    "Title": "PPR1 Prescription Prevalence for Greater London",
+  "DPR1_PPR3_Ratio.mp4": {
+    "Title": "Items Per Patient",
     "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD1.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
     "Paragraph": "This is a paragraph for DPR2",
     "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD2.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
     "Paragraph": "This is a paragraph for DPR2",
     "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD3.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
     "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD4.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
     "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-reesarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD5.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
     "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD6.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
     "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
+    "Location": "Greater London LSOAs",
     "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   },
   "DGD7.mp4": {
-    "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
+    "Title": "DGD7 Prescription Prevalence and Growth",
     "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Location": "Greater London LSOAs",
+    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
 
   }
 }
