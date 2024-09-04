@@ -1,9 +1,9 @@
 {
   "CaseStudies": [
     {
-      "title": "Exploratory Modelling of Depression",
-      "largeImage": "https://thalassa.ltd/static/images/ABMmodelimage.png",
-      "smallImage": "img/portfolio/case2_small.jpeg"
+      "title": "Understanding the Dynamics of Depression in Urban Areas of England.",
+      "largeImage": "../img/DPR1.gif",
+      "paragraph" : "This is paragraph"
     }
   ]
 }

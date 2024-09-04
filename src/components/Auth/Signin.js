@@ -75,10 +75,10 @@ export default function SignIn() {
     signInWithEmailAndPassword(auth, email, password)
       .then(user => {
         console.log(user)
-        history("/animations");
+        history("/project-overview");
         setLoading(false);
         // M.toast({ html: 'Successfully Signed In!', classes: "#43a047 green darken-1" });
-        history("/animations");
+        history("/project-overview");
       })
       .catch(e => {
         setLoading(false);
@@ -106,13 +106,13 @@ export default function SignIn() {
           .then((response) => {
           });
         // alert("Signed in")
-        history("/animations");
+        history("/project-overview");
         result.user.updateProfile({
           displayName: result.user.displayName
         })
         // setLoading(false);
         alert("Signed in")
-        history("/animations");
+        history("/project-overview");
       })
       .catch(e => {
         setLoading(false);

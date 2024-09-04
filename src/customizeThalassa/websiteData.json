@@ -19,18 +19,18 @@
   "Gallery": [
     {
       "title": "Valuing the Impact of Innovations in Aquaculuture",
-      "largeImage": "https://cdn.sanity.io/images/5gxyi0da/production/783ad00fd44e98b9c64a5cc671d10fc87c01900a-3992x2992.jpg?rect=264,123,2168,1220&w=3000&h=1688&q=80&auto=format",
-      "smallImage": "img/portfolio/case1_small.jpg"
+      "url": "/new-vaccine-impact-on-fish-farms",
+      "largeImage": "../img/Aquaculture Value.jpg"
     },
     {
       "title": "Exploratory Modelling of Depression & Localization of COVID-19 Models",
-      "largeImage": "public/img/depreession.png",
-      "smallImage": "img/portfolio/case2_small.jpeg"
+      "url": "/modelling-depression-in-pandemic",
+      "largeImage": "../img/DPR1.gif"
     },
     {
       "title": "Solar Energy and Retail Integration",
-      "largeImage": "https://aemo.com.au/-/media/images/site-assets/promo-tiles/renewables-square.jpg?h=1414&la=en&w=1417&hash=30144ECF443CFDCBEE6544700759176C",
-      "smallImage": "img/portfolio/case3_small.jpg"
+      "url": "/investigation-of-solar-energy-generation",
+      "largeImage": "../img/Energy Transition.jpg" 
     }
   ]
  ,

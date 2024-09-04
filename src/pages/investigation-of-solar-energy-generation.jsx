@@ -23,18 +23,32 @@ const InvestigationOfSolarEnergyGeneration = () => {
         <br></br>
         <br></br>
         <br></br>
+
         <Grid container spacing={4} style={{ padding: 24 }}>
           {caseStudiesData.map((caseStudy, index) => (
             <Grid item xs={12} key={index}>
               <Paper style={{ padding: 16 }}>
+                <Grid item xs={12} md={12}>
+                  <img
+                    src={caseStudy.largeImage}
+                    alt={caseStudy.title}
+                    style={{
+                      width: '100%',
+                      height: 'auto',
+                      maxHeight: '400px', // Set a maximum height for the banner
+                      objectFit: 'cover', // Ensure the image covers the entire width without distortion
+                      objectPosition: 'center', // Center the image within the container
+                    }}
+                  />
+                </Grid>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} md={4}>
+                  {/* <Grid item xs={12} md={4}>
                     <img src={caseStudy.largeImage} alt={caseStudy.title} style={{ width: '100%' }} />
-                  </Grid>
+                  </Grid> */}
                   <Grid item xs={12} md={8}>
                     <Typography variant="h5" gutterBottom>{caseStudy.title}</Typography>
                     <Typography variant="body1">
-                      This is a brief description of the {caseStudy.title.toLowerCase()}. It highlights the key aspects and outcomes of the project, providing insights into how our solutions helped achieve the desired results.
+                      {caseStudy.paragraph}
                     </Typography>
                   </Grid>
                 </Grid>

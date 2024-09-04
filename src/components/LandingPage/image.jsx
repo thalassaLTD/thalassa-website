@@ -14,8 +14,8 @@ export const Image = ({ title, largeImage, smallImage }) => {
       borderRadius: '5px', // Rounded corners for card effect
     },
     imgResponsive: {
-      width: '300px',  // Set your desired width
-      height: '400px', // Set your desired height
+      width: '350px',  // Set your desired width
+      height: '240px', // Set your desired height
       objectFit: 'cover', // Ensure the image covers the entire area
     },
     hoverText: {

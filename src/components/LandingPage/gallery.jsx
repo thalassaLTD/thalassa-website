@@ -19,7 +19,7 @@ export const Gallery = (props) => {
                     key={`${d.title}-${i}`}
                     className="col-sm-6 col-md-4 col-lg-4 mb-4"
                   >
-                    <a href="/case-studies" target="_blank" rel="noopener noreferrer" className="card-link">
+                    <a href={d.url} target="_blank" rel="noopener noreferrer" className="card-link">
                   
                       <div className="card p-3">
                         <Image

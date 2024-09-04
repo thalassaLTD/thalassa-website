@@ -81,7 +81,7 @@ export default function SignUp() {
   };
 
   if (currentUser) {
-    return <Navigate to="/animations" />;
+    return <Navigate to="/project-overview" />;
   }
 
   const postData = (event) => {
