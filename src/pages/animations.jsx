@@ -7,7 +7,7 @@ import Loading from "../components/commonComponents/Loading";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
 import { MenuItem, Select, InputLabel, FormControl, Checkbox, ListItemText } from "@mui/material";
 
-import animationsJsonData from "../customizeThalassa/animationsData.json";
+import animationsJsonData from "../customizeThalassa/pvt-animationsData.json";
 
 export default function Experiments() {
   const [loading, setLoading] = useState(true);

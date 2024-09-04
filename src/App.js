@@ -13,6 +13,7 @@ import Signin from "./components/Auth/Signin";
 import Signup from "./components/Auth/Signup";
 import TermsAndConditions from "./components/Auth/TermsAndConditions";
 import Website from "./pages/website";
+import ProjectOverview from "./pages/project-overview";
 import SpatialAnalytics from "./pages/spatial-analytics";
 import Animations from "./pages/animations";
 import CaseStudies from "./pages/case-studies";
@@ -56,6 +57,7 @@ const App = () => {
             <Route
               element={<ProtectedRoutesComponent />}
             >
+              <Route exact path='/project-overview' element={<ProjectOverview />}></Route>
               <Route exact path='/animations' element={<Animations />}></Route>
               <Route exact path='/spatial-analytics' element={<SpatialAnalytics />}></Route>
               <Route exact path='/account' element={<Profile />}></Route>

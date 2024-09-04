@@ -6,11 +6,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 
 const FilterComponent = () => {
-  const [mapFormat, setMapForamt] = useState('');
-  const [independentVariable, setIndependentVariable] = useState('');
-  const [dependentVariable, setDependentVariable] = useState('');
-  const [statisticalTest, setStatisticalTest] = useState('');
-  const [selectedYears, setSelectedYears] = useState([]);
+  const [mapFormat, setMapForamt] = useState('Cubes'); // Default to "Cubes"
+  const [independentVariable, setIndependentVariable] = useState('Depression Prevelance Prior Year'); // Default to "Depression Prevelance Prior Year"
+  const [dependentVariable, setDependentVariable] = useState('Depression Prevelance Current Year'); // Default to "Depression Prevelance Current Year"
+  const [statisticalTest, setStatisticalTest] = useState('R-Squared'); // Default to "R-Squared"
+  const [selectedYears, setSelectedYears] = useState(['2012']);
 
   const handleYearChange = (event) => {
     const { value } = event.target;
@@ -31,11 +31,11 @@ const FilterComponent = () => {
               <h2>Select Filters</h2>
             </Tooltip>
 
-            {/* Plt type Variable Filter */}
+            {/* Map Format Filter */}
             <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
-              <FormLabel component="legend"> Format</FormLabel>
+              <FormLabel component="legend">Format</FormLabel>
               <RadioGroup
-                name="independentVariable"
+                name="mapFormat"
                 value={mapFormat}
                 onChange={(e) => setMapForamt(e.target.value)}
               >
@@ -44,10 +44,9 @@ const FilterComponent = () => {
               </RadioGroup>
             </FormControl>
 
-
             {/* Independent Variable Filter */}
             <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
-              <FormLabel component="legend"> Independent Variable</FormLabel>
+              <FormLabel component="legend">Independent Variable</FormLabel>
               <RadioGroup
                 name="independentVariable"
                 value={independentVariable}
@@ -114,7 +113,7 @@ const FilterComponent = () => {
               <p><strong>Dependent Variable:</strong> {dependentVariable}</p>
               <p><strong>Statistical Test:</strong> {statisticalTest}</p>
               <p><strong>Years:</strong> {selectedYears.join(', ')}</p>
-              <p><strong>File To Show:</strong> {mapFormat}_{independentVariable}_{dependentVariable}_{statisticalTest}_{selectedYears[0]}.html</p>
+              <p><strong>File To Show from Firebase:</strong> /Experiments/Spatial Analysis/{mapFormat}_{independentVariable}_{dependentVariable}_{statisticalTest}_{selectedYears[0]}.html</p>
             </Box>
           </Box>
         </Box>

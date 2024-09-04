@@ -231,6 +231,31 @@ export default function Sidenav() {
               <ListItemText primary="Home" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem> */}
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => {
+              navigate("/project-overview");
+            }}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <BarChartIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              ></BarChartIcon>
+              <ListItemText primary="Project Overview" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+
 
           <ListItem
             disablePadding
@@ -283,30 +308,7 @@ export default function Sidenav() {
               <ListItemText primary="Spatial Analysis" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          {/* <ListItem
-            disablePadding
-            sx={{ display: "block" }}
-            onClick={() => {
-              navigate("/compare-results");
-            }}
-          >
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? "initial" : "center",
-                px: 2.5,
-              }}
-            >
-              <BarChartIcon
-                sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : "auto",
-                  justifyContent: "center",
-                }}
-              ></BarChartIcon>
-              <ListItemText primary="Compare Results" sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
-          </ListItem> */}
+          
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}
