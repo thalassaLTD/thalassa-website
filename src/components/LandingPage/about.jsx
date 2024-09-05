@@ -2,14 +2,14 @@ import React from "react";
 
 export const About = (props) => {
   return (
-    <div id="about">
+    <div id="about" className="text-center">
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-md-6">
+        {/* <div className="section-title"> */}
+          {/* <div className="col-xs-12 col-md-6">
             {" "}
             <img src="https://lpsonline.sas.upenn.edu/sites/default/files/2022-10/plpso-feratures-data-business.jpg" className="img-responsive" alt="" />{" "}
-          </div>
-          <div className="col-xs-12 col-md-6">
+          </div> */}
+          <div className="col-xs-12 col-md-12">
             <div className="about-text">
               <h2>Overview</h2>
               <p>{props.data ? props.data.paragraph : "loading..."}</p>
@@ -19,8 +19,8 @@ export const About = (props) => {
                   <ul>
                     {props.data
                       ? props.data.Why.map((d, i) => (
-                          <li key={`${d}-${i}`}>{d}</li>
-                        ))
+                        <li key={`${d}-${i}`}>{d}</li>
+                      ))
                       : "loading"}
                   </ul>
                 </div>
@@ -28,8 +28,8 @@ export const About = (props) => {
                   <ul>
                     {props.data
                       ? props.data.Why2.map((d, i) => (
-                          <li key={`${d}-${i}`}> {d}</li>
-                        ))
+                        <li key={`${d}-${i}`}> {d}</li>
+                      ))
                       : "loading"}
                   </ul>
                 </div>
@@ -37,7 +37,7 @@ export const About = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

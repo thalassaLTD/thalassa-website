@@ -33,7 +33,7 @@ export default function Experiments() {
           <Sidenav />
           {loading && <Loading />}
           {!loading && (
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, width:'100%' }}>
               <Paper style={{ padding: 16 }}>
 
                 <Box height={20} />
@@ -46,6 +46,7 @@ export default function Experiments() {
                 {projectData.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
+                <img src={projectData.indexOfAnalysisScreenshot}  alt="indexOfAnalysisScreenshot" />
               </Paper>
 
             </Box>

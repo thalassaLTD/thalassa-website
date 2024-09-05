@@ -29,7 +29,7 @@
 
   },
   "DPR1_PPR3_Ratio.mp4": {
-    "Title": "Items Per Patient",
+    "Title": "Items Per Patient Analysis",
     "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
     "Location": "Greater London LSOAs",
     "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"

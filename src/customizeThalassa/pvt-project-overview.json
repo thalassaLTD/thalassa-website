@@ -1,10 +1,12 @@
 {
     "title": "Depression Dynamics",
     "paragraphs": [
+        
         "Depression has evolved in cities through a complex dynamic process that is distinctive to each urban area. This case study investigates the spatial data within Lower Super Output Areas (LSOAs) across various cities in England to understand the patterns and growth of depression. By analyzing urban demographics, socio-economic factors, and healthcare accessibility, we aim to map out the intricate dynamics of depression in urban settings. The study will also explore the influence of environmental factors, such as green spaces and pollution, on mental health outcomes.",
         "Our analysis is focused specifically on Greater London, a region with significant urban diversity and varying socio-economic conditions. Greater London's unique characteristics provide a rich dataset that allows us to delve into the specific drivers of depression in different boroughs and communities within the city.",
         "We have incorporated interactive plots to allow users to explore the data and findings in a more engaging and informative way. These plots enable users to visualize depression trends across different LSOAs, compare regions, and examine the correlations between depression rates and other variables such as income, education, and access to mental health services.",
         "The interactive visualizations also allow users to manipulate data views, zoom into specific areas, and overlay additional datasets, such as crime rates or air quality, to see how these factors may contribute to the observed depression dynamics. This feature ensures that our analysis is not only comprehensive but also accessible and customizable to meet the needs of different stakeholders.",
         "Finally, all the analysis conducted in this study has been performed on data from Greater London. The insights gained from this focus area provide a valuable case study that can be used to inform similar analyses in other urban regions. The results from Greater London offer a detailed look into how depression manifests in a major urban environment, serving as a model for understanding depression in cities worldwide."
-    ]
+    ],
+    "indexOfAnalysisScreenshot" : "../img/indexOfAnalysisScreenshot.jpg"
 }
