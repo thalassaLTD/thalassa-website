@@ -1,7 +1,7 @@
 {
   "Header": {
     "title": "Thalassa",
-    "paragraph": "Assessing Disruption Impact From An Investor Perspective ..."
+    "paragraph": "Assessing Impact of Disruption and Structural Change from Investor Perspective"
   },
   "About": {
     "paragraph": "Thalassa is focused on developing practial insights at the intersection of:",
@@ -16,24 +16,24 @@
       "Economically and Intangibly driven decisionmaking"
     ]
   },
+  "visionDataModel" : "../img/vision-data-model-v2.jpg",
   "Gallery": [
     {
-      "title": "Valuing the Impact of Innovations in Aquaculuture",
-      "url": "/new-vaccine-impact-on-fish-farms",
-      "largeImage": "../img/Aquaculture Value.jpg"
+      "title": "Optimising The Alternative Energy Transition, A Solar Electricity Generation Business Case",
+      "url": "/investigation-of-solar-energy-generation",
+      "largeImage": "../img/Energy Transition.jpg"
     },
     {
-      "title": "Exploratory Modelling of Depression & Localization of COVID-19 Models",
+      "title": "Understanding the Dynamics of Depression in Urban Areas of England.",
       "url": "/modelling-depression-in-pandemic",
       "largeImage": "../img/DPR1.gif"
     },
     {
-      "title": "Solar Energy and Retail Integration",
-      "url": "/investigation-of-solar-energy-generation",
-      "largeImage": "../img/Energy Transition.jpg" 
+      "title": "Valuing the Impact of New Innovations for Aquaculture",
+      "url": "/new-vaccine-impact-on-fish-farms",
+      "largeImage": "../img/Aquaculture Value.jpg"
     }
-  ]
- ,
+  ],
   "Contact": {
     "email": "mglucksman@thalassa.ltd"
   },

@@ -33,9 +33,9 @@ const NewVaccineImpactOnFishFarms = () => {
                     src={caseStudy.largeImage}
                     alt={caseStudy.title}
                     style={{
-                      width: '100%',
+                      width: '50%',
                       height: 'auto',
-                      maxHeight: '400px', // Set a maximum height for the banner
+                      maxHeight: '800px', // Set a maximum height for the banner
                       objectFit: 'cover', // Ensure the image covers the entire width without distortion
                       objectPosition: 'center', // Center the image within the container
                     }}
@@ -46,11 +46,17 @@ const NewVaccineImpactOnFishFarms = () => {
                     <img src={caseStudy.largeImage} alt={caseStudy.title} style={{ width: '100%' }} />
                   </Grid> */}
                   <Grid item xs={12} md={8}>
-                    <Typography variant="h5" gutterBottom>{caseStudy.title}</Typography>
+                    <Typography variant="h2" gutterBottom>{caseStudy.title}</Typography>
                     <Typography variant="body1">
                       {caseStudy.paragraph}
                     </Typography>
                   </Grid>
+
+                  <Grid item xs={12} md={8}>
+                    <a href={caseStudy.aquaCureURL}>{caseStudy.aquaCureURLHyperlinkText}</a>
+                    
+                  </Grid>
+
                 </Grid>
               </Paper>
             </Grid>

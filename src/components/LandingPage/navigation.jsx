@@ -67,13 +67,13 @@ export const Navigation = (props) => {
               </a>
               <ul className="dropdown-menu">
                 <li>
-                  <a href="/new-vaccine-impact-on-fish-farms">New vaccine impact on fish farm</a>
+                  <a href="/new-vaccine-impact-on-fish-farms">Aquaculture Value</a>
                 </li>
                 <li>
-                  <Link to="/modelling-depression-in-pandemic" className="page-scroll">Modelling depression in the pandemic</Link>
+                  <Link to="/modelling-depression-in-pandemic" className="page-scroll">Depression Dynamics</Link>
                 </li>
                 <li>
-                  <Link to="/investigation-of-solar-energy-generation" className="page-scroll">Investigation of solar energy generation integration with retail distribution</Link>
+                  <Link to="/investigation-of-solar-energy-generation" className="page-scroll">Energy Transition</Link>
                 </li>
                 
               </ul>

@@ -5,7 +5,7 @@ import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import Loading from "../components/commonComponents/Loading";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-import { MenuItem, Select, InputLabel, FormControl, Checkbox, ListItemText } from "@mui/material";
+import { MenuItem, Select, InputLabel, FormControl, Checkbox, ListItemText, Paper } from "@mui/material";
 
 import animationsJsonData from "../customizeThalassa/pvt-animationsData.json";
 
@@ -94,85 +94,89 @@ export default function Experiments() {
           {loading && <Loading />}
           {!loading && (
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Box height={20} />
-              <Box height={10} />
-              <h1>{animationsJsonData.HeadTitle}</h1>
-              <>{animationsJsonData.SubTitle1}</>
-              <Grid container spacing={2} className="paddingall">
-                <Grid item xs={12}>
-                  <Box>
-                    <FormControl fullWidth variant="outlined" margin="normal">
-                      <InputLabel>Select Experiment</InputLabel>
-                      <Select
-                        value={selectedFolder}
-                        onChange={handleFolderChange}
-                        renderValue={(selected) => selected}
-                        label="Select Experiment"
-                      >
-                        {folders.map((folder) => (
-                          <MenuItem key={folder} value={folder}>
-                            {folder}
-                          </MenuItem>
-                        ))}
-                      </Select>
-                    </FormControl>
+              <Paper style={{ padding: 16 }}>
 
-                    {htmlFiles.length > 0 && (
+                <Box height={20} />
+                <Box height={10} />
+                <h1>{animationsJsonData.HeadTitle}</h1>
+                <>{animationsJsonData.SubTitle1}</>
+                <Grid container spacing={2} className="paddingall">
+                  <Grid item xs={12}>
+                    <Box>
                       <FormControl fullWidth variant="outlined" margin="normal">
-                        <InputLabel>Select Trend</InputLabel>
+                        <InputLabel>Select Experiment</InputLabel>
                         <Select
-                          multiple
-                          value={selectedFileTitles}
-                          onChange={handleFileChange}
-                          label="Select Trend"
-                          renderValue={(selected) => (
-                            <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                              {selected.map((value) => (
-                                <Box key={value} sx={{ border: '1px solid #ccc', borderRadius: 1, padding: '2px 4px' }}>
-                                  {value}
-                                </Box>
-                              ))}
-                            </Box>
-                          )}
+                          value={selectedFolder}
+                          onChange={handleFolderChange}
+                          renderValue={(selected) => selected}
+                          label="Select Experiment"
                         >
-                          {htmlFiles.map((file) => (
-                            <MenuItem key={file.title} value={file.title}>
-                              <Checkbox checked={selectedFileTitles.indexOf(file.title) > -1} />
-                              <ListItemText primary={file.title} />
+                          {folders.map((folder) => (
+                            <MenuItem key={folder} value={folder}>
+                              {folder}
                             </MenuItem>
                           ))}
                         </Select>
                       </FormControl>
-                    )}
 
-                    {selectedFileTitles.map((title, index) => {
-                      const url = fileTitleToUrl[title];
-                      const file = htmlFiles.find(file => file.title === title);
-                      return (
-                        <Box key={index} sx={{ marginTop: '16px' }}>
-                          {url && (
-                            <>
-                              <video width="1200" height="800" controls>
-                                <source src={url} type="video/mp4" />
-                                Your browser does not support the video tag.
-                              </video>
-                              {file && (
-                                <Box sx={{ marginTop: '8px' }}>
-                                  <h3>{file.Title}</h3>
-                                  <p>{file.Paragraph}</p>
-                                  <a href={file.Link} target="_blank"> Code Link (currently disabled)</a>
-                                </Box>
-                              )}
-                            </>
-                          )}
-                        </Box>
-                      );
-                    })}
-                  </Box>
+                      {htmlFiles.length > 0 && (
+                        <FormControl fullWidth variant="outlined" margin="normal">
+                          <InputLabel>Select Trend</InputLabel>
+                          <Select
+                            multiple
+                            value={selectedFileTitles}
+                            onChange={handleFileChange}
+                            label="Select Trend"
+                            renderValue={(selected) => (
+                              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
+                                {selected.map((value) => (
+                                  <Box key={value} sx={{ border: '1px solid #ccc', borderRadius: 1, padding: '2px 4px' }}>
+                                    {value}
+                                  </Box>
+                                ))}
+                              </Box>
+                            )}
+                          >
+                            {htmlFiles.map((file) => (
+                              <MenuItem key={file.title} value={file.title}>
+                                <Checkbox checked={selectedFileTitles.indexOf(file.title) > -1} />
+                                <ListItemText primary={file.title} />
+                              </MenuItem>
+                            ))}
+                          </Select>
+                        </FormControl>
+                      )}
+
+                      {selectedFileTitles.map((title, index) => {
+                        const url = fileTitleToUrl[title];
+                        const file = htmlFiles.find(file => file.title === title);
+                        return (
+                          <Box key={index} sx={{ marginTop: '16px' }}>
+                            {url && (
+                              <>
+                                <video width="1200" height="800" controls>
+                                  <source src={url} type="video/mp4" />
+                                  Your browser does not support the video tag.
+                                </video>
+                                {file && (
+                                  <Box sx={{ marginTop: '8px' }}>
+                                    <h3>{file.Title}</h3>
+                                    <p>{file.Paragraph}</p>
+                                    <a href={file.Link} target="_blank"> Code Link (currently disabled)</a>
+                                  </Box>
+                                )}
+                              </>
+                            )}
+                          </Box>
+                        );
+                      })}
+                    </Box>
+                  </Grid>
                 </Grid>
-              </Grid>
+              </Paper>
             </Box>
           )}
+
         </Box>
       </div>
     </>

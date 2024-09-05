@@ -2,8 +2,9 @@
   "CaseStudies": [
     {
       "title": "Understanding the Dynamics of Depression in Urban Areas of England.",
-      "largeImage": "../img/DPR1.gif",
-      "paragraph" : "This is paragraph"
+      "largeImage1": "../img/DPR1.gif",
+      "largeImage2": "../img/DPR2.gif",
+      "paragraph" : "Depression has evolved in Cities in a complex dyanamic evolution that is distinctive each city.  In this case study we are investigating Spatial Data within Lower Super Output Areas."
     }
   ]
 }

@@ -3,7 +3,9 @@
     {
       "title": "Valuing the Impact of New Innovations for Aquaculture",
       "largeImage": "../img/Aquaculture Value.jpg",
-      "paragraph" : "This is paragraph"
+      "paragraph": "Thalassa’s role in this project is to create a digital twin of a fish farm so we can assess the relative value of new innovations our team of 30 partners are working on. Above is a screen shot of the prototype digital twin we are developing with a fish farm in Greece",
+      "aquaCureURL" : "https://cure4aqua-project.eu/",
+      "aquaCureURLHyperlinkText" : "Information on the Horizon Europe and UKRI Funded Cure4Aqua Project"
     }
   ]
 }

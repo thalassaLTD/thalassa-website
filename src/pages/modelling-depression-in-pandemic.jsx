@@ -28,26 +28,43 @@ const NewVaccineImpactOnFishFarms = () => {
             <Grid item xs={12} key={index}>
 
               <Paper style={{ padding: 16 }}>
-                <Typography variant="h2" gutterBottom>{caseStudy.title}</Typography>
 
-                <Grid item xs={12} md={12}>
-                  <img
-                    src={caseStudy.largeImage}
-                    alt={caseStudy.title}
-                    style={{
-                      width: '100%',
-                      height: 'auto',
-                      maxHeight: '800px', // Set a maximum height for the banner
-                      objectFit: 'cover', // Ensure the image covers the entire width without distortion
-                      objectPosition: 'center', // Center the image within the container
-                    }}
-                  />
+                <Grid container spacing={2}>
+                  <Grid item xs={12} md={6}>
+                    <img
+                      src={caseStudy.largeImage1}
+                      alt={caseStudy.title}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        maxHeight: '500px', // Set a maximum height for the banner
+                        objectFit: 'cover', // Ensure the image covers the entire width without distortion
+                        objectPosition: 'center', // Center the image within the container
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <img
+                      src={caseStudy.largeImage2}
+                      alt={caseStudy.title}
+                      style={{
+                        width: '100%',
+                        height: 'auto',
+                        maxHeight: '500px', // Set a maximum height for the banner
+                        objectFit: 'cover', // Ensure the image covers the entire width without distortion
+                        objectPosition: 'center', // Center the image within the container
+                      }}
+                    />
+                  </Grid>
                 </Grid>
                 <Grid container spacing={2}>
                   {/* <Grid item xs={12} md={4}>
                     <img src={caseStudy.largeImage} alt={caseStudy.title} style={{ width: '100%' }} />
                   </Grid> */}
+
                   <Grid item xs={12} md={8}>
+                    <Typography variant="h2" gutterBottom>{caseStudy.title}</Typography>
+
                     <Typography variant="body1">
                       {caseStudy.paragraph}
                     </Typography>
