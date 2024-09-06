@@ -63,7 +63,7 @@ const App = () => {
               <Route exact path='/spatial-analytics' element={<SpatialAnalytics />}></Route>
               <Route exact path='/account' element={<Profile />}></Route>
               <Route exact path='/terms' element={<TermsAndConditions />}></Route>
-              <Route exact path='/Experiments/:type/:folder/:id' element={<Figure />}></Route>      
+              <Route exact path='/Experiments' element={<Figure />}></Route>      
             </Route>
           </Routes>
         </BrowserRouter>

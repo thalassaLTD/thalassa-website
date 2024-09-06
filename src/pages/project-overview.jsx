@@ -12,6 +12,7 @@ export default function Experiments() {
   const [projectData, setProjectData] = useState({
     title: "",
     paragraphs: [],
+    indexOfAnalysisScreenshot: "", // Ensure this key is present
   });
 
   // Load data from JSON and set it to state
@@ -46,9 +47,14 @@ export default function Experiments() {
                 {projectData.paragraphs.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
-                <img src={projectData.indexOfAnalysisScreenshot}  alt="indexOfAnalysisScreenshot" />
-              </Paper>
 
+                {/* Render the image with responsive styles */}
+                <img 
+                  src={projectData.indexOfAnalysisScreenshot}  
+                  alt="indexOfAnalysisScreenshot" 
+                  style={{ maxWidth: '100%', height: 'auto' }} 
+                />
+              </Paper>
             </Box>
           )}
         </Box>

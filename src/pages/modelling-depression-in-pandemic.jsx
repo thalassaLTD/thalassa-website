@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { CssBaseline, Grid, Paper, Typography, createTheme, ThemeProvider } from "@mui/material";
+import { CssBaseline, Grid, Paper, Typography, createTheme, ThemeProvider, Button } from "@mui/material";
 import { Navigation } from "../components/LandingPage/navigation";
 import { Header } from "../components/LandingPage/header";
 
@@ -70,6 +70,10 @@ const NewVaccineImpactOnFishFarms = () => {
                     </Typography>
                   </Grid>
                 </Grid>
+
+                <Button >
+                  Sign In
+                </Button>
               </Paper>
             </Grid>
           ))}
