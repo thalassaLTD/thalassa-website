@@ -15,6 +15,7 @@ import TermsAndConditions from "./components/Auth/TermsAndConditions";
 import Website from "./pages/website";
 import ProjectOverview from "./pages/project-overview";
 import SpatialAnalytics from "./pages/spatial-analytics";
+import Figure from "./pages/figure";
 import Animations from "./pages/animations";
 // import CaseStudies from "./pages/case-studies";
 import NewVaccineImpactOnFishFarms from "./pages/new-vaccine-impact-on-fish-farms";
@@ -62,7 +63,7 @@ const App = () => {
               <Route exact path='/spatial-analytics' element={<SpatialAnalytics />}></Route>
               <Route exact path='/account' element={<Profile />}></Route>
               <Route exact path='/terms' element={<TermsAndConditions />}></Route>
-
+              <Route exact path='/Experiments/:type/:folder/:id' element={<Figure />}></Route>      
             </Route>
           </Routes>
         </BrowserRouter>
