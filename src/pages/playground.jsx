@@ -135,9 +135,9 @@ const FilterComponent = () => {
       <div className="bgcolor">
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />
-          <Box sx={{ padding: '20px', width: '100%' }}>
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
+          <Box sx={{ padding: '20px', paddingRight: '0px', width: '100%' }}>
+            <Grid container spacing={2} >
+              <Grid item xs={6} >
                 <FilterSet
                   setTitle="Select Filters - Set 1"
                   selectedCity={selectedCity1}
