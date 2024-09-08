@@ -147,7 +147,6 @@ const FilterComponent = () => {
                   independentVariable={independentVariable1}
                   setIndependentVariable={setIndependentVariable1}
                   dependentVariable={dependentVariable1}
-
                   setDependentVariable={setDependentVariable1}
                   statisticalTest={statisticalTest1}
                   setStatisticalTest={setStatisticalTest1}

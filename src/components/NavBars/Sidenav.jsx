@@ -315,6 +315,7 @@ export default function Sidenav() {
             sx={{ display: "block" }}
             onClick={() => {
               navigate("/playground");
+              updateOpen(!dopen)
             }}
           >
             <ListItemButton
@@ -387,6 +388,6 @@ export default function Sidenav() {
           </ListItem>
         </List>
       </Drawer>
-    </Box>
+    </Box >
   );
 }
