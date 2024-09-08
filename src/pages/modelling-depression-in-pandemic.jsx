@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { CssBaseline, Grid, Paper, Typography, createTheme, ThemeProvider, Button } from "@mui/material";
 import { Navigation } from "../components/LandingPage/navigation";
 import { Header } from "../components/LandingPage/header";
+import { Link } from 'react-router-dom';
 
 import JsonData from "../customizeThalassa/modelling-depression-in-pandemic.json";
 
@@ -72,7 +73,9 @@ const NewVaccineImpactOnFishFarms = () => {
                 </Grid>
 
                 <Button >
-                  Sign In
+                  <Link to="/signin" className='hide-text'>
+                    Sign In to explore more!
+                  </Link>
                 </Button>
               </Paper>
             </Grid>

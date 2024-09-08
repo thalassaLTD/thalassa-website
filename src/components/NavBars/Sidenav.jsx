@@ -11,6 +11,7 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import HomeIcon from "@mui/icons-material/Home";
 import WorkIcon from "@mui/icons-material/WorkOutline";
+import PlayGround from "@mui/icons-material/PlayArrow";
 import VideoCameraFrontIcon from "@mui/icons-material/VideoCameraFront";
 import VideoChatIcon from "@mui/icons-material/VideoChat";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
@@ -308,7 +309,32 @@ export default function Sidenav() {
               <ListItemText primary="Spatial Analysis" sx={{ opacity: open ? 1 : 0 }} />
             </ListItemButton>
           </ListItem>
-          
+
+          <ListItem
+            disablePadding
+            sx={{ display: "block" }}
+            onClick={() => {
+              navigate("/playground");
+            }}
+          >
+            <ListItemButton
+              sx={{
+                minHeight: 48,
+                justifyContent: open ? "initial" : "center",
+                px: 2.5,
+              }}
+            >
+              <PlayGround
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 3 : "auto",
+                  justifyContent: "center",
+                }}
+              ></PlayGround>
+              <ListItemText primary="Playground" sx={{ opacity: open ? 1 : 0 }} />
+            </ListItemButton>
+          </ListItem>
+
           <Divider
             orientation="horizontal"
             sx={{ my: "1rem", borderColor: "#3d5873", width: "100%" }}
