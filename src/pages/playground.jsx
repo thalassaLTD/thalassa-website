@@ -6,7 +6,7 @@ import Tooltip from '@mui/material/Tooltip';
 import { getStorage, ref, getDownloadURL } from "firebase/storage"; // Import Firebase storage functions
 
 // Reusable Filter Component
-const FilterSet = ({ setTitle, selectedCity, setSelectedCity, mapFormat, setMapFormat, independentVariable, setIndependentVariable, dependentVariable, setDependentVariable, statisticalTest, setStatisticalTest, selectedYears, handleYearChange }) => {
+const FilterSet = ({ setTitle, selectedCity, setSelectedCity, mapFormat, setMapFormat, independentVariable, setIndependentVariable, dependentVariable, setDependentVariable, statisticalTest, setStatisticalTest, selectedYear, handleYearChange }) => {
   return (
     <Paper style={{ padding: 16 }}>
       <Tooltip title="Choose an independent and dependent variable, a statistical test, and check the years you want to compare" arrow>
@@ -62,19 +62,21 @@ const FilterSet = ({ setTitle, selectedCity, setSelectedCity, mapFormat, setMapF
       {/* Year Filter */}
       <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
         <FormLabel component="legend">Year</FormLabel>
-        <Box>
+        <RadioGroup value={selectedYear} onChange={handleYearChange} row>
           {Array.from({ length: 11 }, (_, i) => {
             const year = String(2012 + i);
             return (
               <FormControlLabel
                 key={year}
-                control={<Checkbox checked={selectedYears.includes(year)} onChange={handleYearChange} value={year} />}
+                control={<Radio value={year} />}
                 label={year}
               />
             );
           })}
-        </Box>
+        </RadioGroup>
       </FormControl>
+
+
     </Paper>
   );
 };
@@ -131,7 +133,7 @@ const FilterComponent = () => {
 
   return (
     <>
-      <ResponsiveAppBar />
+      {/* <ResponsiveAppBar /> */}
       <div className="bgcolor">
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />

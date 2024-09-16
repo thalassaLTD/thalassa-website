@@ -26,7 +26,7 @@ export default function Experiments() {
 
   return (
     <>
-      <ResponsiveAppBar />
+      {/* <ResponsiveAppBar /> */}
       <div className="bgcolor">
 
         <Box sx={{ display: "flex", height: "100%" }}>
