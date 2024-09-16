@@ -8,10 +8,10 @@
         "The interactive visualizations also allow users to manipulate data views, zoom into specific areas, and overlay additional datasets, such as crime rates or air quality, to see how these factors may contribute to the observed depression dynamics. This feature ensures that our analysis is not only comprehensive but also accessible and customizable to meet the needs of different stakeholders.",
         "Finally, all the analysis conducted in this study has been performed on data from Greater London. The insights gained from this focus area provide a valuable case study that can be used to inform similar analyses in other urban regions. The results from Greater London offer a detailed look into how depression manifests in a major urban environment, serving as a model for understanding depression in cities worldwide.",
 
-        "DGD1 https://thalassa.ltd/Experiments/Temporal%20Animations/Depression%20Growth%20Drivers%20(DGD)/DGD1.mp4",
-        "DGD2 https://thalassa.ltd/Experiments/Temporal%20Animations/Depression%20Growth%20Drivers%20(DGD)/DGD2.mp4",
-        "DGD3 https://thalassa.ltd/Experiments/Temporal%20Animations/Depression%20Growth%20Drivers%20(DGD)/DGD3.mp4",
-        "DGD3 http://localhost:3000/Experiments?type=Temporal%20Animations&folder=Depression%20Growth%20Drivers%20(DGD)&id=DGD3.mp4"
+        
+        "DGD1 https://thalassa.ltd/Experiments?type=Temporal Animations&folder=Depression Growth Drivers (DGD)&id=DGD1.mp4",
+        "DGD2 https://thalassa.ltd/Experiments?type=Temporal Animations&folder=Depression Growth Drivers (DGD)&id=DGD2.mp4",
+        "DGD3 https://thalassa.ltd/Experiments?type=Temporal Animations&folder=Depression Growth Drivers (DGD)&id=DGD3.mp4"
         
 
     ],
