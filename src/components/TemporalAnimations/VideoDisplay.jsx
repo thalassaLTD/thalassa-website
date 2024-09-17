@@ -11,7 +11,7 @@ const VideoDisplay = ({ selectedFileTitles, fileTitleToUrl, htmlFiles }) => (
         <Box key={index} sx={{ marginTop: '0px' }}>
           {url && (
             <>
-              <video width="1200" height="600" controls>
+              <video width="1100" height="600" controls>
                 <source src={url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>

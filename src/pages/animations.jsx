@@ -97,43 +97,40 @@ export default function Experiments() {
       <div className="bgcolor">
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />
-          {loading && <Loading />}
-          {!loading && (
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Paper style={{ padding: 8 }}>
-                <TooltipHeader
-                  tooltipText="The data used from England and Wales Depression and Prescriptions and animations made on different cities"
-                  headerText={animationsJsonData.HeadTitle}
-                  headerVariant="h4"
-                />
+          <Box sx={{ padding: '20px' }}>
+            <Paper style={{ padding: 16 }}>
+              <TooltipHeader
+                tooltipText="The data used from England and Wales Depression and Prescriptions and animations made on different cities"
+                headerText={animationsJsonData.HeadTitle}
+                headerVariant="h4"
+              />
 
 
-                <>{animationsJsonData.SubTitle1}</>
-                <Grid container spacing={2} className="paddingall">
-                  <Grid item xs={12} md={4}>
-                    <Box>
-                      <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Box>
-                      <ExperimentSelector selectedFolder={selectedFolder} handleFolderChange={handleFolderChange} folders={folders} />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12} md={4}>
-                    <Box>
-                      <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
-                    </Box>
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Box>
-                      <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
-                    </Box>
-                  </Grid>
+              <>{animationsJsonData.SubTitle1}</>
+              <Grid container spacing={2} className="paddingall">
+                <Grid item xs={12} md={4}>
+                  <Box>
+                    <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
+                  </Box>
                 </Grid>
-              </Paper>
-            </Box>
-          )}
+                <Grid item xs={12} md={4}>
+                  <Box>
+                    <ExperimentSelector selectedFolder={selectedFolder} handleFolderChange={handleFolderChange} folders={folders} />
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Box>
+                    <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box>
+                    <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
+                  </Box>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Box>
         </Box>
       </div>
     </>
