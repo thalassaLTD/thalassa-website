@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+import { Box, Paper, Tooltip } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info'; import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import Loading from "../components/commonComponents/Loading";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-import Paper from "@mui/material/Paper";
-
 import CitySelector from "../components/TemporalAnimations/CitySelector";
 import ExperimentSelector from "../components/TemporalAnimations/ExperimentSelector";
 import TrendSelector from "../components/TemporalAnimations/TrendSelector";
 import VideoDisplay from "../components/TemporalAnimations/VideoDisplay";
+import TooltipHeader from '../components/TooltipHeader';
+
 
 import animationsJsonData from "../customizeThalassa/pvt-animationsData.json";
 
@@ -21,8 +22,8 @@ export default function Experiments() {
   const [selectedFolder, setSelectedFolder] = useState("");
   const [selectedFileTitles, setSelectedFileTitles] = useState([]);
   const [fileTitleToUrl, setFileTitleToUrl] = useState({});
-  const [selectedCity, setSelectedCity] = useState("London"); // City selection state
-  const cities = ["London", "Leicester", "Manchester", "Bristol"]; // Available cities
+  const [selectedArea, setSelectedArea] = useState("Greater London"); // City selection state
+  const cities = ["Greater London", "Leicester", "Manchester", "Bristol"]; // Available cities
 
   useEffect(() => {
     const storage = getStorage();
@@ -53,7 +54,7 @@ export default function Experiments() {
     setLoading(true);
 
     const storage = getStorage();
-    const folderRef = ref(storage, `Experiments/Temporal Animations/${selectedCity}/${folder}`);
+    const folderRef = ref(storage, `Experiments/Temporal Animations/${selectedArea}/${folder}`);
 
     listAll(folderRef)
       .then((res) => {
@@ -87,7 +88,7 @@ export default function Experiments() {
   };
 
   const handleCityChange = (event) => {
-    setSelectedCity(event.target.value); // Update city selection
+    setSelectedArea(event.target.value); // Update city selection
   };
 
   return (
@@ -99,17 +100,33 @@ export default function Experiments() {
           {loading && <Loading />}
           {!loading && (
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Paper style={{ padding: 16 }}>
-                <Box height={20} />
-                <Box height={10} />
-                <h1>{animationsJsonData.HeadTitle}</h1>
+              <Paper style={{ padding: 8 }}>
+                <TooltipHeader
+                  tooltipText="The data used from England and Wales Depression and Prescriptions and animations made on different cities"
+                  headerText={animationsJsonData.HeadTitle}
+                  headerVariant="h4"
+                />
+
+
                 <>{animationsJsonData.SubTitle1}</>
                 <Grid container spacing={2} className="paddingall">
+                  <Grid item xs={12} md={4}>
+                    <Box>
+                      <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <Box>
+                      <ExperimentSelector selectedFolder={selectedFolder} handleFolderChange={handleFolderChange} folders={folders} />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} md={4}>
+                    <Box>
+                      <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
+                    </Box>
+                  </Grid>
                   <Grid item xs={12}>
                     <Box>
-                      <CitySelector selectedCity={selectedCity} handleCityChange={handleCityChange} cities={cities} />
-                      <ExperimentSelector selectedFolder={selectedFolder} handleFolderChange={handleFolderChange} folders={folders} />
-                      <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
                       <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
                     </Box>
                   </Grid>

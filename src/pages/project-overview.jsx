@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
+import { Box, Paper, Tooltip } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info';
 import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import Loading from "../components/commonComponents/Loading";
@@ -34,14 +35,17 @@ export default function Experiments() {
           <Sidenav />
           {loading && <Loading />}
           {!loading && (
-            <Box component="main" sx={{ flexGrow: 1, p: 3, width:'100%' }}>
+            <Box component="main" sx={{ flexGrow: 1, p: 3, width: '100%' }}>
               <Paper style={{ padding: 16 }}>
 
-                <Box height={20} />
-                <Box height={10} />
-
-                {/* Render the title */}
-                <h1>{projectData.title}</h1>
+                <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+                  <h2 style={{ marginRight: 8 }}>{projectData.title}</h2>
+                  <Tooltip title="Overview of the experiements conducted so far." arrow>
+                    <IconButton size="small" sx={{ verticalAlign: 'middle', padding: 0 }}>
+                      <InfoIcon style={{ marginBottom: 16 }} />
+                    </IconButton>
+                  </Tooltip>
+                </Box>
 
                 {/* Render each paragraph */}
                 {projectData.paragraphs.map((paragraph, index) => (
@@ -49,10 +53,10 @@ export default function Experiments() {
                 ))}
 
                 {/* Render the image with responsive styles */}
-                <img 
-                  src={projectData.indexOfAnalysisScreenshot}  
-                  alt="indexOfAnalysisScreenshot" 
-                  style={{ maxWidth: '100%', height: 'auto' }} 
+                <img
+                  src={projectData.indexOfAnalysisScreenshot}
+                  alt="indexOfAnalysisScreenshot"
+                  style={{ maxWidth: '100%', height: 'auto' }}
                 />
               </Paper>
             </Box>
