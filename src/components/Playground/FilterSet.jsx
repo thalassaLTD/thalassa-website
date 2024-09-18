@@ -46,7 +46,7 @@ const FilterSet = ({ title, selectedCity, setSelectedCity, mapFormat, setMapForm
         <FormLabel component="legend">Statistical Test</FormLabel>
         <RadioGroup name="statisticalTest" value={statisticalTest} onChange={(e) => setStatisticalTest(e.target.value)}>
           <FormControlLabel value="R-Squared" control={<Radio />} label="R-Squared" />
-          <FormControlLabel value="T-Value" control={<Radio />} label="T-Value" />
+          <FormControlLabel value="t-Value & R-Squared" control={<Radio />} label="t-Value & R-Squared" />
         </RadioGroup>
       </FormControl>
 
