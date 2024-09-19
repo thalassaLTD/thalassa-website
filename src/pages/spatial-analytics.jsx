@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Sidenav from "../components/NavBars/Sidenav";
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid } from "@mui/material";
 import MapFormatFilter from '../components/SpatialAnalytics/MapFormatFilter';
-import VariableFilter from '../components/SpatialAnalytics/VariableFilter';
-import StatisticalTestFilter from '../components/SpatialAnalytics/StatisticalTestFilter';
 import YearFilter from '../components/SpatialAnalytics/YearFilter';
 import TooltipHeader from '../components/TooltipHeader';
 import CitySelector from "../components/TemporalAnimations/CitySelector";
@@ -13,25 +11,40 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 const FilterComponent = () => {
   const [mapFormat, setMapFormat] = useState('Cubes');
-  const [independentVariable, setIndependentVariable] = useState('Depression Prevelance Prior Year');
-  const [dependentVariable, setDependentVariable] = useState('Depression Prevelance Current Year');
-  const [statisticalTest, setStatisticalTest] = useState('R-Squared');
-  const [selectedYears, setSelectedYears] = useState(['2012']);
+  const [folder, setFolder] = useState('Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared');
+  const [selectedYears, setSelectedYears] = useState(['2014']);
   const [fileUrls, setFileUrls] = useState([]);
-  const [selectedArea, setSelectedArea] = useState("Greater London"); // City selection state
+  const [selectedArea, setSelectedArea] = useState("Greater London");
 
-  const cities = ["Greater London", "Leicester", "Manchester", "Bristol"]; // Available cities
+  const cities = ["Greater London", "Leicester", "Manchester", "Bristol"];
 
-  const handleCityChange = (event) => {
-    setSelectedArea(event.target.value); // Update city selection
+  const folders = {
+    Cubes: [
+      "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
+      "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared",
+      "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
+      "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared"
+    ],
+    Maps: [
+      "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
+      "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared"
+    ]
   };
 
-  const fetchFileUrls = async (city, format, independentVariable, dependentVariable, statisticalTest, years) => {
+  const handleCityChange = (event) => {
+    setSelectedArea(event.target.value);
+  };
+
+  const handleFolderChange = (event) => {
+    setFolder(event.target.value);
+  };
+
+  const fetchFileUrls = async (city, format, folder, years) => {
     const storage = getStorage();
     const urls = [];
-    
+
     for (const year of years) {
-      const fileRef = ref(storage, `/Experiments/Spatial Analysis/${city}/${format}/${independentVariable} vs ${dependentVariable}/${statisticalTest}/${year}.html`);
+      const fileRef = ref(storage, `/Experiments/Spatial Analysis/${city}/${format}/${folder}/${year}.html`);
       try {
         const url = await getDownloadURL(fileRef);
         urls.push({ year, url });
@@ -40,19 +53,17 @@ const FilterComponent = () => {
         urls.push({ year, url: null });
       }
     }
-    
+
     return urls;
   };
 
   useEffect(() => {
     const fetchData = async () => {
-      if (selectedYears.length > 0) {
+      if (selectedYears.length > 0 && folder) {
         const urls = await fetchFileUrls(
           selectedArea,
           mapFormat,
-          independentVariable,
-          dependentVariable,
-          statisticalTest,
+          folder,
           selectedYears
         );
         setFileUrls(urls);
@@ -60,39 +71,59 @@ const FilterComponent = () => {
     };
 
     fetchData();
-    console.log(`/Experiments/Spatial Analysis/${selectedArea}/${mapFormat}/${independentVariable} vs ${dependentVariable}/${statisticalTest}/${selectedYears[0]}.html`)
-  }, [mapFormat, independentVariable, dependentVariable, statisticalTest, selectedYears, selectedArea]);
+  }, [mapFormat, folder, selectedYears, selectedArea]);
 
   return (
     <div className="bgcolor">
       <Box sx={{ display: "flex", height: "100%" }}>
         <Sidenav />
-        <Box sx={{ padding: '20px' }}>
+        <Box sx={{ padding: '20px', width: '100%' }}>
           <Paper style={{ padding: 16 }}>
             <TooltipHeader
               tooltipText="Choose filters and years to compare"
               headerText="Select Filters"
               headerVariant="h4"
             />
+            <Grid item xs={12} sm={3}>
+              <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
+            </Grid>
+            {/* Use Grid layout for compact filters */}
+            <Grid container spacing={2} alignItems="center">
 
-            <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
 
-            <MapFormatFilter mapFormat={mapFormat} setMapFormat={setMapFormat} />
-            <VariableFilter
-              independentVariable={independentVariable}
-              setIndependentVariable={setIndependentVariable}
-              dependentVariable={dependentVariable}
-              setDependentVariable={setDependentVariable}
-            />
-            <StatisticalTestFilter statisticalTest={statisticalTest} setStatisticalTest={setStatisticalTest} />
-            <YearFilter selectedYears={selectedYears} setSelectedYears={setSelectedYears} />
+              <Grid item xs={12} sm={2}>
+                <MapFormatFilter mapFormat={mapFormat} setMapFormat={setMapFormat} />
+              </Grid>
 
+              <Grid item xs={12} sm={10}>
+                <FormControl fullWidth variant="outlined" margin="normal">
+                  <InputLabel>Select Experiment</InputLabel>
+                  <Select
+                    value={folder}
+                    onChange={handleFolderChange}
+                    label="Select Experiment"
+                  >
+                    {folders[mapFormat]?.map((folderOption, index) => (
+                      <MenuItem key={index} value={folderOption}>
+                        {folderOption}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+              </Grid>
+
+              <Grid item xs={12} sm={12}>
+                <YearFilter selectedYears={selectedYears} setSelectedYears={setSelectedYears} />
+              </Grid>
+            </Grid>
+
+            {/* Display the results below the filters */}
             {fileUrls.map(({ year, url }) => (
               url ? (
                 <iframe
                   key={year}
                   src={url}
-                  style={{ width: '100%', height: '500px', border: 'none', marginBottom: '20px' }}
+                  style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
                   title={`Spatial Analysis for ${year}`}
                 />
               ) : (

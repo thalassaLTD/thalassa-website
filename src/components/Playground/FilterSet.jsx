@@ -26,27 +26,13 @@ const FilterSet = ({ title, selectedCity, setSelectedCity, mapFormat, setMapForm
         </RadioGroup>
       </FormControl>
 
-      <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
-        <FormLabel component="legend">Independent Variable</FormLabel>
-        <RadioGroup name="independentVariable" value={independentVariable} onChange={(e) => setIndependentVariable(e.target.value)}>
-          <FormControlLabel value="Depression Prevalence Prior Year" control={<Radio />} label="Depression Prevalence Prior Year" />
-          <FormControlLabel value="Items Per Patient Prior Year" control={<Radio />} label="Items Per Patient Prior Year" />
-        </RadioGroup>
-      </FormControl>
-
-      <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
-        <FormLabel component="legend">Dependent Variable</FormLabel>
-        <RadioGroup name="dependentVariable" value={dependentVariable} onChange={(e) => setDependentVariable(e.target.value)}>
-          <FormControlLabel value="Depression Prevalence Current Year" control={<Radio />} label="Depression Prevalence Current Year" />
-          <FormControlLabel value="Depression Growth Year-on-Year" control={<Radio />} label="Depression Growth Year-on-Year" />
-        </RadioGroup>
-      </FormControl>
+      
 
       <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
         <FormLabel component="legend">Statistical Test</FormLabel>
         <RadioGroup name="statisticalTest" value={statisticalTest} onChange={(e) => setStatisticalTest(e.target.value)}>
-          <FormControlLabel value="R-Squared" control={<Radio />} label="R-Squared" />
-          <FormControlLabel value="t-Value & R-Squared" control={<Radio />} label="t-Value & R-Squared" />
+          <FormControlLabel value="Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared" control={<Radio />} label="Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared" />
+          <FormControlLabel value="Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared" control={<Radio />} label="Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared" />
         </RadioGroup>
       </FormControl>
 
@@ -54,7 +40,7 @@ const FilterSet = ({ title, selectedCity, setSelectedCity, mapFormat, setMapForm
         <FormLabel component="legend">Year</FormLabel>
         <RadioGroup value={selectedYear} onChange={handleYearChange} row>
           {Array.from({ length: 11 }, (_, i) => {
-            const year = String(2012 + i);
+            const year = String(2014 + i);
             return (
               <FormControlLabel key={year} control={<Radio value={year} />} label={year} />
             );

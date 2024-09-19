@@ -14,7 +14,7 @@ const YearFilter = ({ selectedYears, setSelectedYears }) => {
       <FormLabel component="legend">Year</FormLabel>
       <Box>
         {Array.from({ length: 11 }, (_, i) => {
-          const year = String(2012 + i);
+          const year = String(2014 + i);
           return (
             <FormControlLabel
               key={year}

@@ -9,6 +9,7 @@ const TrendSelector = ({ htmlFiles, selectedFileTitles, handleFileChange }) => (
       multiple
       value={selectedFileTitles}
       onChange={handleFileChange}
+      label="Select Trend"
       renderValue={(selected) => (
         <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
           {selected.map((value) => (

@@ -3,14 +3,13 @@ import React, { useState, useEffect } from "react";
 import { Box, Grid } from "@mui/material";
 import Sidenav from "../components/NavBars/Sidenav";
 import FilterSet from "../components/Playground/FilterSet";
-// import { fetchFileUrl } from "../utils/firebaseUtils";
 
 // utils/firebaseUtils.js
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
-export const fetchFileUrl = async (city, format, independentVariable, dependentVariable, statisticalTest, year) => {
+export const fetchFileUrl = async (city, format, statisticalTest, year) => {
   const storage = getStorage();
-  const fileRef = ref(storage, `/Experiments/Spatial Analysis/${city}/${format}/${independentVariable} vs ${dependentVariable}/${statisticalTest}/${year}.html`);
+  const fileRef = ref(storage, `/Experiments/Spatial Analysis/${city}/${format}/${statisticalTest}/${year}.html`);
   try {
     const url = await getDownloadURL(fileRef);
     return url;
@@ -24,19 +23,15 @@ const FilterComponent = () => {
   // State for Set 1
   const [selectedCity1, setSelectedCity1] = useState('Greater London');
   const [mapFormat1, setMapFormat1] = useState('Cubes');
-  const [independentVariable1, setIndependentVariable1] = useState('Depression Prevalence Prior Year');
-  const [dependentVariable1, setDependentVariable1] = useState('Depression Prevalence Current Year');
-  const [statisticalTest1, setStatisticalTest1] = useState('R-Squared');
-  const [selectedYear1, setSelectedYear1] = useState('2012'); // Single year selection
+  const [statisticalTest1, setStatisticalTest1] = useState('Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared');
+  const [selectedYear1, setSelectedYear1] = useState('2014'); // Single year selection
   const [fileUrl1, setFileUrl1] = useState('');
 
   // State for Set 2
   const [selectedCity2, setSelectedCity2] = useState('Greater London');
   const [mapFormat2, setMapFormat2] = useState('Cubes');
-  const [independentVariable2, setIndependentVariable2] = useState('Depression Prevalence Prior Year');
-  const [dependentVariable2, setDependentVariable2] = useState('Depression Prevalence Current Year');
-  const [statisticalTest2, setStatisticalTest2] = useState('R-Squared');
-  const [selectedYear2, setSelectedYear2] = useState('2012'); // Single year selection
+  const [statisticalTest2, setStatisticalTest2] = useState('Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared');
+  const [selectedYear2, setSelectedYear2] = useState('2014'); // Single year selection
   const [fileUrl2, setFileUrl2] = useState('');
 
   // Handle year change for Set 1 (Single selection only)
@@ -52,14 +47,14 @@ const FilterComponent = () => {
   };
 
   useEffect(() => {
-    fetchFileUrl(selectedCity1, mapFormat1, independentVariable1, dependentVariable1, statisticalTest1, selectedYear1)
+    fetchFileUrl(selectedCity1, mapFormat1, statisticalTest1, selectedYear1)
       .then(setFileUrl1);
-  }, [selectedCity1, mapFormat1, independentVariable1, dependentVariable1, statisticalTest1, selectedYear1]);
+  }, [selectedCity1, mapFormat1, statisticalTest1, selectedYear1]);
 
   useEffect(() => {
-    fetchFileUrl(selectedCity2, mapFormat2, independentVariable2, dependentVariable2, statisticalTest2, selectedYear2)
+    fetchFileUrl(selectedCity2, mapFormat2, statisticalTest2, selectedYear2)
       .then(setFileUrl2);
-  }, [selectedCity2, mapFormat2, independentVariable2, dependentVariable2, statisticalTest2, selectedYear2]);
+  }, [selectedCity2, mapFormat2, statisticalTest2, selectedYear2]);
 
   return (
     <div className="bgcolor">
@@ -74,17 +69,17 @@ const FilterComponent = () => {
                 setSelectedCity={setSelectedCity1}
                 mapFormat={mapFormat1}
                 setMapFormat={setMapFormat1}
-                independentVariable={independentVariable1}
-                setIndependentVariable={setIndependentVariable1}
-                dependentVariable={dependentVariable1}
-                setDependentVariable={setDependentVariable1}
                 statisticalTest={statisticalTest1}
                 setStatisticalTest={setStatisticalTest1}
                 selectedYear={selectedYear1}
                 handleYearChange={handleYearChange1} // Single year selection
               />
-              <Box sx={{ height: 'calc(100vh - 200px)' }}>
-                <iframe src={fileUrl1} style={{ width: '100%', height: '100%', border: 'none' }} title="Set 1 Data"></iframe>
+              <Box sx={{ height: 'calc(100vh - 200px)', overflow: 'hidden' }}>
+                <iframe
+                  src={fileUrl1}
+                  style={{ width: '100%', height: '100%', border: 'none', overflow: 'hidden' }}
+                  title="Set 1 Data">
+                </iframe>
               </Box>
             </Grid>
 
@@ -95,10 +90,6 @@ const FilterComponent = () => {
                 setSelectedCity={setSelectedCity2}
                 mapFormat={mapFormat2}
                 setMapFormat={setMapFormat2}
-                independentVariable={independentVariable2}
-                setIndependentVariable={setIndependentVariable2}
-                dependentVariable={dependentVariable2}
-                setDependentVariable={setDependentVariable2}
                 statisticalTest={statisticalTest2}
                 setStatisticalTest={setStatisticalTest2}
                 selectedYear={selectedYear2}
@@ -107,7 +98,7 @@ const FilterComponent = () => {
               <Box sx={{ height: 'calc(100vh - 200px)' }}>
                 <iframe src={fileUrl2} style={{ width: '100%', height: '100%', border: 'none' }} title="Set 2 Data"></iframe>
               </Box>
-              <>{`/Experiments/Spatial Analysis/${selectedCity1}/${mapFormat1}/${independentVariable1} vs ${dependentVariable1}/${statisticalTest1}/${selectedYear1}.html`}</>
+              <>{`/Experiments/Spatial Analysis/${selectedCity1}/${mapFormat1}/${statisticalTest1}/${selectedYear1}.html`}</>
             </Grid>
           </Grid>
         </Box>
