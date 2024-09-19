@@ -74,12 +74,8 @@ const FilterComponent = () => {
                 selectedYear={selectedYear1}
                 handleYearChange={handleYearChange1} // Single year selection
               />
-              <Box sx={{ height: 'calc(100vh - 200px)', overflow: 'hidden' }}>
-                <iframe
-                  src={fileUrl1}
-                  style={{ width: '100%', height: '100%', border: 'none', overflow: 'hidden' }}
-                  title="Set 1 Data">
-                </iframe>
+              <Box sx={{ height: 'calc(100vh - 200px)' }}>
+                <iframe src={fileUrl1} style={{ width: '100%', height: '100%', border: 'none' }} title="Set 1 Data"></iframe>
               </Box>
             </Grid>
 

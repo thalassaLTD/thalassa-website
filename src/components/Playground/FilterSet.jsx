@@ -26,14 +26,17 @@ const FilterSet = ({ title, selectedCity, setSelectedCity, mapFormat, setMapForm
         </RadioGroup>
       </FormControl>
 
-      
+
 
       <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
         <FormLabel component="legend">Statistical Test</FormLabel>
         <RadioGroup name="statisticalTest" value={statisticalTest} onChange={(e) => setStatisticalTest(e.target.value)}>
           <FormControlLabel value="Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared" control={<Radio />} label="Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared" />
           <FormControlLabel value="Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared" control={<Radio />} label="Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared" />
+          <FormControlLabel value="Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared" control={<Radio />} label="Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared" />
+          <FormControlLabel value="Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared" control={<Radio />} label="Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared" />
         </RadioGroup>
+
       </FormControl>
 
       <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
