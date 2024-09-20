@@ -6,8 +6,12 @@ import YearFilter from '../components/SpatialAnalytics/YearFilter';
 import TooltipHeader from '../components/TooltipHeader';
 import CitySelector from "../components/TemporalAnimations/CitySelector";
 
+import spatialAnalyticsJsonData from "../customizeThalassa/pvt-spatialAnalyticsData.json";
+
+
 // utils/firebaseUtils.js
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
+// import { format } from "react-number-format/types/numeric_format";
 
 const FilterComponent = () => {
   const [mapFormat, setMapFormat] = useState('Cubes');
@@ -81,7 +85,7 @@ const FilterComponent = () => {
           <Paper style={{ padding: 16 }}>
             <TooltipHeader
               tooltipText="Choose filters and years to compare"
-              headerText="Select Filters"
+              headerText={spatialAnalyticsJsonData.HeadTitle}
               headerVariant="h4"
             />
             <Grid item xs={12} sm={3}>
@@ -120,16 +124,22 @@ const FilterComponent = () => {
             {/* Display the results below the filters */}
             {fileUrls.map(({ year, url }) => (
               url ? (
-                <iframe
-                  key={year}
-                  src={url}
-                  style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
-                  title={`Spatial Analysis for ${year}`}
-                />
+                <>
+                  <iframe
+                    key={year}
+                    src={url}
+                    style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
+                    title={`Spatial Analysis for ${year}`}
+                  />
+                  <p> {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.[year]}</p>
+
+                </>
+
               ) : (
                 <p key={year}>No data available for {year}</p>
               )
             ))}
+
           </Paper>
         </Box>
       </Box>

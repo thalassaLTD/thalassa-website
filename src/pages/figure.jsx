@@ -14,6 +14,7 @@ export default function Figure() {
     const queryParams = new URLSearchParams(location.search);
   
     const type = queryParams.get('type');
+    const area = queryParams.get('area');
     const folder = queryParams.get('folder');
     const id = queryParams.get('id');
 
@@ -36,8 +37,8 @@ export default function Figure() {
         const fetchVideoUrl = async () => {
             try {
                 // Constructing the path to the video file in Firebase Storage
-                const videoPath = `/Experiments/${type}/${folder}/${id}`;
-                console.log(type, folder, id, `/Experiments/${type}/${folder}/${id}`)
+                const videoPath = `/Experiments/${type}/${area}/${folder}/${id}`;
+                console.log(type, folder, id, `/Experiments/${type}/${area}/${folder}/${id}`)
                 const videoRef = ref(storage, videoPath);
 
                 // Fetching the download URL for the video

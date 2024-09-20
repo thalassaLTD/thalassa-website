@@ -3,6 +3,8 @@ import React from "react";
 import { Box } from "@mui/material";
 
 const VideoDisplay = ({ selectedFileTitles, fileTitleToUrl, htmlFiles }) => (
+
+  
   <>
     {selectedFileTitles.map((title, index) => {
       const url = fileTitleToUrl[title];
@@ -19,7 +21,8 @@ const VideoDisplay = ({ selectedFileTitles, fileTitleToUrl, htmlFiles }) => (
                 <Box sx={{ marginTop: '0px' }}>
                   <h3>{file.Title}</h3>
                   <p>{file.Paragraph}</p>
-                  <a href={file.Link} target="_blank" rel="noopener noreferrer">Code Link (currently disabled)</a>
+
+                  <a href={"https://thalassa.ltd/Experiments?type=Temporal%20Animations&area=Greater%20London&folder=Depression%20Growth%20Drivers%20(DGD)&id=DGD2.mp4"} target="_blank" rel="noopener noreferrer">File Link </a>
                 </Box>
               )}
             </>
