@@ -31,7 +31,8 @@ const FilterComponent = () => {
     ],
     Maps: [
       "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
-      "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared"
+      "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
+      "Morans I"
     ]
   };
 
