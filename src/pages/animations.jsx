@@ -31,7 +31,7 @@ export default function Experiments() {
 
     listAll(experimentsRef)
       .then((res) => {
-        const folderNames = ["Depression Prevalence (DPR)", "Prescription Prevalence (PPR)", "Depression Growth Drivers (DGD)"];
+        const folderNames = ["Depression Prevalence (DPR)", "Morans I Depression Prevalence (BTP)", "Prescription Prevalence (PPR)", "Depression Growth Drivers (DGD)"];
         setFolders(folderNames);
 
         if (folderNames.length > 0) {
