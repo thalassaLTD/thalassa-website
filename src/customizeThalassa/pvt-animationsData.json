@@ -27,27 +27,27 @@
     "Location": "Greater London LSOAs"
   },
   "DGD1.mp4": {
-    "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
+    "Title": "DGD1 Depression Prevalence Growth % vs Items/Patient",
     "Paragraph": "This video provides an overview of both the prevalence of depression prescriptions and their growth over time. It demonstrates how prescription rates have changed across Greater London, highlighting regions with rapid growth.",
     "Location": "Greater London"
   },
   "DGD2.mp4": {
-    "Title": "DGD2 Depression Growth vs Items/Patient 2014-22",
+    "Title": "DGD2 LocalR2 Depression Growth vs Items/Patient 2014-22",
     "Paragraph": "This analysis compares the growth in depression prevalence with the number of prescription items per patient from 2014 to 2022. It sheds light on the correlation between increased depression rates and the intensity of treatments through prescriptions.",
     "Location": "Greater London"
   },
   "DGD3.mp4": {
-    "Title": "DGD3 GWR of Depression Prevalence vs Items/Patient 2014-22",
+    "Title": "DGD3 LocalR2 Depression Prevalence vs Items/Patient 2014-22",
     "Paragraph": "This analysis uses geographically weighted regression (GWR) to examine the relationship between depression prevalence and the number of prescription items per patient. It focuses on spatial variations in Greater London from 2014 to 2022.",
     "Location": "Greater London LSOAs"
   },
   "DGD4.mp4": {
-    "Title": "DGD4 Prescription Prevalence and Growth for Greater London",
+    "Title": "DGD4 Depression Growth with Revised Bins",
     "Paragraph": "This video shows a detailed view of how the prevalence of prescriptions and their growth have evolved in Greater London over time, focusing on key trends in specific areas.",
     "Location": "Greater London LSOAs"
   },
   "DGD5.mp4": {
-    "Title": "DGD5 Depression Growth vs Depression Prevalence in Prior Year",
+    "Title": "DGD5 LocalR2 Depression Growth vs Depression Prevalence in Prior Year",
     "Paragraph": "This analysis compares the growth in depression rates in a given year with the depression prevalence in the previous year. It explores whether areas with higher prior prevalence experienced faster growth.",
     "Location": "Greater London LSOAs"
   },
