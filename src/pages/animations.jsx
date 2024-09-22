@@ -107,6 +107,7 @@ export default function Experiments() {
 
 
               <>{animationsJsonData.SubTitle1}</>
+
               <Grid container spacing={2} className="paddingall">
                 <Grid item xs={12} md={4}>
                   <Box>
@@ -122,11 +123,15 @@ export default function Experiments() {
                   <Box>
                     <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
                   </Box>
+                  <Grid item xs={12} sm={12}>
+                    (Deselect all Trends when switching between experiments)
+                  </Grid>
                 </Grid>
                 <Grid item xs={12}>
                   <Box>
                     <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
                   </Box>
+
                 </Grid>
               </Grid>
             </Paper>

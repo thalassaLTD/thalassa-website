@@ -119,6 +119,10 @@ const FilterComponent = () => {
               <Grid item xs={12} sm={12}>
                 <YearFilter selectedYears={selectedYears} setSelectedYears={setSelectedYears} />
               </Grid>
+
+              <Grid item xs={12} sm={12}>
+                (Years must be actively de-selected and select one year at a time or go slow for bandwidth constrains)
+              </Grid>
             </Grid>
 
             {/* Display the results below the filters */}
