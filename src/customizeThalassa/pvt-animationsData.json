@@ -1,87 +1,84 @@
 {
-  "HeadTitle" : "Evolution of Depression and Prescriptions 2012-2022",
-  "SubTitle1" : "Select an Experiment and a Trend from the drop down menus : (XXXN) - Denotes the analysis index ",
+  "HeadTitle": "Evolution of Depression and Prescriptions 2012-2022",
+  "SubTitle1": "Select an Experiment and a Trend from the drop down menus : (XXXN) - Denotes the analysis index ",
   "DPR1.mp4": {
     "Title": "Depression Prevalence (DPR1)",
-    "Paragraph": "Depression Prevelance appears to be steadily increasing in clusters that are also expanding in size over time",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
+    "Paragraph": "This analysis shows a steady increase in depression prevalence across different areas of Greater London. The affected regions are expanding, indicating that more neighborhoods are seeing an increase in depression over time.",
+    "Location": "Greater London LSOAs"
   },
   "DPR2.mp4": {
     "Title": "Depression Growth (DPR2)",
-    "Paragraph": "However, growth is happening in bursts seemingly randomly across the map",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "Depression growth patterns appear erratic, with sudden bursts of increase in different parts of Greater London. These bursts seem to occur randomly across the map, with no clear geographic pattern to the growth.",
+    "Location": "Greater London LSOAs"
   },
   "PPR1.mp4": {
     "Title": "Prescription Prevalence for Greater London (PPR1)",
-    "Paragraph": "This is the number of patients recieving prescription for depression divided by the number of people attending GP practices in each LSOA",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This video depicts the prevalence of prescriptions given for depression, calculated as the number of patients receiving prescriptions divided by the total number of people visiting GP practices within each LSOA. This provides a clear view of how widespread prescription treatments are in these areas.",
+    "Location": "Greater London LSOAs"
   },
   "PPR2.mp4": {
     "Title": "Prescription Growth for Greater London (PPR2)",
-    "Paragraph": "",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This video explores the growth of prescriptions for depression across Greater London. It focuses on the expansion of areas where prescription rates have been increasing.",
+    "Location": "Greater London LSOAs"
   },
   "DPR1_PPR3_Ratio.mp4": {
-    "Title": "Items Per Patient",
-    "Paragraph": "Data contains both population and patient prevelance, the intention is to pick one or the other (probably patient-prevelance because this relates more to the prescriptions,",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Title": "Items Per Patient Analysis",
+    "Paragraph": "This analysis compares both population prevalence and patient prevalence. It highlights the relationship between the number of depression-related prescription items per patient, helping to understand whether treatments are concentrated in certain areas or more evenly distributed.",
+    "Location": "Greater London LSOAs"
   },
   "DGD1.mp4": {
     "Title": "DGD1 Prescription Prevalence and Growth for Greater London",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This video provides an overview of both the prevalence of depression prescriptions and their growth over time. It demonstrates how prescription rates have changed across Greater London, highlighting regions with rapid growth.",
+    "Location": "Greater London"
   },
   "DGD2.mp4": {
     "Title": "DGD2 Depression Growth vs Items/Patient 2014-22",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This analysis compares the growth in depression prevalence with the number of prescription items per patient from 2014 to 2022. It sheds light on the correlation between increased depression rates and the intensity of treatments through prescriptions.",
+    "Location": "Greater London"
   },
   "DGD3.mp4": {
     "Title": "DGD3 GWR of Depression Prevalence vs Items/Patient 2014-22",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This analysis uses geographically weighted regression (GWR) to examine the relationship between depression prevalence and the number of prescription items per patient. It focuses on spatial variations in Greater London from 2014 to 2022.",
+    "Location": "Greater London LSOAs"
   },
   "DGD4.mp4": {
     "Title": "DGD4 Prescription Prevalence and Growth for Greater London",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-reesarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This video shows a detailed view of how the prevalence of prescriptions and their growth have evolved in Greater London over time, focusing on key trends in specific areas.",
+    "Location": "Greater London LSOAs"
   },
   "DGD5.mp4": {
-    "Title": "DGD5 depression growth vs depression prevalence in prior year ",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Title": "DGD5 Depression Growth vs Depression Prevalence in Prior Year",
+    "Paragraph": "This analysis compares the growth in depression rates in a given year with the depression prevalence in the previous year. It explores whether areas with higher prior prevalence experienced faster growth.",
+    "Location": "Greater London LSOAs"
   },
   "DGD6.mp4": {
     "Title": "DGD6 Prescription Prevalence and Growth for Greater London",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-resarch/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This video presents a comprehensive look at the relationship between prescription prevalence and growth in Greater London, providing insights into how prescription patterns have changed over time.",
+    "Location": "Greater London LSOAs"
   },
   "DGD7.mp4": {
     "Title": "DGD7 Prescription Prevalence and Growth",
-    "Paragraph": "This is a paragraph for DPR2",
-    "Location": "Greater London LSOAs",
-    "Link": "https://github.com/mauriceUCL/depression-research/blob/main/1.ExpCode/DPR/DPR1.ipynb"
-
+    "Paragraph": "This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
+    "Location": "Greater London LSOAs"
+  },
+  "BTP1.mp4": {
+    "Title": "BTP1",
+    "Paragraph": "This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
+    "Location": "Greater London LSOAs"
+  },
+  "BTP2.mp4": {
+    "Title": "BTP2",
+    "Paragraph": "This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
+    "Location": "Greater London LSOAs"
+  },
+  "BTP3.mp4": {
+    "Title": "BTP3",
+    "Paragraph": "This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
+    "Location": "Greater London LSOAs"
+  },
+  "BTP4.mp4": {
+    "Title": "Morans I Depression Prevalence",
+    "Paragraph": "This video explores the Morans I Depression Prevalence, LISA cluster Maps for regions in Greater London. Has been divided into 5 clusters.",
+    "Location": "Greater London LSOAs"
   }
 }

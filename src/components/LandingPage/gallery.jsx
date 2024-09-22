@@ -11,10 +11,12 @@ export const Gallery = (props) => {
       <div className="container">
         <div className="section-title">
           <h2>Example Projects</h2>
-          <h3>
+
+          <Typography style={{ fontSize: '2rem' }}>
             These case studies illustrate very different situations but share a common thread: A historical system disrupted and fundamentally altered by structural change and external shocks.
             We use data to inform the creation of realistic digital twins to understand the implications of these alterations and shocks to understand and inform decisionmaking in the future structure and conditions.
-          </h3>
+          </Typography>
+
         </div>
 
 
@@ -36,7 +38,7 @@ export const Gallery = (props) => {
                         smallImage={d.largeImage}
                       />
                       <div className="card-body">
-                        <h5 className="card-title">{d.title}</h5>
+                        <h4 className="card-title">{d.title}</h4>
                       </div>
                     </div>
                   </a>
@@ -45,7 +47,7 @@ export const Gallery = (props) => {
               : "Loading..."}
           </div>
         </div>
-        <Grid item xs={12} md={12}>
+        <Grid item xs={12} md={12} sx={{ mt: 9 }}>
           <img
             src={JsonData.visionDataModel}
             style={{

@@ -71,7 +71,7 @@ const ProtectedRoutesComponent = () => {
     );
   }
   if (!userAuth) {
-    return <Navigate to="/" />;
+    return <Navigate to="/modelling-depression-in-pandemic" />;
   }
   // if(showRegistration) {
   //   return <Registration open={showRegistration} studentDetails={studentDetails} onClose={()=>setShowRegistration(prev=>!prev)}/>

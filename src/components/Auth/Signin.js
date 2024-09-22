@@ -54,12 +54,16 @@ export default function SignIn() {
   const history = useNavigate();
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [checkTerms, setCheckTerms] = useState(false);
   const [loading, setLoading] = useState(false);
   const auth = getAuth();
   const [snackbarOpen, setSnackbarOpen] = useState(false)
   const [snackbarMsg, setSnackbarMsg] = useState('')
   const [severity, setSeverity] = useState('success')
 
+  const handleCheckboxChange = (event) => {
+    setCheckTerms(event.target.checked);
+  };
   // const [state, dispatch] = useStateValue();
 
 
@@ -70,26 +74,34 @@ export default function SignIn() {
   }
 
   const postData = (event) => {
-    setLoading(true);
     event.preventDefault();
+    
+    if (!checkTerms) {
+      setSnackbarMsg('You must agree to the terms and conditions.');
+      setSeverity('error');
+      setSnackbarOpen(true);
+      return;
+    }
+  
+    setLoading(true);
+  
     signInWithEmailAndPassword(auth, email, password)
       .then(user => {
-        console.log(user)
+        console.log(user);
         history("/project-overview");
         setLoading(false);
         // M.toast({ html: 'Successfully Signed In!', classes: "#43a047 green darken-1" });
-        history("/project-overview");
       })
       .catch(e => {
         setLoading(false);
         const message = getErrorMessage(e);
-        setSnackbarMsg(message)
-        setSeverity('error')
-        setSnackbarOpen(true)
+        setSnackbarMsg(message);
+        setSeverity('error');
+        setSnackbarOpen(true);
         // M.toast({ html: e.message, classes: "#c62828 red darken-3" });
       });
-
   };
+  
 
   const googleAuth = () => {
     const provider = new GoogleAuthProvider();
@@ -180,6 +192,18 @@ export default function SignIn() {
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
+            />
+
+            <FormControlLabel
+              control={
+                <Checkbox
+                  value="terms"
+                  color="primary"
+                  checked={checkTerms}
+                  onChange={handleCheckboxChange}
+                />
+              }
+              label="Thank you for your interest in reviewing the Thalassa Limited private archive of the Analysis of Depression Dynamics in Urban Areas of England. By signing into this private area on the Thalassa Limited website you agree that you will not disclose your username and password to any third party and all information contained herein is private and confidential and must not be disclosed or shared to any third party in any form without express written consent from the Directors of Thalassa Limited. Please tick this box to confirm you agree"
             />
             <Button
               type="submit"

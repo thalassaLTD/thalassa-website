@@ -1,36 +1,40 @@
 import React, { useEffect, useState } from "react";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
+import { Box, Paper, Tooltip } from "@mui/material";
+import IconButton from '@mui/material/IconButton';
+import InfoIcon from '@mui/icons-material/Info'; import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
 import ResponsiveAppBar from "../components/NavBars/ResNav";
 import Loading from "../components/commonComponents/Loading";
 import { getStorage, ref, listAll, getDownloadURL } from "firebase/storage";
-import { MenuItem, Select, InputLabel, FormControl, Checkbox, ListItemText, Paper } from "@mui/material";
+import CitySelector from "../components/TemporalAnimations/CitySelector";
+import ExperimentSelector from "../components/TemporalAnimations/ExperimentSelector";
+import TrendSelector from "../components/TemporalAnimations/TrendSelector";
+import VideoDisplay from "../components/TemporalAnimations/VideoDisplay";
+import TooltipHeader from '../components/TooltipHeader';
+
 
 import animationsJsonData from "../customizeThalassa/pvt-animationsData.json";
 
 export default function Experiments() {
   const [loading, setLoading] = useState(true);
   const [folders, setFolders] = useState([]);
-  const [htmlFiles, setHtmlFiles] = useState([]); // State to store files with names and metadata
-  const [selectedFolder, setSelectedFolder] = useState('');
+  const [htmlFiles, setHtmlFiles] = useState([]);
+  const [selectedFolder, setSelectedFolder] = useState("");
   const [selectedFileTitles, setSelectedFileTitles] = useState([]);
-  const [fileTitleToUrl, setFileTitleToUrl] = useState({}); // Mapping of titles to URLs
+  const [fileTitleToUrl, setFileTitleToUrl] = useState({});
+  const [selectedArea, setSelectedArea] = useState("Greater London"); // City selection state
+  const cities = ["Greater London", "Leicester", "Manchester", "Bristol"]; // Available cities
 
   useEffect(() => {
     const storage = getStorage();
-    const experimentsRef = ref(storage, 'Experiments/Temporal Animations/');
+    const experimentsRef = ref(storage, "Experiments/Temporal Animations/");
 
-    // Fetch folders in Experiments/
     listAll(experimentsRef)
       .then((res) => {
-        // const folderNames = res.prefixes.map((folderRef) => folderRef.name);
-        const folderNames = ["Depression Prevalence (DPR)", "Prescription Prevalence (PPR)", "Depression Growth Drivers (DGD)"];
-
+        const folderNames = ["Depression Prevalence (DPR)", "Morans I Depression Prevalence (BTP)", "Prescription Prevalence (PPR)", "Depression Growth Drivers (DGD)"];
         setFolders(folderNames);
 
         if (folderNames.length > 0) {
-          // Automatically select the first folder
           const firstFolder = folderNames[0];
           setSelectedFolder(firstFolder);
           handleFolderChange({ target: { value: firstFolder } });
@@ -50,25 +54,25 @@ export default function Experiments() {
     setLoading(true);
 
     const storage = getStorage();
-    const folderRef = ref(storage, `Experiments/Temporal Animations/${folder}`);
+    const folderRef = ref(storage, `Experiments/Temporal Animations/${selectedArea}/${folder}`);
 
     listAll(folderRef)
       .then((res) => {
         const filePromises = res.items.map(async (itemRef) => {
           const url = await getDownloadURL(itemRef);
           const name = itemRef.name;
-          const title = animationsJsonData[name]?.Title || name; // Use title from animationsJsonData or fallback to filename
-          return { name, url, title, ...animationsJsonData[name] }; // Add metadata from animationsJsonData
+          const title = animationsJsonData[name]?.Title || name;
+          return { name, url, title, ...animationsJsonData[name] };
         });
         return Promise.all(filePromises);
       })
       .then((files) => {
-        setHtmlFiles(files); // Store files with names and URLs
+        setHtmlFiles(files);
         const titleToUrl = files.reduce((acc, file) => ({ ...acc, [file.title]: file.url }), {});
         setFileTitleToUrl(titleToUrl);
         if (files.length > 0) {
           const defaultTitle = files[0].title;
-          setSelectedFileTitles([defaultTitle]); // Set the first file title as the default selected title
+          setSelectedFileTitles([defaultTitle]);
         }
         setLoading(false);
       })
@@ -79,104 +83,54 @@ export default function Experiments() {
   };
 
   const handleFileChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setSelectedFileTitles(typeof value === 'string' ? value.split(',') : value);
+    const { target: { value } } = event;
+    setSelectedFileTitles(typeof value === "string" ? value.split(",") : value);
+  };
+
+  const handleCityChange = (event) => {
+    setSelectedArea(event.target.value); // Update city selection
   };
 
   return (
     <>
-      <ResponsiveAppBar />
+      {/* <ResponsiveAppBar /> */}
       <div className="bgcolor">
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />
-          {loading && <Loading />}
-          {!loading && (
-            <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-              <Paper style={{ padding: 16 }}>
+          <Box sx={{ padding: '20px' }}>
+            <Paper style={{ padding: 16 }}>
+              <TooltipHeader
+                tooltipText="The data used from England and Wales Depression and Prescriptions and animations made on different cities"
+                headerText={animationsJsonData.HeadTitle}
+                headerVariant="h4"
+              />
 
-                <Box height={20} />
-                <Box height={10} />
-                <h1>{animationsJsonData.HeadTitle}</h1>
-                <>{animationsJsonData.SubTitle1}</>
-                <Grid container spacing={2} className="paddingall">
-                  <Grid item xs={12}>
-                    <Box>
-                      <FormControl fullWidth variant="outlined" margin="normal">
-                        <InputLabel>Select Experiment</InputLabel>
-                        <Select
-                          value={selectedFolder}
-                          onChange={handleFolderChange}
-                          renderValue={(selected) => selected}
-                          label="Select Experiment"
-                        >
-                          {folders.map((folder) => (
-                            <MenuItem key={folder} value={folder}>
-                              {folder}
-                            </MenuItem>
-                          ))}
-                        </Select>
-                      </FormControl>
 
-                      {htmlFiles.length > 0 && (
-                        <FormControl fullWidth variant="outlined" margin="normal">
-                          <InputLabel>Select Trend</InputLabel>
-                          <Select
-                            multiple
-                            value={selectedFileTitles}
-                            onChange={handleFileChange}
-                            label="Select Trend"
-                            renderValue={(selected) => (
-                              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                                {selected.map((value) => (
-                                  <Box key={value} sx={{ border: '1px solid #ccc', borderRadius: 1, padding: '2px 4px' }}>
-                                    {value}
-                                  </Box>
-                                ))}
-                              </Box>
-                            )}
-                          >
-                            {htmlFiles.map((file) => (
-                              <MenuItem key={file.title} value={file.title}>
-                                <Checkbox checked={selectedFileTitles.indexOf(file.title) > -1} />
-                                <ListItemText primary={file.title} />
-                              </MenuItem>
-                            ))}
-                          </Select>
-                        </FormControl>
-                      )}
-
-                      {selectedFileTitles.map((title, index) => {
-                        const url = fileTitleToUrl[title];
-                        const file = htmlFiles.find(file => file.title === title);
-                        return (
-                          <Box key={index} sx={{ marginTop: '16px' }}>
-                            {url && (
-                              <>
-                                <video width="1200" height="800" controls>
-                                  <source src={url} type="video/mp4" />
-                                  Your browser does not support the video tag.
-                                </video>
-                                {file && (
-                                  <Box sx={{ marginTop: '8px' }}>
-                                    <h3>{file.Title}</h3>
-                                    <p>{file.Paragraph}</p>
-                                    <a href={file.Link} target="_blank"> Code Link (currently disabled)</a>
-                                  </Box>
-                                )}
-                              </>
-                            )}
-                          </Box>
-                        );
-                      })}
-                    </Box>
-                  </Grid>
+              <>{animationsJsonData.SubTitle1}</>
+              <Grid container spacing={2} className="paddingall">
+                <Grid item xs={12} md={4}>
+                  <Box>
+                    <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
+                  </Box>
                 </Grid>
-              </Paper>
-            </Box>
-          )}
-
+                <Grid item xs={12} md={4}>
+                  <Box>
+                    <ExperimentSelector selectedFolder={selectedFolder} handleFolderChange={handleFolderChange} folders={folders} />
+                  </Box>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                  <Box>
+                    <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
+                  </Box>
+                </Grid>
+                <Grid item xs={12}>
+                  <Box>
+                    <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
+                  </Box>
+                </Grid>
+              </Grid>
+            </Paper>
+          </Box>
         </Box>
       </div>
     </>

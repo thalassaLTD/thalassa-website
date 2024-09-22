@@ -14,29 +14,29 @@ function AmplitudeEvent(textLabel) {
 
     const [ref, setRef] = useState(document.referrer);
     // App Opened
-    useEffect(() => {
-        fetch("https://geolocation-db.com/json/")
-            .then(response => {
-                return response.json();
-            }, "jsonp")
-            .then(res => {
-                console.log(res)
-                amplitude.getInstance().logEvent("THALASSA - " + textLabel, {
-                    user_id: res.IPv4,
-                    mail: currentUser?.email,
-                    name: currentUser?.displayName,
-                    location_lat: res.latitude,
-                    location_lng: res.longitude,
-                    ip: res.IPv4,
-                    event_properties: {
-                        keyString: ref,
-                        keyInt: 11,
-                        keyBool: true
-                    }
-                });
-            })
-            .catch(err => console.log(err))
-    }, [])
+    // useEffect(() => {
+    //     fetch("https://geolocation-db.com/json/")
+    //         .then(response => {
+    //             return response.json();
+    //         }, "jsonp")
+    //         .then(res => {
+    //             console.log(res)
+    //             amplitude.getInstance().logEvent("THALASSA - " + textLabel, {
+    //                 user_id: res.IPv4,
+    //                 mail: currentUser?.email,
+    //                 name: currentUser?.displayName,
+    //                 location_lat: res.latitude,
+    //                 location_lng: res.longitude,
+    //                 ip: res.IPv4,
+    //                 event_properties: {
+    //                     keyString: ref,
+    //                     keyInt: 11,
+    //                     keyBool: true
+    //                 }
+    //             });
+    //         })
+    //         .catch(err => console.log(err))
+    // }, [])
 }
 
 export default AmplitudeEvent;
