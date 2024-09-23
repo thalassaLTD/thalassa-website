@@ -11,7 +11,10 @@ import ExperimentSelector from "../components/TemporalAnimations/ExperimentSelec
 import TrendSelector from "../components/TemporalAnimations/TrendSelector";
 import VideoDisplay from "../components/TemporalAnimations/VideoDisplay";
 import TooltipHeader from '../components/TooltipHeader';
-
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import animationsJsonData from "../customizeThalassa/pvt-animationsData.json";
 
@@ -98,15 +101,62 @@ export default function Experiments() {
         <Box sx={{ display: "flex", height: "100%" }}>
           <Sidenav />
           <Box sx={{ padding: '20px' }}>
+
             <Paper style={{ padding: 16 }}>
+
               <TooltipHeader
                 tooltipText="The data used from England and Wales Depression and Prescriptions and animations made on different cities"
                 headerText={animationsJsonData.HeadTitle}
                 headerVariant="h4"
               />
 
+              <Accordion slotProps={{ heading: { component: 'h4' } }}>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls="panel1-content"
+                  id="panel1-header"
+                  sx={{ backgroundColor: 'lightgrey' }}
+
+                >
+                  <strong> Summary of Analysis available here </strong>
+                </AccordionSummary>
+                <AccordionDetails>
+                  DPR and PPR: Primary Analysis directly showing spatial data
+                  <br /> <br />
+
+                  <strong>Depression Prevelance and Growth = DPR</strong>
+                  <br /> Direct Display of Spatial Analysis over time
+
+                  <br /> DPR1 - Depression Prevelance: %  of all GP registered patients  diganosed as depressed in each LSOA
+                  <br /> DPR2 - Depression Growth: % annual change of DPR1 in each LSOA
+
+                  <br /> <br />
+                  
+                  <strong> Prescriptions Prevelance and Growth = PPR </strong>
+                  <br /> PPR1 - Prescriptions Prevelance: % of all GP registered patients with anti-depressant prescription in each LSOA
+                  <br /> PPR2 - Prescriptions Growth: % annual change of PPR1 in each LSOA
+                  <br /> PPR3 - Prescription Items per Depressed Patient  PPR1/DPR1
+                  <br /> <br />
+
+                  <strong> Depression Growth Drivers = PPR </strong>
+                  <br /> Exploratory Spatial Analysis over time and time snapshots
+                  
+                  <>Some animations start from 2014 - 2022</>
+
+                </AccordionDetails>
+              </Accordion>
+              <br />
+
+
+
+
+
+
+
+
 
               <>{animationsJsonData.SubTitle1}</>
+
 
               <Grid container spacing={2} className="paddingall">
                 <Grid item xs={12} md={4}>
