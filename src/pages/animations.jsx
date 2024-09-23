@@ -70,13 +70,17 @@ export default function Experiments() {
         return Promise.all(filePromises);
       })
       .then((files) => {
-        setHtmlFiles(files);
+        setHtmlFiles(files);  // This updates the list of files for the new folder
         const titleToUrl = files.reduce((acc, file) => ({ ...acc, [file.title]: file.url }), {});
-        setFileTitleToUrl(titleToUrl);
+        setFileTitleToUrl(titleToUrl);  // This updates the URL mapping for the new files
+
         if (files.length > 0) {
           const defaultTitle = files[0].title;
-          setSelectedFileTitles([defaultTitle]);
+          setSelectedFileTitles([defaultTitle]);  // Automatically select the first file in the new experiment
+        } else {
+          setSelectedFileTitles([]);  // Reset if no files are available
         }
+
         setLoading(false);
       })
       .catch((error) => {
@@ -84,6 +88,7 @@ export default function Experiments() {
         setLoading(false);
       });
   };
+
 
   const handleFileChange = (event) => {
     const { target: { value } } = event;
@@ -131,17 +136,17 @@ export default function Experiments() {
                   <br /> DPR2 - Depression Growth: % annual change of DPR1 in each LSOA
 
                   <br /> <br />
-                  
+
                   <strong> Prescriptions Prevelance and Growth = PPR </strong>
                   <br /> PPR1 - Prescriptions Prevelance: % of all GP registered patients with anti-depressant prescription in each LSOA
                   <br /> PPR2 - Prescriptions Growth: % annual change of PPR1 in each LSOA
                   <br /> PPR3 - Prescription Items per Depressed Patient  PPR1/DPR1
                   <br /> <br />
 
-                  <strong> Depression Growth Drivers = PPR </strong>
+                  <strong> Depression Growth Drivers = DGD </strong>
                   <br /> Exploratory Spatial Analysis over time and time snapshots
-                  
-                  <>Some animations start from 2014 - 2022</>
+
+                  <br /> <>Some animations start from 2014 - 2022</>
 
                 </AccordionDetails>
               </Accordion>
@@ -159,7 +164,7 @@ export default function Experiments() {
 
 
               <Grid container spacing={2} className="paddingall">
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={2}>
                   <Box>
                     <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
                   </Box>
@@ -169,22 +174,20 @@ export default function Experiments() {
                     <ExperimentSelector selectedFolder={selectedFolder} handleFolderChange={handleFolderChange} folders={folders} />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md={4}>
+                <Grid item xs={12} md={6}>
                   <Box>
                     <TrendSelector htmlFiles={htmlFiles} selectedFileTitles={selectedFileTitles} handleFileChange={handleFileChange} />
                   </Box>
-                  <Grid item xs={12} sm={12}>
-                    (Deselect all Trends when switching between experiments)
-                  </Grid>
                 </Grid>
-                <Grid item xs={12}>
-                  <Box>
-                    <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
-                  </Box>
 
-                </Grid>
               </Grid>
             </Paper>
+            <Grid item xs={12}>
+              <Box>
+                <VideoDisplay selectedFileTitles={selectedFileTitles} fileTitleToUrl={fileTitleToUrl} htmlFiles={htmlFiles} />
+              </Box>
+
+            </Grid>
           </Box>
         </Box>
       </div>
