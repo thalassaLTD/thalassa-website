@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Sidenav from "../components/NavBars/Sidenav";
-import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid, Typography } from "@mui/material";
+import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid, Typography, Divider} from "@mui/material";
 import MapFormatFilter from '../components/SpatialAnalytics/MapFormatFilter';
 import YearFilter from '../components/SpatialAnalytics/YearFilter';
 import TooltipHeader from '../components/TooltipHeader';
 import CitySelector from "../components/TemporalAnimations/CitySelector";
-
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import spatialAnalyticsJsonData from "../customizeThalassa/pvt-spatialAnalyticsData.json";
 
 
@@ -98,6 +101,34 @@ const FilterComponent = () => {
 
             </Box>
 
+            <Accordion slotProps={{ heading: { component: 'h4' } }}>
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls="panel1-content"
+                id="panel1-header"
+                sx={{ backgroundColor: 'lightgrey' }}
+
+              >
+                <strong> Summary of Analysis available here </strong>
+              </AccordionSummary>
+              <AccordionDetails>
+
+                <strong> Depression Growth Drivers = DGD </strong>
+                <br /> Exploratory Spatial Analysis over time and time snapshots
+                <br />
+
+                <br /> Cubes - LocalR2: Depression Prevelance vs Prior Year Items per Patient
+                <br /> Cubes - LocalR2 & t-value: Depression Prevelance vs Prior Year Items per Patient
+                <br /> Cubes - LocalR2: Depression Growth vs Prior Year Items per Patient
+                <br /> Cubes - LocalR2 & t-value: Depression Growth vs Prior Year Items per Patient
+                <br />
+                <br /> Maps - LocalR2: Depression Growth vs Prior Year Depresssion Prevalence
+                <br /> Maps - LocalR2: Depression Growth vs Prior Year Items per Patient
+                <br /> <br />
+
+              </AccordionDetails>
+            </Accordion>
+
             <Grid item xs={12} sm={3}>
               <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
             </Grid>
@@ -134,11 +165,17 @@ const FilterComponent = () => {
                 (Be patient when selecting each year. Each year selected downloads a very large file to the website so it may take some time)
               </Grid>
             </Grid>
+            <br/>
+
+            <Typography variant="h5"> {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.["Title"]}</Typography>
 
             {/* Display the results below the filters */}
             {fileUrls.map(({ year, url }) => (
               url ? (
                 <>
+                <Typography variant="h5" sx={{mt:5, p :1}} >{year}</Typography>
+
+
                   <iframe
                     key={year}
                     src={url}
@@ -146,6 +183,7 @@ const FilterComponent = () => {
                     title={`Spatial Analysis for ${year}`}
                   />
                   <p> {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.[year]}</p>
+                  <Divider></Divider>
 
                 </>
 
