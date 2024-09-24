@@ -5,10 +5,9 @@
     "1.  Temporal Animations: LSOA (defined below) level Spatial Maps of Data, Regression Results and Histograms showing the distribution of result in each of the Cities we have analysed in England",
     "2.  Spatial Analysis: Annual Snapshots showing Depression and Prescriptions Prevelance and Growth Data and Regression Results.", 
     "3.  Playground: allows comparison of any two of the Animations and Spatial Analysis in any city",
-     ]}
-     {
-    "title": "Overview and Summary",
-    "paragraphs": [
+    
+    "Overview and Summary",
+    
     "Depression has evolved in cities through a complex dynamic process that in some cases cities have similarities and in other cases the developments are distinctive.  We are seeking to identify patterns in the spatial variations of depression evolution that may offer clues about the underlying complex dynamic processes.   Ultimately the goal is to  discover better explanations of the variety of developments that may lead to a more robust theory and predictive capability.",
 
     "This study is focussed on improving our understanding by revealing Depression Growth events as opposed to studying factors that might correlate with Depression Prevelance.  There are a number of reasons we have chosen this focus but chief among them:",
