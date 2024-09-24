@@ -115,14 +115,14 @@ export default function Experiments() {
                 headerVariant="h4"
               /> */}
               <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
-                  <h2 style={{ marginRight: 8 }}>{animationsJsonData.HeadTitle}</h2>
-                  {/* <Tooltip title="Overview of the experiements conducted so far." arrow>
+                <h2 style={{ marginRight: 8 }}>{animationsJsonData.HeadTitle}</h2>
+                {/* <Tooltip title="Overview of the experiements conducted so far." arrow>
                     <IconButton size="small" sx={{ verticalAlign: 'middle', padding: 0 }}>
                       <InfoIcon style={{ marginBottom: 16 }} />
                     </IconButton>
                   </Tooltip> */}
-                  
-                </Box>
+
+              </Box>
 
               <Accordion slotProps={{ heading: { component: 'h4' } }}>
                 <AccordionSummary
@@ -155,7 +155,19 @@ export default function Experiments() {
                   <strong> Depression Growth Drivers = DGD </strong>
                   <br /> Exploratory Spatial Analysis over time and time snapshots
 
-                  <br /> <>Some animations start from 2014 - 2022</>
+                  <br /> <> (Some animations start from 2014 - 2022) </>
+                  <br /> DGD1 - Depression Growth vs Items per Patient Global  
+                  <br /> DGD2 - LocalR2: Depression Growth vs Prior Year Items per Patient
+                  <br /> DGD3 - LocalR2: Depression Prevelance vs Prior Year Items per Patient
+                  <br /> DGD4 - Depression Growth (Alternative Depression Growth Groups)
+                  <br /> DGD5 - LocalR2: Depression Growth vs Prior Year Depresssion Prevalence
+                  <br /> <br />
+
+
+                  <strong> Benchmark Tsimpidia Paper = BTP </strong>
+                  <br /> Benchmark: Unravelling the dynamics of mental health inequalities in England, Tsimpida et al (2024)
+                  <br /> BTP4 - Morans I Depression Prevalence LISA CLusters
+
 
                 </AccordionDetails>
               </Accordion>
