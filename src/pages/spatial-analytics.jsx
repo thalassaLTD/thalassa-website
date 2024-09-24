@@ -131,7 +131,7 @@ const FilterComponent = () => {
               </Grid>
 
               <Grid item xs={12} sm={12}>
-                (Years must be actively de-selected and select one year at a time or go slow for bandwidth constrains)
+                (Be patient when selecting each year. Each year selected downloads a very large file to the website so it may take some time)
               </Grid>
             </Grid>
 
