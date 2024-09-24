@@ -1,7 +1,14 @@
 {
     "title": "Depression Dynamics",
     "paragraphs": [
-        
+    "Below is an Overvew and Summary the Research Results available for the Depression Dynamics Case Study. To access the currently availabe research results navigate through:",
+    "1.  Temporal Animations: LSOA (defined below) level Spatial Maps of Data, Regression Results and Histograms showing the distribution of result in each of the Cities we have analysed in England",
+    "2.  Spatial Analysis: Annual Snapshots showing Depression and Prescriptions Prevelance and Growth Data and Regression Results.", 
+    "3.  Playground: allows comparison of any two of the Animations and Spatial Analysis in any city",
+     ]}
+     {
+    "title": "Overview and Summary",
+    "paragraphs": [
     "Depression has evolved in cities through a complex dynamic process that in some cases cities have similarities and in other cases the developments are distinctive.  We are seeking to identify patterns in the spatial variations of depression evolution that may offer clues about the underlying complex dynamic processes.   Ultimately the goal is to  discover better explanations of the variety of developments that may lead to a more robust theory and predictive capability.",
 
     "This study is focussed on improving our understanding by revealing Depression Growth events as opposed to studying factors that might correlate with Depression Prevelance.  There are a number of reasons we have chosen this focus but chief among them:",
@@ -21,7 +28,7 @@
 
     "We have incorporated interactive plots to allow users to explore the data and findings in a more engaging and informative way. These plots enable users to visualize depression trends across different LSOAs, compare the situation and results between cities, and understand the predictive usefuleness of different factors in explaining depression prevalence and growth.",
 
-    "We are steadily adding cities and analyses to this resource with the aim of achieving better models that can support better depression public health policy and treatment practices that anticipate the likely dynamic evolution of the disease."
+    "We are steadily adding cities and analyses to this resource with the aim of achieving better models that can support better depression public health policy and treatment practices that anticipate the likely dynamic evolution of the disease.",
     ],
     "indexOfAnalysisScreenshot" : "../img/indexOfAnalysisScreenshot.jpg"
 }
