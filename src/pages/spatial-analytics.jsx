@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Sidenav from "../components/NavBars/Sidenav";
-import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid } from "@mui/material";
+import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid, Typography } from "@mui/material";
 import MapFormatFilter from '../components/SpatialAnalytics/MapFormatFilter';
 import YearFilter from '../components/SpatialAnalytics/YearFilter';
 import TooltipHeader from '../components/TooltipHeader';
@@ -32,7 +32,7 @@ const FilterComponent = () => {
     Maps: [
       "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
       "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared"
-        ]
+    ]
   };
 
   const handleCityChange = (event) => {
@@ -83,11 +83,21 @@ const FilterComponent = () => {
         <Sidenav />
         <Box sx={{ padding: '20px', width: '100%' }}>
           <Paper style={{ padding: 16 }}>
-            <TooltipHeader
+            {/* <TooltipHeader
               tooltipText="Choose filters and years to compare"
               headerText={spatialAnalyticsJsonData.HeadTitle}
               headerVariant="h4"
-            />
+            /> */}
+            <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+              <h2 style={{ marginRight: 8 }}>{spatialAnalyticsJsonData.HeadTitle}</h2>
+              {/* <Tooltip title="Overview of the experiements conducted so far." arrow>
+                    <IconButton size="small" sx={{ verticalAlign: 'middle', padding: 0 }}>
+                      <InfoIcon style={{ marginBottom: 16 }} />
+                    </IconButton>
+                  </Tooltip> */}
+
+            </Box>
+
             <Grid item xs={12} sm={3}>
               <CitySelector selectedArea={selectedArea} handleCityChange={handleCityChange} cities={cities} />
             </Grid>

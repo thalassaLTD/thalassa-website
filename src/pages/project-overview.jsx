@@ -40,11 +40,12 @@ export default function Experiments() {
 
                 <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
                   <h2 style={{ marginRight: 8 }}>{projectData.title}</h2>
-                  <Tooltip title="Overview of the experiements conducted so far." arrow>
+                  {/* <Tooltip title="Overview of the experiements conducted so far." arrow>
                     <IconButton size="small" sx={{ verticalAlign: 'middle', padding: 0 }}>
                       <InfoIcon style={{ marginBottom: 16 }} />
                     </IconButton>
-                  </Tooltip>
+                  </Tooltip> */}
+                  
                 </Box>
 
                 {/* Render each paragraph */}
