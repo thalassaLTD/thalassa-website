@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Box, Paper, Tooltip } from "@mui/material";
+import { Box, Paper, Tooltip, Typography } from "@mui/material";
 import IconButton from '@mui/material/IconButton';
 import InfoIcon from '@mui/icons-material/Info'; import Grid from "@mui/material/Grid";
 import Sidenav from "../components/NavBars/Sidenav";
@@ -109,11 +109,20 @@ export default function Experiments() {
 
             <Paper style={{ padding: 16 }}>
 
-              <TooltipHeader
+              {/* <TooltipHeader
                 tooltipText="The data used from England and Wales Depression and Prescriptions and animations made on different cities"
                 headerText={animationsJsonData.HeadTitle}
                 headerVariant="h4"
-              />
+              /> */}
+              <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
+                  <h2 style={{ marginRight: 8 }}>{animationsJsonData.HeadTitle}</h2>
+                  {/* <Tooltip title="Overview of the experiements conducted so far." arrow>
+                    <IconButton size="small" sx={{ verticalAlign: 'middle', padding: 0 }}>
+                      <InfoIcon style={{ marginBottom: 16 }} />
+                    </IconButton>
+                  </Tooltip> */}
+                  
+                </Box>
 
               <Accordion slotProps={{ heading: { component: 'h4' } }}>
                 <AccordionSummary
