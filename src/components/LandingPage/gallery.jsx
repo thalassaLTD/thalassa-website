@@ -14,7 +14,7 @@ export const Gallery = (props) => {
 
           <Typography style={{ fontSize: '2rem' }}>
             These case studies illustrate very different situations but share a common thread: A historical system disrupted and fundamentally altered by structural change and external shocks.
-            We use data to inform the creation of realistic digital twins to understand the implications of these alterations and shocks to understand and inform decisionmaking in the future structure and conditions.
+            We use data to inform the creation of realistic digital twins to understand the implications of these alterations and shocks to inform decisionmaking in the future structure and conditions.
           </Typography>
 
         </div>
