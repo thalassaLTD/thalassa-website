@@ -9,7 +9,12 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 
 export const fetchFileUrl = async (city, format, statisticalTest, year) => {
   const storage = getStorage();
-  const fileRef = ref(storage, `/Experiments/Spatial Analysis/${city}/${format}/${statisticalTest}/${year}.html`);
+  const filePath = format === "Temporal Animations"
+    ? `/Experiments/${format}/${city}/${statisticalTest}/${year}`
+    : `/Experiments/Spatial Analysis/${city}/${format}/${statisticalTest}/${year}.html`;
+
+  const fileRef = ref(storage, filePath);
+  // const fileRef = ref(storage, `/Experiments/Spatial Analysis/${city}/${format}/${statisticalTest}/${year}.html`);
   try {
     const url = await getDownloadURL(fileRef);
     return url;
@@ -94,7 +99,7 @@ const FilterComponent = () => {
               <Box sx={{ height: 'calc(100vh - 200px)' }}>
                 <iframe src={fileUrl2} style={{ width: '100%', height: '100%', border: 'none' }} title="Set 2 Data"></iframe>
               </Box>
-              <>{`/Experiments/Spatial Analysis/${selectedCity1}/${mapFormat1}/${statisticalTest1}/${selectedYear1}.html`}</>
+              <>{fileUrl1}</>
             </Grid>
           </Grid>
         </Box>

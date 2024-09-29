@@ -189,10 +189,10 @@ export default function SignIn() {
               autoComplete="current-password"
               onChange={(event) => setPassword(event.target.value)}
             />
-            <FormControlLabel
+            {/* <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
-            />
+            /> */}
 
             <FormControlLabel
               control={
