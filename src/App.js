@@ -14,6 +14,7 @@ import Signup from "./components/Auth/Signup";
 import TermsAndConditions from "./components/Auth/TermsAndConditions";
 import Website from "./pages/website";
 import ProjectOverview from "./pages/project-overview";
+import Articles from "./pages/articles";
 import SpatialAnalytics from "./pages/spatial-analytics";
 import Figure from "./pages/figure";
 import Animations from "./pages/animations";
@@ -63,6 +64,7 @@ const App = () => {
               <Route exact path='/animations' element={<Animations />}></Route>
               <Route exact path='/spatial-analytics' element={<SpatialAnalytics />}></Route>
               <Route exact path='/playground' element={<Playground />}></Route>
+              <Route exact path='/articles' element={<Articles />}></Route>
               <Route exact path='/account' element={<Profile />}></Route>
               <Route exact path='/terms' element={<TermsAndConditions />}></Route>
               <Route exact path='/Experiments' element={<Figure />}></Route>      
