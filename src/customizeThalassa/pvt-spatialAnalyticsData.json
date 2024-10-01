@@ -1,24 +1,24 @@
 {
-  "HeadTitle": "Exploratory Spatial Analysis of Potential Depression and Depression Growth Drivers",
-  "SubTitle1": "Build an Experiment and Select the years to compare",
+  "HeadTitle": "Exploratory Spatial Analysis of Possible Depression and Depression Growth Drivers",
+  "SubTitle1": "Select an Experiment and Select the Years to view",
   "Cubes": {
-    "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared": {
+    "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared results": {
       "Title": "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
       "Location": "Greater London LSOAs",
-      "2011": "In the early stages, there are minimal correlations between depression prevalence and growth, suggesting that drivers for depression were scattered across different regions.",
-      "2012": "A slight uptick in the correlation indicates that certain areas with prior high depression rates started experiencing growth, but the pattern remains largely fragmented.",
-      "2013": "R-squared values show more cohesive clusters, hinting that past prevalence is becoming a stronger predictor for future growth in certain neighborhoods.",
-      "2014": "A clear shift occurs in 2014, where previous high-prevalence areas show significant depression growth, with R-squared values rising.",
-      "2015": "Further stabilization of growth patterns is seen, as areas with high previous-year prevalence show more predictable growth, especially in suburban regions.",
-      "2016": "The patterns remain consistent, with stronger correlations seen in urban pockets, where depression growth is accelerating.",
-      "2017": "This year shows a more pronounced spread of depression growth to previously unaffected areas, while the R-squared correlation holds steady.",
-      "2018": "Correlation dips slightly as growth starts appearing in new, less predictable areas. The expansion suggests broader societal drivers affecting previously low-prevalence regions.",
+      "2011": "pre 2012 data is not comparable method, growth results are not meanigful until 2014",
+      "2012": "pre 2012 data is not comparable method, growth results are not meanigful until 2014",
+      "2013": "pre 2012 data is not comparable method, growth results are not meanigful until 2014",
+      "2014": "The rationale for exploring correlation between depression growth and prior year depression prevalence is to assess the case for higher or lower levels of depression leading to more extreme surges or collapses of depression as quantified by postive or negative growth surges.   To interpret this 3D plot, first rotate to the 2D plane showing Depression Prevalance on the horizontal axis and R-squared on the veritical axis. This view shows a very high R-squared for the vast majority of LSOAs over the entire range of Depression Prevalence but where there is low R-squared it tends to be concentrated in the 0%-6% Depression Prevlance range. What could be the reason? It is possibile this is showing the existence of threshold effects in the lower-middle range of depression prevalence where small changes in prevelance could flip the polarity of growth from minus to plus to the opposite and vice versa. Or other reasons could be the cause of these areas being different. In the former case an on-the-edge flip in polarity would be impossbile for a linear GWR to explain. In either case these outliers point to something unusual happening in these low R-squared locatiions. Next,rotate the plot to show the 2D view with depression Growth in the horizonal and keep R-Squared in the vertical. This view shows a distinct asymmetric 'roller coaster' pattern with R-squared for every LSOA experiencing 0% - 25% growth rate having an R-squared > 0.8.  Outside this range R-sqared falls rapidly. For growth rates less than minus 30% and greater than plus 50% there is a 'bounce' in the R-squared eventually reaching 0.6. In this case the locations where correlation is low are clustered on the maps in, for example, Camden, Southwark and Kingston-upon-Thames. Something different is happening in these locations and the examination of the maps shows these outliers form clusters.",
+      "2015": "See the commentary for 2014 which generally applies in 2015 with some notable differences. Visually the center of gravity for the R-squared outliers in the R-squared vs Prior Year Depression Prevalence dimesion is still spread out but appears to be more concenrated and with a median near 5%. On the R-squared vs Depression Growth plane the main difference appears to be a wider range of very high R-squared exceeding 0.8 from 0% - 45% growth. There is some overlap in the outlier LSOAs from 2014 with very low R-squared ",
+      "2016": "See the commentary for 2014 and 2015 which generally applies in 2016 with some notable differences. Visually the center of gravity for the R-squared outliers in the R-squared vs Prior Year Depression Prevalence dimesion is still spread out but appears to be more concenrated and with a median near 6%, so a gradual shift to higher levels of depression prevalence, but this also happens in the context of generally higher levels of depression prevalence so the relative center-of-gravity of the outliers could be about the same (needs checking). On the R-squared vs Depression Growth plane the main difference appears to be a yet again wider range of very high R-squared exceeding 0.8 from 0% - 75% growth. There is some overlap in the outlier areas from 2014 with very low R-squared, but these low R-squared values only occur for negative 1% to negative 25% growth. R-squared exceeds 0.6 for all postive growth rates. Again there is some overlap in the outlier LSOAs from 2014 and 2015 with very low R-squared",
+      "2017": "See the commentary for 2014 - 2016 which generally applies in 2017 with some notable differences. Visually the center of gravity for the R-squared outliers in the R-squared vs Prior Year Depression Prevalence dimesion is still spread out but appears to be more concenrated and with a median near 6%, so a stabilasation at this level of depression prevalence. On the R-squared vs Depression Growth plane the main difference appears to be a yet again wider range of very high R-squared exceeding 0.8, but the scale on this plot is smaller so the range of high R-squared has actually been reduced to 0% - 40% and a few LSOAs experiencing high growth have R-squared less than 0.4, and again low R-squared values also occur for in a tight range of negative growth from minus 2% to minus 6% growth. Again there is some overlap in the outlier LSOAs from 2014 and 2015 with very low R-squared",
+      "2018": "See the commentary for 2014 - 2017 which generally applies in 2018 with some notable differences. Visually the center of gravity for the R-squared outliers in the R-squared vs Prior Year Depression Prevalence dimesion is still spread out but appears to be more concenrated and with a median near 6%, so a stabilisation at this level of depression prevalence. On the R-squared vs Depression Growth plane the main difference appears to be a yet again wider range of very high R-squared exceeding 0.8, but the scale on this plot is smaller so the range of high R-squared has actually been reduced to 0% - 40% and a few LSOAs experiencing high growth have R-squared less than 0.4, and again low R-squared values also occur for in a tight range of negative growth from minus 2% to minus 6% growth. Again there is some overlap in the outlier LSOAs from 2014 and 2015 with very low R-squared",
       "2019": "Signs of recovery appear, with high-prevalence areas stabilizing, though growth remains elevated in certain emerging clusters.",
-      "2020": "The pandemic significantly impacts depression growth, with correlations skyrocketing in urban areas where social isolation and economic stress likely played a role.",
-      "2021": "Post-pandemic, the R-squared values hold strong, suggesting that areas with previous high depression rates continue to drive the bulk of new cases.",
-      "2022": "A rebalancing starts to emerge, with growth becoming less predictable, as new factors influence the patterns of depression across the city."
+      "2020": "",
+      "2021": "",
+      "2022": ""
     },
-    "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared": {
+    "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared & t-Value results": {
       "Title": "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared",
       "Location": "Greater London LSOAs",
       "2011": "t-values indicate a weak statistical relationship between growth and prior prevalence, suggesting other drivers are in play.",
@@ -34,7 +34,7 @@
       "2021": "Post-pandemic, t-values remain high, reflecting that depression growth is still being driven by prior hot spots.",
       "2022": "Statistical correlations weaken slightly, as new post-pandemic social conditions reshape depression growth patterns across the region."
     },
-    "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared": {
+    "GWR Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared results": {
       "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
       "Location": "Greater London LSOAs",
       "2011": "At this stage, the relationship between items per patient and depression growth is minimal, with treatments not yet playing a clear role.",
@@ -50,7 +50,7 @@
       "2021": "Correlation remains high, as prescriptions continue to serve as a key factor in managing the post-pandemic depression surge.",
       "2022": "A slight dip in correlation suggests the relationship between prescription items per patient and depression growth is beginning to evolve, with new factors at play."
     },
-    "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared": {
+    "Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared & t-Value results": {
       "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared",
       "Location": "Greater London LSOAs",
       "2011": "t-values show a weak statistical relationship, indicating prescription patterns were not yet driving depression growth in a significant way.",
@@ -68,7 +68,7 @@
     }
   },
   "Maps": {
-    "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared": {
+    "GWR Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared & t-Value results": {
       "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared",
       "Location": "Greater London LSOAs",
       "2011": "Minimal spatial correlation, with prescriptions playing little role in depression growth across the map.",
@@ -84,7 +84,7 @@
       "2021": "Post-pandemic, strong spatial trends return, with prescription levels closely aligned with depression growth in certain areas.",
       "2022": "Geographic patterns evolve, with new factors likely influencing growth beyond prescription levels."
     },
-    "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared": {
+    "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared results": {
       "Title": "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
       "Location": "Greater London LSOAs",
       "2011": "Geographic data reveals little correlation, with depression growth spread unevenly across the region.",
