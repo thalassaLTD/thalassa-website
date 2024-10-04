@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Sidenav from "../components/NavBars/Sidenav";
-import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid, Typography, Divider} from "@mui/material";
+import { Box, Paper, MenuItem, Select, FormControl, InputLabel, Grid, Typography, Divider } from "@mui/material";
 import MapFormatFilter from '../components/SpatialAnalytics/MapFormatFilter';
 import YearFilter from '../components/SpatialAnalytics/YearFilter';
 import TooltipHeader from '../components/TooltipHeader';
@@ -165,7 +165,7 @@ const FilterComponent = () => {
                 (Be patient when selecting each year. Each year selected downloads a very large file to the website so it may take some time)
               </Grid>
             </Grid>
-            <br/>
+            <br />
 
             <Typography variant="h5"> {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.["Title"]}</Typography>
 
@@ -173,7 +173,7 @@ const FilterComponent = () => {
             {fileUrls.map(({ year, url }) => (
               url ? (
                 <>
-                <Typography variant="h5" sx={{mt:5, p :1}} >{year}</Typography>
+                  <Typography variant="h5" sx={{ mt: 5, p: 1 }} >{year}</Typography>
 
 
                   <iframe
@@ -182,7 +182,8 @@ const FilterComponent = () => {
                     style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
                     title={`Spatial Analysis for ${year}`}
                   />
-                  <p> {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.[year]}</p>
+                  <p style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
+                  > {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.[year]}</p>
                   <Divider></Divider>
 
                 </>
