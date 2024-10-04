@@ -2,8 +2,8 @@
   "HeadTitle": "Exploratory Spatial Analysis of Possible Depression and Depression Growth Drivers",
   "SubTitle1": "Select an Experiment and Select the Years to view",
   "Cubes": {
-    "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared results": {
-      "Title": "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
+    "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared": {
+      "Title": "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
       "Location": "Greater London LSOAs",
       "2011": "pre 2012 data is not comparable method, growth results are not meanigful until 2014",
       "2012": "pre 2012 data is not comparable method, growth results are not meanigful until 2014",
@@ -18,8 +18,8 @@
       "2021": "",
       "2022": ""
     },
-    "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared & t-Value results": {
-      "Title": "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared",
+    "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared": {
+      "Title": "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared & t-Value results",
       "Location": "Greater London LSOAs",
       "2011": "t-values indicate a weak statistical relationship between growth and prior prevalence, suggesting other drivers are in play.",
       "2012": "Slight increases in t-values show that prior depression prevalence is becoming more statistically significant as a driver for growth.",
@@ -34,8 +34,8 @@
       "2021": "Post-pandemic, t-values remain high, reflecting that depression growth is still being driven by prior hot spots.",
       "2022": "Statistical correlations weaken slightly, as new post-pandemic social conditions reshape depression growth patterns across the region."
     },
-    "GWR Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared results": {
-      "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
+    "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared": {
+      "Title": "GWR Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared results",
       "Location": "Greater London LSOAs",
       "2011": "At this stage, the relationship between items per patient and depression growth is minimal, with treatments not yet playing a clear role.",
       "2012": "A small rise in R-squared values suggests that areas with higher prescription items per patient are beginning to see corresponding growth in depression rates.",
@@ -50,8 +50,8 @@
       "2021": "Correlation remains high, as prescriptions continue to serve as a key factor in managing the post-pandemic depression surge.",
       "2022": "A slight dip in correlation suggests the relationship between prescription items per patient and depression growth is beginning to evolve, with new factors at play."
     },
-    "Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared & t-Value results": {
-      "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared",
+    "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared": {
+      "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared & t-Value",
       "Location": "Greater London LSOAs",
       "2011": "t-values show a weak statistical relationship, indicating prescription patterns were not yet driving depression growth in a significant way.",
       "2012": "The statistical relationship begins to strengthen, with higher t-values suggesting prescriptions are becoming a more important factor in depression growth.",
@@ -68,8 +68,8 @@
     }
   },
   "Maps": {
-    "GWR Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared & t-Value results": {
-      "Title": "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared",
+    "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared": {
+      "Title": "GWR Depression Growth Year-on-Year vs Items Per Patient Prior Year, R-Squared & t-Value results",
       "Location": "Greater London LSOAs",
       "2011": "Minimal spatial correlation, with prescriptions playing little role in depression growth across the map.",
       "2012": "Early signs of spatial correlation between high-prescription areas and depression growth begin to emerge.",
@@ -84,8 +84,8 @@
       "2021": "Post-pandemic, strong spatial trends return, with prescription levels closely aligned with depression growth in certain areas.",
       "2022": "Geographic patterns evolve, with new factors likely influencing growth beyond prescription levels."
     },
-    "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared results": {
-      "Title": "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
+    "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared": {
+      "Title": "GWR Depression Growth Year-on-Year vs Depression Prevalence Prior Year, R-Squared results",
       "Location": "Greater London LSOAs",
       "2011": "Geographic data reveals little correlation, with depression growth spread unevenly across the region.",
       "2012": "Emerging clusters show that past prevalence is becoming a more significant factor in certain areas.",
