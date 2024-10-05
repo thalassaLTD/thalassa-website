@@ -34,7 +34,9 @@ const FilterComponent = () => {
     ],
     Maps: [
       "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared",
-      "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared"
+      "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared",
+      "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
+      "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared"
     ]
   };
 
@@ -123,7 +125,9 @@ const FilterComponent = () => {
                 <br /> Cubes - LocalR2 & t-value: Depression Growth vs Prior Year Items per Patient
                 <br />
                 <br /> Maps - LocalR2: Depression Growth vs Prior Year Depresssion Prevalence
+                <br /> Maps - LocalR2 & t-value: Depression Prevelance vs Prior Year Items per Patient
                 <br /> Maps - LocalR2: Depression Growth vs Prior Year Items per Patient
+                <br /> Maps - LocalR2 & t-value: Depression Growth vs Prior Year Items per Patient
                 <br /> <br />
 
               </AccordionDetails>

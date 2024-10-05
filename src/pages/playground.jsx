@@ -99,7 +99,6 @@ const FilterComponent = () => {
               <Box sx={{ height: 'calc(100vh - 200px)' }}>
                 <iframe src={fileUrl2} style={{ width: '100%', height: '100%', border: 'none' }} title="Set 2 Data"></iframe>
               </Box>
-              <>{fileUrl1}</>
             </Grid>
           </Grid>
         </Box>
