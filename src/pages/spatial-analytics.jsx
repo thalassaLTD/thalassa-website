@@ -186,9 +186,8 @@ const FilterComponent = () => {
                     style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
                     title={`Spatial Analysis for ${year}`}
                   />
-                  <p style={{ width: '80%', height: '600px', border: 'none', marginBottom: '20px' }}
+                  <p style={{ width: '80%'}}
                   > {spatialAnalyticsJsonData?.[mapFormat]?.[folder]?.[year]}</p>
-                  <Divider></Divider>
 
                 </>
 
