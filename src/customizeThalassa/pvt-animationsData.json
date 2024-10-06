@@ -18,12 +18,12 @@
   },
   "PPR2.mp4": {
     "Title": "PPR2 - Prescription Growth",
-    "Paragraph": ".",
+    "Paragraph": "The growth rates computed here are from the annual change in Prescription Density in PPR1.  In line with the Depression Growth of DPR2, growth is happening in bursts in a seeming random patten over time.  This constrasts sharply with the appearence of a steady evolution of Prescriptions Density in PPR1 and reinforces the observation that there could be threshold or tipping point effects at work. The median growth rates starts at 7.3% and gradually declines to 2.5% and then, a notable difference from Depression Prevelance Growth,  is a surge of growth happening between 2018-2020 rising to 4.7% and then a decline to 1.5-1.9% in 2021-2022. Unlike Depression Prevalence Growth, the Standard Devition exceeds the growth rates for nearly the whole period implying more extreme changes of prescriptions density annually than Depression Prevelance.  Indeed the Growth Histogram has sustained 'long-tails' through the entire 2012-2022, similar to the distribution of Depression Prevelance Growth (this can be observed in the Playground).",
     "Location": "Greater London LSOAs"
   },
   "PPR3.mp4": {
     "Title": "PPR3 -Prescription Items Per Depressed Patient",
-    "Paragraph": "This analysis compares both population prevalence and patient prevalence. It highlights the relationship between the number of depression-related prescription items per patient, helping to understand whether treatments are concentrated in certain areas or more evenly distributed.",
+    "Paragraph": "Items per Depressed patient is equal to the number drug types on the medical records of registered paitents diagnosed as depressed. 2012 appears to have a definition difference from subseqent years but shares the characteristic 'skewed' distribution with the majority of LSOAs having a low number of items per patient: between 1-3 and a small number of LSOAs having very high levels up to 10. The highest number of items per patient is 55. These numbers come from patients linked to specific GP practices so it is not obvioulsly a situation where a GP practice is dispensing for a larger geographic area, so such a high figure is a genuine puzzle.  The map shows clusters of high items per patient gradually fading over time. (a Morans I cluster analysis will help here)  Over time the distribution is moving to lower median and standard deviation values. Why? possibly prescribing practices are being more tightly controlled or new medications have been introduced that peform the function of several old medications.  This is an open question but there is a clear secular trend to fewer items per patient with a sustained skew to a few LSOAs having high levels.  However the most extreme LSOAs in 2013 were prescribing about 10 items per patient whereas in 2022 the extreme had dropped to about 4..",
     "Location": "Greater London LSOAs"
   },
   "DGD1.mp4": {
