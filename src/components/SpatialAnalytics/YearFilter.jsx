@@ -13,7 +13,7 @@ const YearFilter = ({ selectedYears, setSelectedYears }) => {
     <FormControl component="fieldset" sx={{ marginBottom: '20px' }}>
       <FormLabel component="legend">Year</FormLabel>
       <Box>
-        {Array.from({ length: 11 }, (_, i) => {
+        {Array.from({ length: 9 }, (_, i) => {
           const year = String(2014 + i);
           return (
             <FormControlLabel
