@@ -28,57 +28,57 @@
   },
   "DGD1.mp4": {
     "Title": "DGD1 - Depression Prevalence Growth % vs Items/Patient",
-    "Paragraph": "This video provides an overview of both the prevalence of depression prescriptions and their growth over time. It demonstrates how prescription rates have changed across Greater London, highlighting regions with rapid growth.",
+    "Paragraph": "The Global Regression of Items Per Patient (current year, prior year needs to be added) shows little if any clear correlation of Depression Growth and Items per Patient. However, subsequent experiments using Geographically Weighted Regression produce very high corellation ",
     "Location": "Greater London"
   },
   "DGD2.mp4": {
     "Title": "DGD2 - LocalR2 Depression Growth vs Items/Patient 2014-22",
-    "Paragraph": "This analysis compares the growth in depression prevalence with the number of prescription items per patient from 2014 to 2022. It sheds light on the correlation between increased depression rates and the intensity of treatments through prescriptions.",
+    "Paragraph": "Depression Growth is highly correlated with Items per patietn in the great majority of LSOAs. The locations of high and low correlation are however varying over time in line with observations that growth happens in bursts",
     "Location": "Greater London"
   },
   "DGD3.mp4": {
     "Title": "DGD3 - LocalR2 Depression Prevalence vs Items/Patient 2014-22",
-    "Paragraph": "This analysis uses geographically weighted regression (GWR) to examine the relationship between depression prevalence and the number of prescription items per patient. It focuses on spatial variations in Greater London from 2014 to 2022.",
+    "Paragraph": "Depression Prevelance is increasingly correlated with Items per patient over time. And the correlation appears to form clusters. (A cluster analysis will help here) ",
     "Location": "Greater London LSOAs"
   },
   "DGD4.mp4": {
     "Title": "DGD4 - Depression Growth with Revised Bins",
-    "Paragraph": "This video shows a detailed view of how the prevalence of prescriptions and their growth have evolved in Greater London over time, focusing on key trends in specific areas.",
+    "Paragraph": "This is an attempt to reveal more clearly clusters of very high Depression Prevelance growth using equal bin sizes with an underflow and overflow.",
     "Location": "Greater London LSOAs"
   },
   "DGD5.mp4": {
     "Title": "DGD5 - LocalR2 Depression Growth vs Depression Prevalence in Prior Year",
-    "Paragraph": "This analysis compares the growth in depression rates in a given year with the depression prevalence in the previous year. It explores whether areas with higher prior prevalence experienced faster growth.",
+    "Paragraph": "Depression Growth is less strongly correlated with Prior Year Depression than with Items per patient but the mean r-squared is greater than 0.6 for the entire 2012-2022 period.  However, there is a double-hump in the distribution of LSOAs with a relatively larger group of LSOAs having poor correlation of Growth with Prior Year Depression.  When we add in other factors that may explain growth this is a clue that may help understand what is different between LSOAs with high correlation vs low correlation.",
     "Location": "Greater London LSOAs"
   },
   "DGD6.mp4": {
     "Title": "DGD6 - Prescription Prevalence and Growth for Greater London",
-    "Paragraph": "This video presents a comprehensive look at the relationship between prescription prevalence and growth in Greater London, providing insights into how prescription patterns have changed over time.",
+    "Paragraph": "No Animation",
     "Location": "Greater London LSOAs"
   },
   "DGD7.mp4": {
     "Title": "DGD7 - Prescription Prevalence and Growth",
-    "Paragraph": "This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
+    "Paragraph": "No Animation",
     "Location": "Greater London LSOAs"
   },
   "BTP1.mp4": {
-    "Title": "BTP1",
-    "Paragraph": "BTP1 - This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
-    "Location": "Greater London LSOAs"
+    "Title": "BTP1 - Benchmarking Our Morans I analysis against the Tsimpida et al result for England",
+    "Paragraph": "No Animation ",
+    "Location": "England LSOAs"
   },
   "BTP2.mp4": {
-    "Title": "BTP2",
-    "Paragraph": "BTP2 - This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
-    "Location": "Greater London LSOAs"
+    "Title": "BTP2 - Additional Benchmarking for England GWR Depression Prevelance vs IMD",
+    "Paragraph": "No Animation",
+    "Location": "England LSOAs"
   },
   "BTP3.mp4": {
-    "Title": "BTP3",
-    "Paragraph": "BTP3 -This video explores the prevalence of prescriptions for depression and their growth across Greater London. It highlights key areas where prescription rates have significantly increased.",
+    "Title": "BTP3 - Benchmarking to reproduce GWR Results for Depression Prevelance vs IMD ",
+    "Paragraph": "No Animation",
     "Location": "Greater London LSOAs"
   },
   "BTP4.mp4": {
     "Title": "BTP4 - Morans I Depression Prevalence",
-    "Paragraph": "The Morans I analysis highlights groups of LSOAs where high and low levels of Depression Prevalence are adjacent and also where high and low level 'outliers' are adjacent. The Greater London Area in Morans I analysis of the whole of England appears to have a majority of low-low clusters, wheras in this analysis of only LSOAs within Greater London there are significant sustained clusters of both high-high and low-low.  By compariing this analysis to the DPR1 in the Playground, help show where clusters are sustained. Notably there are very few outlier areas -- these are potentially areas of special interest becuase they are rare.  (A further improvment will be to add the openstreet map layer to help with identifying outlier areas.",
+    "Paragraph": "The Morans I analysis highlights groups of LSOAs where high and low levels of Depression Prevalence are adjacent and also where high and low level 'outliers' are adjacent. The Greater London Area in Morans I analysis of the whole of England appears to have a majority of low-low clusters, wheras in this analysis of only LSOAs within Greater London there are significant sustained clusters of both high-high and low-low.  By compariing this analysis to the DPR1 in the Playground, help show where clusters are sustained. Notably there are very few outlier areas -- these are potentially areas of special interest becuase they are rare.  (A further improvment will be to add the openstreet map layer to help with identifying outlier areas).",
     "Location": "Greater London LSOAs"
   }
 }
