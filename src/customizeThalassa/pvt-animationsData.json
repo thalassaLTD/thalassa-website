@@ -78,7 +78,7 @@
   },
   "BTP4.mp4": {
     "Title": "BTP4 - Morans I Depression Prevalence",
-    "Paragraph": "This video explores the Morans I Depression Prevalence, LISA cluster Maps for regions in Greater London. Has been divided into 5 clusters.",
+    "Paragraph": "The Morans I analysis highlights groups of LSOAs where high and low levels of Depression Prevalence are adjacent and also where high and low level 'outliers' are adjacent. The Greater London Area in Morans I analysis of the whole of England appears to have a majority of low-low clusters, wheras in this analysis of only LSOAs within Greater London there are significant sustained clusters of both high-high and low-low.  By compariing this analysis to the DPR1 in the Playground, help show where clusters are sustained. Notably there are very few outlier areas -- these are potentially areas of special interest becuase they are rare.  (A further improvment will be to add the openstreet map layer to help with identifying outlier areas.",
     "Location": "Greater London LSOAs"
   }
 }
