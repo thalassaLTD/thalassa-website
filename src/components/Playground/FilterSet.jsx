@@ -153,7 +153,7 @@ const FilterSet = ({
             ? getAnimationFiles().map((file) => (
                 <FormControlLabel key={file} control={<Radio value={file} />} label={file} />
               ))
-            : Array.from({ length: 11 }, (_, i) => {
+            : Array.from({ length: 9 }, (_, i) => {
                 const year = String(2014 + i);
                 return (
                   <FormControlLabel key={year} control={<Radio value={year} />} label={year} />
