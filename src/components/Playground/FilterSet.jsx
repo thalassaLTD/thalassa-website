@@ -45,15 +45,15 @@ const FilterSet = ({
           "Depression Growth Year-on-Year vs Depression Prevalence Prior Year R-Squared"
       },
       {
-        value: "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
-        label:
-          "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared"
-      },
-      {
         value:
           "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared",
         label:
           "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared"
+      },
+      {
+        value: "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
+        label:
+          "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared"
       },
       {
         value:
