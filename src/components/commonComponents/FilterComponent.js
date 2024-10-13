@@ -140,7 +140,7 @@ export default function FilterComponent({ filters, filterList,filterLabels, rese
                   {value.map((item, idx) => {
                     let [k, val] = Object.entries(item)[0];
                     return (
-                      <MenuItem>
+                      <MenuItem key={idx}>
                         <FormControlLabel
                           label={k}
                           control={
