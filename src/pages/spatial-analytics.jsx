@@ -53,6 +53,11 @@ const FilterComponent = () => {
       "Depression Growth Year-on-Year vs Depression Prevalence Prior Year t-Value & R-Squared",
       "Depression Growth Year-on-Year vs Items Per Patient Prior Year R-Squared",
       "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared",
+      "Depression Prevalence DPR1",
+      "Depression Prevalence DPR2",
+      "Prescription Prevalence PPR1",
+      "Prescription Prevalence PPR3",
+      "Prescription Prevalence PPR3"
     ],
   };
 

@@ -60,6 +60,36 @@ const FilterSet = ({
           "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared",
         label:
           "Depression Growth Year-on-Year vs Items Per Patient Prior Year t-Value & R-Squared"
+      },
+      {
+        value:
+          "Depression Prevalence DPR1",
+        label:
+          "Depression Prevalence DPR1"
+      },
+      {
+        value:
+          "Depression Prevalence DPR2",
+        label:
+          "Depression Prevalence DPR2"
+      },
+      {
+        value:
+          "Prescription Prevalence PPR1",
+        label:
+          "Prescription Prevalence PPR1"
+      },
+      {
+        value:
+          "Prescription Prevalence PPR2",
+        label:
+          "Prescription Prevalence PPR2"
+      },
+      {
+        value:
+          "Prescription Prevalence PPR3",
+        label:
+          "Prescription Prevalence PPR3"
       }
     ];
   };
