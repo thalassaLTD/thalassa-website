@@ -35,7 +35,7 @@ const FilterSet = ({
         { value: "Depression Prevalence (DPR)", label: "Depression Prevalence (DPR)" },
         { value: "Prescription Prevalence (PPR)", label: "Prescription Prevalence (PPR)" },
         { value: "Depression Growth Drivers (DGD)", label: "Depression Growth Drivers (DGD)" },
-        { value: "Morans I Depression Prevalence (BTP)", label: "Morans I Depression Prevalence (BTP)" }
+        // { value: "Morans I Depression Prevalence (BTP)", label: "Morans I Depression Prevalence (BTP)" }
       ];
     }
     return [
@@ -68,9 +68,9 @@ const FilterSet = ({
   const getAnimationFiles = () => {
     switch (statisticalTest) {
       case "Depression Prevalence (DPR)":
-        return ["DPR1.mp4", "DPR2.mp4"];
+        return ["DPR1.mp4", "DPR2.mp4", "DPR1_MI.mp4", "DPR2_MI.mp4"];
       case "Prescription Prevalence (PPR)":
-        return ["PPR1.mp4", "PPR2.mp4", "PPR3.mp4"];
+        return ["PPR1.mp4", "PPR2.mp4", "PPR3.mp4", "PPR1_MI.mp4", "PPR2_MI.mp4", "PPR3_MI.mp4"];
       case "Depression Growth Drivers (DGD)":
         return ["DGD1.mp4", "DGD2.mp4", "DGD3.mp4", "DGD4.mp4", "DGD5.mp4"];
       case "Morans I Depression Prevalence (BTP)":
