@@ -140,10 +140,10 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2024
-            <a href="http://www.thalassa.ltd" rel="nofollow">
-              -THALASSA
-            </a>
+            &copy; 2024 - Thalassa Limited, Maurice Glucksman
+            {/* <a href="http://www.thalassa.ltd" rel="nofollow">
+              - Thalassa Limited, Maurice Glucksman
+            </a> */}
           </p>
         </div>
       </div>
