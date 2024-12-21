@@ -140,7 +140,7 @@ export const Contact = (props) => {
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2024 - Thalassa Limited, Maurice Glucksman
+            &copy; 2024 Thalassa Limited. All Rights Reserved.
             {/* <a href="http://www.thalassa.ltd" rel="nofollow">
               - Thalassa Limited, Maurice Glucksman
             </a> */}
